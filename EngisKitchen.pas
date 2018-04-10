@@ -1,7 +1,6 @@
 Program EngisKitchen;
 
-uses uDef, sysutils, F1;
-//uses F2_exit;
+uses uDef, sysutils, F1, F2;
 //uses F3_startSimulasi;
 //uses F4_stopSimulasi;
 //uses F5_beliBahan;
@@ -33,7 +32,7 @@ while input <> 'exit' do
 begin
 	if input = 'load' then
 	begin
-		load(FEBahanMentah, FEBahanOlahan, FEInventoriBahanMentah, FEInventoriBahanOlahan, FEResep, FESimulasi); 
+		load(FEBahanMentah, FEBahanOlahan, FEInventoriBahanMentah, FEInventoriBahanOlahan, FEResep, FESimulasi, NBahanM, NBahanO, NInvBM, NInvBO, NResep, NSim); 
 	end else if input = ''
 	begin
 		writeln('Masukan input yang benar.');
@@ -42,4 +41,5 @@ begin
 	write('> ');
 	readln(input)
 end;
+exit(FEBahanMentah, FEBahanOlahan, FEInventoriBahanMentah, FEInventoriBahanOlahan, FEResep, FESimulasi, NBahanM, NBahanO, NInvBM, NInvBO, NResep, NSim);
 end.
