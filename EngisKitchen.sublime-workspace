@@ -1,0 +1,954 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"pro",
+				"procedure\tdeclaration"
+			],
+			[
+				"FEInv",
+				"FEInventoriBahanMentah"
+			],
+			[
+				"FE",
+				"FEBahanOlahan"
+			],
+			[
+				"NB",
+				"NBahanO"
+			],
+			[
+				"Ab",
+				"Abahanolahan"
+			],
+			[
+				"Fe",
+				"FEBahanMentah"
+			],
+			[
+				"temp",
+				"temp"
+			],
+			[
+				"FEBaha",
+				"FEBahanMentah"
+			],
+			[
+				"int",
+				"Integer"
+			],
+			[
+				"bahan",
+				"bahanmentah"
+			],
+			[
+				"re",
+				"record\tdeclaration"
+			],
+			[
+				"point",
+				"point"
+			],
+			[
+				"i",
+				"if\tstatement"
+			],
+			[
+				"offs",
+				"offsetList"
+			],
+			[
+				"l",
+				"l"
+			],
+			[
+				"Kon",
+				"KonversiFKeK"
+			],
+			[
+				"k",
+				"komposit"
+			],
+			[
+				"B",
+				"B"
+			],
+			[
+				"p",
+				"program\twith main procedure"
+			],
+			[
+				"C",
+				"C"
+			],
+			[
+				"A",
+				"A"
+			],
+			[
+				"O",
+				"Operasi"
+			],
+			[
+				"Opera",
+				"Operasi"
+			],
+			[
+				"b",
+				"begin\tcompound statement"
+			],
+			[
+				"w",
+				"writeln"
+			],
+			[
+				"case",
+				"case\tstatement"
+			],
+			[
+				"cas",
+				"case\tstatement"
+			],
+			[
+				"operasi",
+				"Operasi"
+			],
+			[
+				"oper",
+				"Operasi"
+			],
+			[
+				"if",
+				"if\tstatement with else"
+			],
+			[
+				"progra",
+				"program\twith main procedure"
+			],
+			[
+				"prog",
+				"program\tdeclaration"
+			],
+			[
+				"program",
+				"program\tdeclaration"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "uDef.pas",
+			"settings":
+			{
+				"buffer_size": 1434,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "EngisKitchen.pas",
+			"settings":
+			{
+				"buffer_size": 1057,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "F1.pas",
+			"settings":
+			{
+				"buffer_size": 7324,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "F2.pas",
+			"settings":
+			{
+				"buffer_size": 7113,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "F3.pas",
+			"settings":
+			{
+				"buffer_size": 110,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "unit F3;"
+			}
+		},
+		{
+			"file": "BahanMentah.txt",
+			"settings":
+			{
+				"buffer_size": 157,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "BahanOlahan.txt",
+			"settings":
+			{
+				"buffer_size": 102,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "InvBahanMentah.txt",
+			"settings":
+			{
+				"buffer_size": 97,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "InvBahanOlahan.txt",
+			"settings":
+			{
+				"buffer_size": 52,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Resep.txt",
+			"settings":
+			{
+				"buffer_size": 228,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Simulasi.txt",
+			"settings":
+			{
+				"buffer_size": 65,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Pascal Snippets/fpc.sublime-build",
+					""
+				],
+				[
+					"Packages/Pascal Snippets/fpc.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/Pascal Snippets/fpc.sublime-build",
+					"Build and Run"
+				]
+			],
+			[
+				"Packages/Pascal Snippets/fpc.sublime-build",
+				"Build and Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				"Syntax Check"
+			]
+		],
+		[
+			[
+				[
+					"Packages/User/Pascal.sublime-build",
+					""
+				],
+				[
+					"Packages/User/Pascal.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/User/Pascal.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/User/fpc-working.sublime-build",
+					""
+				],
+				[
+					"Packages/User/fpc-working.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/User/fpc-working.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/User/fpc.sublime-build",
+					""
+				],
+				[
+					"Packages/User/fpc.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/User/fpc.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/User/fpc1.sublime-build",
+					""
+				],
+				[
+					"Packages/User/fpc1.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/User/fpc1.sublime-build",
+				"Run"
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 104.0,
+		"last_filter": "ayu",
+		"selected_items":
+		[
+			[
+				"ayu",
+				"ayu: Activate theme"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"box",
+				"Boxy Theme: Activation"
+			],
+			[
+				"the",
+				"Boxy Theme: Environment"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"theme",
+				"Material Theme: Configuration"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"prv",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"ma",
+				"Material Theme: Configuration"
+			],
+			[
+				"Snippet: ",
+				"Snippet: #!/usr/bin/env"
+			]
+		],
+		"width": 448.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			":load sortList.hs",
+			"File sortList.hs",
+			"sortList [3,2,1]",
+			"3*3",
+			"?",
+			"help",
+			":run",
+			"ghci sortList.hs",
+			"ghci",
+			"compil",
+			"ghci",
+			"fpc",
+			"help",
+			"?",
+			"build",
+			"compile"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/kevin/Documents/GitHub/TubesDasPro/EngisKitchen.sublime-project",
+		"/Users/kevin/Documents/Sublime Text/untitled.pas",
+		"/Users/kevin/Box Sync/ITB/2017-2018/Semester 2/IF1210/TUBES/uDef.pas",
+		"/Users/kevin/Box Sync/ITB/2017-2018/Semester 2/IF1210/TUBES/F1.pas",
+		"/Users/kevin/Box Sync/ITB/2017-2018/Semester 2/IF1210/TUBES/EngisKitchen.pas",
+		"/Users/kevin/Box Sync/ITB/2017-2018/Semester 2/IF1210/TUBES/test.pas",
+		"/Users/kevin/Box Sync/ITB/2017-2018/Semester 2/IF1210/TUBES/F5.pas",
+		"/Users/kevin/Box Sync/ITB/2017-2018/Semester 2/IF1210/TUBES/re.pas",
+		"/Users/kevin/Box Sync/ITB/2017-2018/Semester 2/IF1210/TUBES/F1_load.pas",
+		"/Users/kevin/Documents/Sublime Text/DasPro/TUBES/F1-load.pas",
+		"/Users/kevin/Documents/Sublime Text/DasPro/TUBES/load.pas",
+		"/Users/kevin/Documents/Sublime Text/DasPro/TUBES/Engis_Kitchen.pas",
+		"/Users/kevin/Documents/unit POINT.pas",
+		"/Users/kevin/Downloads/heart-signal-e1.1497290101440.en.srt",
+		"/Users/kevin/Documents/Sublime Text/DasPro/Pascal/jumlahderet.pas",
+		"/Users/kevin/Documents/Sublime Text/DasPro/Pascal/min2.pas",
+		"/Users/kevin/Documents/Sublime Text/PTI B (03) - KU1072/Latihan Praktikum 5/Soal3.pas",
+		"/Users/kevin/Downloads/Soal1.pas",
+		"/Users/kevin/Documents/Sublime Text/PTI B (03) - KU1072/2017_09_04/Soal 4.pas",
+		"/Users/kevin/Documents/Sublime Text/PTI B (03) - KU1072/2017_09_18/LaguAnakAyam_3.pas",
+		"/Users/kevin/Documents/Sublime Text/DasPro/filterList.hs",
+		"/Users/kevin/Documents/Sublime Text/DasPro/offsetList.hs",
+		"/Users/kevin/Documents/Sublime Text/DasPro/ListOfInteger.hs",
+		"/Users/kevin/Documents/Sublime Text/DasPro/KonversiSuhu.hs",
+		"/Users/kevin/Documents/Sublime Text/DasPro/countIf.hs",
+		"/Users/kevin/Documents/Sublime Text/DasPro/sortList.hs",
+		"/Users/kevin/Documents/Sublime Text/DasPro/sumInteger.hs",
+		"/Users/kevin/Documents/Sublime Text/DasPro/insSorted.hs",
+		"/Users/kevin/Documents/Sublime Text/DasPro/splitList.hs",
+		"/Users/kevin/Documents/Sublime Text/DasPro/trunc.hs",
+		"/Users/kevin/Documents/Sublime Text/DasPro/nilaiEkstrim.hs",
+		"/Users/kevin/Library/Application Support/Steam/steamapps/common/dota 2 beta/dota/cfg/autoexec.cfg",
+		"/Users/kevin/Documents/Sublime Text/PTI B (03) - KU1072/Latihan Praktikum 4/Array1.pas",
+		"/Users/kevin/Documents/Sublime Text/PTI B (03) - KU1072/Latihan/UAS1516-4.pas",
+		"/Users/kevin/Vin.dat",
+		"/Users/kevin/Documents/Sublime Text/PTI B (03) - KU1072/Latihan Praktikum 5/Soal1.ps",
+		"/Users/kevin/Documents/Sublime Text/PTI B (03) - KU1072/Latihan Praktikum 5/Infile.dat",
+		"/Users/kevin/Documents/Sublime Text/PTI B (03) - KU1072/Latihan Praktikum 5/FileExternal.pas",
+		"/Users/kevin/Documents/Sublime Text/PTI B (03) - KU1072/Latihan Praktikum 5/Outfile.dat",
+		"/Users/kevin/Downloads/Tour_de_France_logo.svg",
+		"/Users/kevin/Documents/Sublime Text/PTI/Prak 4/test.pas",
+		"/Users/kevin/Documents/Sublime Text/Toki/04/IfThenCase.pas",
+		"/Users/kevin/Documents/Sublime Text/Toki/04/IfThenElse.pas",
+		"/Users/kevin/Documents/Sublime Text/Toki/04/IfThenMulti.pas",
+		"/Users/kevin/Documents/Sublime Text/Toki/04/IfThen.pas",
+		"/Users/kevin/Documents/Sublime Text/Toki/03/TransposMatriks.pas",
+		"/Users/kevin/Documents/Sublime Text/Toki/03/LuasSegitiga.pas",
+		"/Users/kevin/Documents/Sublime Text/Toki/03/BebekUntukTeman.pas",
+		"/Users/kevin/Documents/Sublime Text/Toki/03/BurungBeo.pas",
+		"/Users/kevin/Documents/Sublime Text/Toki/03/ATambahB.pas",
+		"/Users/kevin/Documents/Sublime Text/PTI B (03) - KU1072/2017_09_11/Ranking 3 Bilangan.pas",
+		"/Users/kevin/Documents/Sublime Text/PTI B (03) - KU1072/2017_09_11/Calc-SS.pas",
+		"/Users/kevin/Documents/Sublime Text/PTI B (03) - KU1072/Soal 1.pas",
+		"/Users/kevin/Documents/Sublime Text/PTI B (03) - KU1072/Soal 2.pas",
+		"/Users/kevin/Documents/Sublime Text/PTI B (03) - KU1072/Soal 3.pas",
+		"/Users/kevin/Documents/Sublime Text/PTI B (03) - KU1072/Soal 4.pas",
+		"/Users/kevin/Documents/Sublime Text/Toki/03/numerik.pas",
+		"/Users/kevin/Documents/Sublime Text/Toki/03/kuadrat.pas",
+		"/Users/kevin/Desktop/Screen Shot 2017-07-08 at 4.30.40 PM.png",
+		"/Users/kevin/Documents/Sublime Text/Toki/02/titik.pas",
+		"/Users/kevin/Documents/Sublime Text/Toki/02/tipedasar.pas",
+		"/Users/kevin/Documents/Sublime Text/Toki/02/karakter.pas",
+		"/Users/kevin/Documents/Sublime Text/Jos.pas",
+		"/Users/kevin/Documents/Sublime Text/assign.pas",
+		"/Users/kevin/Documents/Sublime Text/HelloWorld.pas",
+		"/Users/kevin/Library/Application Support/Sublime Text 3/Packages/User/fpc-working.sublime-build",
+		"/Users/kevin/Documents/Sublime Text/2",
+		"/Users/kevin/Documents/Sublime Text/1",
+		"/Users/kevin/Documents/Sublime Text/halo.pas",
+		"/Users/kevin/Library/Application Support/Sublime Text 3/Packages/User/fpc1.sublime-build",
+		"/Users/kevin/Library/Application Support/Sublime Text 3/Packages/User/fpc.sublime-build",
+		"/Users/kevin/Library/Application Support/Sublime Text 3/Packages/User/Pascal.sublime-build",
+		"/usr/local/bin/fpc"
+	],
+	"find":
+	{
+		"height": 32.0
+	},
+	"find_in_files":
+	{
+		"height": 116.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "uDef.pas",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1434,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1351,
+								1397
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/Pascal/Pascal.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 602.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "EngisKitchen.pas",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1057,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								51,
+								51
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/Pascal/Pascal.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "F1.pas",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7324,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6185,
+								6185
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/Pascal/Pascal.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "F2.pas",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7113,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7106,
+								7106
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/Pascal/Pascal.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "F3.pas",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 110,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								40,
+								20
+							]
+						],
+						"settings":
+						{
+							"auto_name": "unit F3;",
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/Pascal/Pascal.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "BahanMentah.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 157,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "BahanOlahan.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 102,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "InvBahanMentah.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 97,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "InvBahanOlahan.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 52,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "Resep.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 228,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "Simulasi.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 65,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 32.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 36.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/Haskell/Haskell.sublime-build",
+	"project": "EngisKitchen.sublime-project",
+	"replace":
+	{
+		"height": 60.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/Documents/GitHub/TubesDasPro/EngisKitchen.pas"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 143.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
