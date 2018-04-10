@@ -23,7 +23,7 @@ uses uDef, sysutils, F1;
 
 
 var
-	input: String;
+	input: AnsiString;
 	countis, energiawal, countm : Integer;
 
 begin
