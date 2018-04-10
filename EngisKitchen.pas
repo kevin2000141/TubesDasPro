@@ -1,6 +1,6 @@
 Program EngisKitchen;
 
-uses F1;
+uses uDef, sysutils, F1;
 //uses F2_exit;
 //uses F3_startSimulasi;
 //uses F4_stopSimulasi;
@@ -29,6 +29,17 @@ var
 begin
 write('> ');
 readln(input);
-load(FEBahanMentah, FEBahanOlahan, FEInventoriBahanMentah, FEInventoriBahanOlahan, FEResep, FESimulasi);
+while input <> 'exit' do
+begin
+	if input = 'load' then
+	begin
+		load(FEBahanMentah, FEBahanOlahan, FEInventoriBahanMentah, FEInventoriBahanOlahan, FEResep, FESimulasi); 
+	end else if input = ''
+	begin
+		writeln('Masukan input yang benar.');
+	end else
 
+	write('> ');
+	readln(input)
+end;
 end.
