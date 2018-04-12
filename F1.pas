@@ -122,7 +122,7 @@ implementation
 		temp := shorten(temp);
 		FESimulasi[NSim].nomor:=StrToInt(copy(temp, 1, (pos('|',temp) -1)));
 		delete(temp,1,(pos('|',temp)));
-		DefaultFormatSettings.ShortDateFormat := 'dd/mm/yy';
+		DefaultFormatSettings.ShortDateFormat := 'dd/mm/yyyy';
 		DefaultFormatSettings.DateSeparator := '/';
 		FESimulasi[NSim].tanggal:=StrToDate(copy(temp, 1, (pos('|',temp) -1)));
 		delete(temp,1,(pos('|',temp)));
@@ -166,7 +166,7 @@ implementation
 		temp := shorten(temp);
 		FEInventoriBahanMentah[i,NInvBM[i]].nama:=copy(temp, 1, (pos('|',temp) -1));
 		delete(temp,1,(pos('|',temp)));
-		DefaultFormatSettings.ShortDateFormat := 'dd/mm/yy';
+		DefaultFormatSettings.ShortDateFormat := 'dd/mm/yyyy';
 		DefaultFormatSettings.DateSeparator := '/';
 		FEInventoriBahanMentah[i,NInvBM[i]].tanggal:=StrToDate(copy(temp, 1, (pos('|',temp) -1)));
 		delete(temp,1,(pos('|',temp)));
@@ -192,7 +192,7 @@ implementation
 		temp := shorten(temp);
 		FEInventoriBahanOlahan[i,NInvBO[i]].nama:=copy(temp, 1, (pos('|',temp) -1));
 		delete(temp,1,(pos('|',temp)));
-		DefaultFormatSettings.ShortDateFormat := 'dd/mm/yy';
+		DefaultFormatSettings.ShortDateFormat := 'dd/mm/yyyy';
 		DefaultFormatSettings.DateSeparator := '/';
 		FEInventoriBahanOlahan[i,NInvBO[i]].tanggal:=StrToDate(copy(temp, 1, (pos('|',temp) -1)));
 		delete(temp,1,(pos('|',temp)));

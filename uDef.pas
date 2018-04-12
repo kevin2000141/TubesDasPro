@@ -62,7 +62,7 @@ uses sysutils;
 		NBahanM, NBahanO, NResep, NSim: Integer; {Nilai efektif}
 		NomorSim: Integer; {Nomor Simulasi yang dijalankan}
 		NInvBM, NInvBO: Afileinventori; {Nilai efektif inventori}
-		countis, energiawal, countm, NomorSim : Integer;
+		countis, energiawal, countm: Integer;
 
 implementation
 
