@@ -48,9 +48,9 @@ uses sysutils;
 		Abahanmentah = array [1..Nmax] of bahanmentah;
 		Abahanolahan = array [1..Nmax] of bahanolahan;
 		Ainventori = array [1..Nmax] of array [1..Nmax] of inventoribahan;
-		Ainventorifile = array [1..NMax] of Integer;
+		Afileinventori = array [1..NMax] of Integer; {Untuk menentukan file inventori ke-N sesuai simulasi ke-N yang dijalankan}
 		Aresep = array [1..Nmax] of resep;
-		Asimulasi = array [1..Nmax] of simulasi;
+		Asimulasi = array [1..Nmax] of simulasi; 
 
 	var
 		FEBahanMentah: Abahanmentah; 
