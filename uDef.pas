@@ -47,7 +47,7 @@ uses sysutils;
 		end;
 		Abahanmentah = array [1..Nmax] of bahanmentah;
 		Abahanolahan = array [1..Nmax] of bahanolahan;
-		Ainventori = array [1..Nmax] of inventoribahan;
+		Ainventori = array [1..Nmax] of [1..Nmax] inventoribahan;
 		Aresep = array [1..Nmax] of resep;
 		Asimulasi = array [1..Nmax] of simulasi;
 

@@ -23,7 +23,7 @@ uses uDef, sysutils, F1, F2;
 
 var
 	input: AnsiString;
-	countis, energiawal, countm, NoSim : Integer;
+	countis, energiawal, countm, NomorSim : Integer;
 
 begin
 write('> ');
@@ -33,12 +33,11 @@ begin
 	if input = 'load' then
 	begin
 		load(FEBahanMentah, FEBahanOlahan, FEInventoriBahanMentah, FEInventoriBahanOlahan, FEResep, FESimulasi, NBahanM, NBahanO, NInvBM, NInvBO, NResep, NSim); 
-	end else if input = ''
-	begin
-		writeln('Masukan input yang benar.');
-	end else
+		write('> ');
+		readln(input);
+		readln(NomorSim);
+	end;
 
-	write('> ');
 	readln(input)
 end;
 exit(FEBahanMentah, FEBahanOlahan, FEInventoriBahanMentah, FEInventoriBahanOlahan, FEResep, FESimulasi, NBahanM, NBahanO, NInvBM, NInvBO, NResep, NSim);
