@@ -1,6 +1,6 @@
 Program EngisKitchen;
 
-uses uDef, sysutils, F1, F2;
+uses uDef, sysutils, F1;
 //uses F3_startSimulasi;
 //uses F4_stopSimulasi;
 //uses F5_beliBahan;
@@ -40,5 +40,5 @@ begin
 
 	readln(input)
 end;
-exit(FEBahanMentah, FEBahanOlahan, FEInventoriBahanMentah, FEInventoriBahanOlahan, FEResep, FESimulasi, NBahanM, NBahanO, NInvBM, NInvBO, NResep, NSim);
+{exit(FEBahanMentah, FEBahanOlahan, FEInventoriBahanMentah, FEInventoriBahanOlahan, FEResep, FESimulasi, NBahanM, NBahanO, NInvBM, NInvBO, NResep, NSim);}
 end.

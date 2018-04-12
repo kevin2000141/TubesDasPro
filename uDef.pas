@@ -59,8 +59,8 @@ uses sysutils;
 		FEInventoriBahanOlahan: Ainventori;
 		FEResep: Aresep;
 		FESimulasi: Asimulasi;
-		NBahanM, NBahanO, NInvBM, NInvBO, NResep, NSim: Integer;
-
+		NBahanM, NBahanO, NResep, NSim: Integer;
+		NInvBM, NInvBO: Afileinventori;
 
 implementation
 
