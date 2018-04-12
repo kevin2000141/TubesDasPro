@@ -2,7 +2,14 @@ unit F5;
 interface
 	uses uDef,F1;//untuk ngambil data
 	function inv (NBahanM,NBahanO,j: integer ; c : Asimulasi ): Boolean ; //gak perlu dipanggil
+<<<<<<< HEAD
 	procedure beliBahan(var a:Ainventori{type dari F1};d:Abahanmentah{untuk data bahan};var b,e:integer{neff inv bahan};var c:Asimulasi{type dari soal});
+=======
+	procedure beliBahan(var a:Ainventori{type dari F1};
+							d:Abahanmentah{untuk data bahan};
+						var b,e:integer{neff inv bahan};
+						var c:Asimulasi{type dari soal});
+>>>>>>> 74088c02f08b70f6b52dc34623f655327cbd419e
 
 implementation
 	function inv(NBahanM,NBahanO,j:integer;c : Asimulasi ):Boolean;
