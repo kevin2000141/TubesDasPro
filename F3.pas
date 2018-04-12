@@ -3,7 +3,7 @@ unit F3;
 interface
 uses uDef, sysutils;
 
-	procedure startSimulasi();
+	procedure startSimulasi(var FESimulasi: Asimulasi, NoSim: Integer);
 	begin
 		
 	end;
