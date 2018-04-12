@@ -3,13 +3,11 @@ interface
 	uses uDef,F1;//untuk ngambil data
 	function inv (NBahanM,NBahanO,j: integer ; c : Asimulasi ): Boolean ; //gak perlu dipanggil
 	procedure beliBahan(var a:Ainventori{type dari F1};d:Abahanmentah{untuk data bahan};var b,e:integer{neff inv bahan};var c:Asimulasi{type dari soal});
-	var
-		k:integer;
 
 implementation
 	function inv(NBahanM,NBahanO,j:integer;c : Asimulasi ):Boolean;
 	begin
-		if (((NBahanM+NBahanO)<c[k].maxInventori))
+		if (((NBahanM+NBahanO)<c[NSim].maxInventori))
 		then begin
 			inv := True;
 		end else
@@ -34,15 +32,15 @@ implementation
 		end;
 		writeln(d[i].harga*j);
 		
-		if ((inv (b,e,j,c))and (c[k].tEnergi>0) and (c[k].tUang >= (d[i].harga*j)) ) then 
+		if ((inv (b,e,j,c))and (c[NSim].tEnergi>0) and (c[NSim].tUang >= (d[i].harga*j)) ) then 
 		begin
 				b:=b+1;{neff baru(total bahan mentah dibeli)}
-				c[k].tEnergi:=c[k].tEnergi-1;{energibaru}
-				a[b].nama := namabahan; a[b].tanggal :=;
-				a[b].jumlah := j;
-				c[k].tPengeluaran:=c[k].tPengeluaran+(d[i].harga*j);{total pengeluaran}
-				c[k].tUang:=c[k].tUang-(d[i].harga*j);{pendapatan bersih berkurang}
-				c[k].tBMentahDibeli := c[k].tBMentahDibeli + j ;
+				c[NSim].tEnergi:=c[NSim].tEnergi-1;{energibaru}
+				{a[b].nama := namabahan; a[b].tanggal :=;
+				a[b].jumlah := j;}
+				c[NSim].tPengeluaran:=c[NSim].tPengeluaran+(d[i].harga*j);{total pengeluaran}
+				c[NSim].tUang:=c[NSim].tUang-(d[i].harga*j);{pendapatan bersih berkurang}
+				c[NSim].tBMentahDibeli := c[NSim].tBMentahDibeli + j ;
 				writeln('berhasil dibeli');
 		end else writeln('gagal dibeli');
 	end;
