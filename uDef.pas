@@ -45,25 +45,26 @@ uses sysutils;
 			tPengeluaran 	: Longint;
 			tUang 			: Longint;
 		end;
-		Abahanmentah = array [1..Nmax] of bahanmentah;
-		Abahanolahan = array [1..Nmax] of bahanolahan;
-		Ainventori = array [1..Nmax] of array [1..Nmax] of inventoribahan;
+		Abahanmentah = array [1..Nmax] of bahanmentah; {Untuk menentukan bahan mentah ke-N}
+		Abahanolahan = array [1..Nmax] of bahanolahan; {Untuk menentukan bahan olahan ke-N}
+		Ainventori = array [1..Nmax] of array [1..Nmax] of inventoribahan; {Untuk menentukan inventori ke-N1 file inventori ke-N2}
 		Afileinventori = array [1..NMax] of Integer; {Untuk menentukan file inventori ke-N sesuai simulasi ke-N yang dijalankan}
-		Aresep = array [1..Nmax] of resep;
-		Asimulasi = array [1..Nmax] of simulasi; 
+		Aresep = array [1..Nmax] of resep; {Untuk menentukan resep ke-N}
+		Asimulasi = array [1..Nmax] of simulasi;  {Untuk menentukan simulasi ke-N}
 
 	var
-		FEBahanMentah: Abahanmentah; 
-		FEBahanOlahan: Abahanolahan;
-		FEInventoriBahanMentah: Ainventori;
-		FEInventoriBahanOlahan: Ainventori;
-		FEResep: Aresep;
-		FESimulasi: Asimulasi;
-		NBahanM, NBahanO, NResep, NSim, NomorSim: Integer;
-		NInvBM, NInvBO: Afileinventori;
+		FEBahanMentah: Abahanmentah; {Array dari file bahan mentah}
+		FEBahanOlahan: Abahanolahan; {Array dari file bahan olahan}
+		FEInventoriBahanMentah: Ainventori; {Array dari file inventori bahan mentah}
+		FEInventoriBahanOlahan: Ainventori; {Array dari file inventori bahan olahan}
+		FEResep: Aresep; {Array dari file resep}
+		FESimulasi: Asimulasi; {Array dari file simulasi}
+		NBahanM, NBahanO, NResep, NSim: Integer; {Nilai efektif}
+		NomorSim: Integer; {Nomor Simulasi yang dijalankan}
+		NInvBM, NInvBO: Afileinventori; {Nilai efektif inventori}
+		countis, energiawal, countm, NomorSim : Integer;
 
 implementation
-
 
 
 end.
