@@ -119,13 +119,13 @@ implementation
 		begin
 		readln (c, temp);
 		temp := shorten(temp);
-		FEInventoriBahanMentah[1,NInvBM].nama:=copy(temp, 1, (pos('|',temp) -1));
+		FEInventoriBahanMentah[NInvBM].nama:=copy(temp, 1, (pos('|',temp) -1));
 		delete(temp,1,(pos('|',temp)));
 		DefaultFormatSettings.ShortDateFormat := 'dd/mm/yy';
 		DefaultFormatSettings.DateSeparator := '/';
-		FEInventoriBahanMentah[1,NInvBM].tanggal:=StrToDate(copy(temp, 1, (pos('|',temp) -1)));
+		FEInventoriBahanMentah[NInvBM].tanggal:=StrToDate(copy(temp, 1, (pos('|',temp) -1)));
 		delete(temp,1,(pos('|',temp)));
-		FEInventoriBahanMentah[1,NInvBM].jumlah:=StrToInt(temp);
+		FEInventoriBahanMentah[NInvBM].jumlah:=StrToInt(temp);
 		NInvBM:=NInvBM + 1;
 		end;
 	NInvBM:= NInvBM - 1;
@@ -140,13 +140,13 @@ implementation
 		begin
 		readln (d, temp);
 		temp := shorten(temp);
-		FEInventoriBahanOlahan[1,NInvBO].nama:=copy(temp, 1, (pos('|',temp) -1));
+		FEInventoriBahanOlahan[NInvBO].nama:=copy(temp, 1, (pos('|',temp) -1));
 		delete(temp,1,(pos('|',temp)));
 		DefaultFormatSettings.ShortDateFormat := 'dd/mm/yy';
 		DefaultFormatSettings.DateSeparator := '/';
-		FEInventoriBahanOlahan[1,NInvBO].tanggal:=StrToDate(copy(temp, 1, (pos('|',temp) -1)));
+		FEInventoriBahanOlahan[NInvBO].tanggal:=StrToDate(copy(temp, 1, (pos('|',temp) -1)));
 		delete(temp,1,(pos('|',temp)));
-		FEInventoriBahanOlahan[1,NInvBO].jumlah:=StrToInt(temp);
+		FEInventoriBahanOlahan[NInvBO].jumlah:=StrToInt(temp);
 		NInvBO:=NInvBO + 1;
 		end;
 	NInvBO:= NInvBO - 1;
