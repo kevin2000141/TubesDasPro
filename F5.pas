@@ -2,14 +2,15 @@ unit F5;
 interface
 	uses uDef,F1;//untuk ngambil data
 	function inv (NBahanM,NBahanO,j: integer ; c : Asimulasi ): Boolean ; //gak perlu dipanggil
-	procedure beliBahan(var a:Ainventori{type dari F1};d:Abahanmentah{untuk data bahan};var b,e:integer{neff inv bahan};var c:Asimulasi{type dari soal});
-	var
-		k:integer;
+	procedure beliBahan(var a:Ainventori{type dari F1};
+							d:Abahanmentah{untuk data bahan};
+						var b,e:integer{neff inv bahan};
+						var c:Asimulasi{type dari soal});
 
 implementation
 	function inv(NBahanM,NBahanO,j:integer;c : Asimulasi ):Boolean;
 	begin
-		if (((NBahanM+NBahanO)<c[k].maxInventori))
+		if (((NBahanM+NBahanO)<c[NSim].maxInventori))
 		then begin
 			inv := True;
 		end else
