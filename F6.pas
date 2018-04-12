@@ -21,9 +21,9 @@ implementation
 			begin
 				ketemu:=False;//var untuk nyari
 				k:=1;
-				while((ketemu=False)and(k< NInvBM)) do 
+				while((ketemu=False)and(k< NInvBM[NomorSim])) do 
 				begin
-					if((olah[i].bahan[j]=mentah[k].nama) and (mentah[k].jumlah>0)) then
+					if((olah[i].bahan[j]=mentah[NomorSim][k].nama) and (mentah[NomorSim][k].jumlah>0)) then
 					begin
 						ketemu:=True;
 						count:=count+1;
@@ -31,24 +31,24 @@ implementation
 					k:=k+1;
 				end;
 			end;
-			if((count=olah[i].n)and(c[NSim].tEnergi>0)) then
+			if((count=olah[i].n)and(c[NomorSim].tEnergi>0)) then
 			begin
 				for j:=1 to olah[i].n do 
 				begin
 					ketemu:=False;//var untuk nyari
 					k:=1;
-					while((ketemu=False)and(k< NInvBM)) do 
+					while((ketemu=False)and(k< NInvBM[NomorSim])) do 
 					begin
-						if((olah[i].bahan[j]=mentah[k].nama) and (mentah[k].jumlah>0)) then
+						if((olah[i].bahan[j]=mentah[NomorSim][k].nama) and (mentah[NomorSim][k].jumlah>0)) then
 						begin
 							ketemu:=True;
-							mentah[k].jumlah:=mentah[k].jumlah-1;//ngurangi jumlah bahan mentah di inventori
+							mentah[NomorSim][k].jumlah:=mentah[NomorSim][k].jumlah-1;//ngurangi jumlah bahan mentah di inventori
 						end;
 						k:=k+1;
 					end;
 				end;
-				c[NSim].tEnergi:=c[NSim].tEnergi-1;
-				c[NSim].tBOlahanDibuat:=c[NSim].tBOlahanDibuat+1;
+				c[NomorSim].tEnergi:=c[NomorSim].tEnergi-1;
+				c[NomorSim].tBOlahanDibuat:=c[NomorSim].tBOlahanDibuat+1;
 				//msih perlu tanggal
 			end else writeln('gak bisa beli');
 	end;
