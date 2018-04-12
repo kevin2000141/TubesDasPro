@@ -63,6 +63,8 @@ uses sysutils;
 		NomorSim: Integer; {Nomor Simulasi yang dijalankan}
 		NInvBM, NInvBO: Afileinventori; {Nilai efektif inventori}
 		countis, energiawal, countm: Integer;
+		i:Integer;
+		teks:String;
 
 implementation
 
