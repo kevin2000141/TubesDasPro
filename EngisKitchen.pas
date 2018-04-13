@@ -1,6 +1,6 @@
 Program EngisKitchen;
 
-uses uDef, sysutils, F1;
+uses uDef, sysutils, F1, F2;
 //uses F3_startSimulasi;
 //uses F4_stopSimulasi;
 //uses F5_beliBahan;
@@ -33,12 +33,12 @@ begin
 	if input = 'load' then
 	begin
 		load(FEBahanMentah, FEBahanOlahan, FEInventoriBahanMentah, FEInventoriBahanOlahan, FEResep, FESimulasi, NBahanM, NBahanO, NInvBM, NInvBO, NResep, NSim); 
-		write('> ');
+		{write('> ');
 		readln(input);
-		readln(NomorSim);
+		readln(NomorSim);}
 	end;
-
-	readln(input)
+	write('> ');
+	readln(input);
 end;
-{exit(FEBahanMentah, FEBahanOlahan, FEInventoriBahanMentah, FEInventoriBahanOlahan, FEResep, FESimulasi, NBahanM, NBahanO, NInvBM, NInvBO, NResep, NSim);}
+exit(FEInventoriBahanMentah, FEInventoriBahanOlahan, FEResep, NInvBM, NInvBO, NResep, NSim);
 end.

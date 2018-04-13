@@ -150,7 +150,7 @@ implementation
 	NSim:= NSim - 1;
 	{for i:=1 to NSim do
 	begin
-		writeln(FESimulasi[i].nomor, ' ', DateToStr(FESimulasi[NSim].tanggal), ' ', FESimulasi[NSim].tHariHidup, ' ', FESimulasi[NSim].tEnergi, ' ', FESimulasi[NSim].maxInventori, ' ', FESimulasi[NSim].tBMentahDibeli, ' ', FESimulasi[NSim].tBOlahanDibuat, ' ', FESimulasi[NSim].tBOlahanDijual, ' ',FESimulasi[NSim].tResepDijual, ' ', FESimulasi[NSim].tPemasukan, ' ', FESimulasi[NSim].tPengeluaran, ' ', FESimulasi[NSim].tUang);
+		writeln(FESimulasi[i].nomor, ' ', FormatDateTime('ddddd',FESimulasi[NSim].tanggal), ' ', FESimulasi[NSim].tHariHidup, ' ', FESimulasi[NSim].tEnergi, ' ', FESimulasi[NSim].maxInventori, ' ', FESimulasi[NSim].tBMentahDibeli, ' ', FESimulasi[NSim].tBOlahanDibuat, ' ', FESimulasi[NSim].tBOlahanDijual, ' ',FESimulasi[NSim].tResepDijual, ' ', FESimulasi[NSim].tPemasukan, ' ', FESimulasi[NSim].tPengeluaran, ' ', FESimulasi[NSim].tUang);
 	end;}
 
 	for i:=1 to NSim do
@@ -177,7 +177,7 @@ implementation
 	close(c[i]);
 	{for j:=1 to NInvBM[i] do
 	begin
-		writeln (FEInventoriBahanMentah[i,j].nama, ' ', DateToStr(FEInventoriBahanMentah[i,j].tanggal), ' ', FEInventoriBahanMentah[i,j].jumlah);
+		writeln (FEInventoriBahanMentah[i,j].nama, ' ', FormatDateTime('ddddd',FEInventoriBahanMentah[i,j].tanggal), ' ', FEInventoriBahanMentah[i,j].jumlah);
 	end;
 	writeln();}
 
@@ -203,7 +203,7 @@ implementation
 	close(d[i]);
 	{for j:=1 to NInvBO[i] do
 	begin
-		writeln (FEInventoriBahanOlahan[i,j].nama, ' ', DateToStr(FEInventoriBahanOlahan[i,j].tanggal), ' ', FEInventoriBahanOlahan[i,j].jumlah);
+		writeln (FEInventoriBahanOlahan[i,j].nama, ' ', FormatDateTime('ddddd',FEInventoriBahanOlahan[i,j].tanggal), ' ', FEInventoriBahanOlahan[i,j].jumlah);
 	end;
 	writeln();}
 
