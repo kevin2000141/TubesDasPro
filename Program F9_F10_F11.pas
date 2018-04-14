@@ -1,15 +1,6 @@
 Program F9_F10_F11;
 
-uses
-	F11_tidur,F9_makan,F10_istirahat,uDef,F1,sysutils;
-
-
-var
-	text	:String;	// Tempat membaca masukan perintah yg diinginkan
-	i		:Integer;	// Counter array
-	
 begin
-
 
 //Inisialisasi
 	countm	:=1;
