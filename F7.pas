@@ -10,7 +10,7 @@ implementation
 		i,j:integer;
 	begin
 		write('masukan nama bahan olahan : ');
-		readln(nama);
+		readln(nama);//nama yang mau dijual
 		ketemu:=False;
 		i:=1;
 		while ((ketemu = False) and (i<=NInvBO[NomorSim])) do
@@ -23,7 +23,7 @@ implementation
 		end;
 		ketemu2:=False;
 		j:=1;
-		while((ketemu2 = False) and (j<=NBahanO))do
+		while((ketemu2 = False) and (j<=NBahanO))do//cuman cari j
 		begin
 			if(nama = olah[j].nama) then
 			begin
@@ -31,7 +31,7 @@ implementation
 			end;
 			j:=j+1;
 		end;
-		if(ketemu = True) then
+		if((ketemu = True)and(c[NomorSim].tEnergi>0)) then
 		begin
 			olahb[NomorSim][i].jumlah:=olahb[NomorSim][i].jumlah-1;
 			c[NomorSim].tBOlahanDijual:=c[NomorSim].tBOlahanDijual+1;
