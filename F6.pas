@@ -65,6 +65,7 @@ implementation
 					olahb[NomorSim][k].nama:=nama;
 					olahb[NomorSim][k].tanggal:=c[NomorSim].tanggal;
 					olahb[NomorSim][k].jumlah:=1;
+					NInvBO[NomorSim]:=NInvBO[NomorSim]+1;
 				end;
 			end else writeln('gak bisa beli');
 	end;

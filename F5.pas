@@ -36,7 +36,7 @@ implementation
 		
 		if ((inv (c))and (c[NomorSim].tEnergi>0) and (c[NomorSim].tUang >= (d[i].harga*j)) ) then 
 		begin
-				NInvBM[NomorSim]:=NInvBM[NomorSim]+1;
+				
 				c[NomorSim].tEnergi:=c[NomorSim].tEnergi-1;{energibaru}
 				c[NomorSim].tPengeluaran:=c[NomorSim].tPengeluaran+(d[i].harga*j);{total pengeluaran}
 				c[NomorSim].tUang:=c[NomorSim].tUang-(d[i].harga*j);{pendapatan bersih berkurang}
@@ -57,6 +57,7 @@ implementation
 					a[NomorSim][k].nama:=namabahan;
 					a[NomorSim][k].tanggal:=c[NomorSim].tanggal;
 					a[NomorSim][k].jumlah:=j;
+					NInvBM[NomorSim]:=NInvBM[NomorSim]+1;
 				end;
 				writeln('berhasil dibeli');
 		end else writeln('gagal dibeli');
