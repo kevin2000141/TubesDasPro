@@ -1,28 +1,26 @@
 unit F5;
 interface
 	uses uDef,F1;//untuk ngambil data
-	function inv (NBahanM,NBahanO,j: integer ; c : Asimulasi ): Boolean ; //gak perlu dipanggil
+	function inv (c : Asimulasi ): Boolean ; //gak perlu dipanggil
 
-	procedure beliBahan(var a:Ainventori{type dari F1};
-							d:Abahanmentah{untuk data bahan};
-						var b,e:integer{neff inv bahan};
-						var c:Asimulasi{type dari soal});
+	procedure beliBahan(var a:Ainventori{type inv dari F1};d:Abahanmentah{untuk data bahan};var c:Asimulasi{type dari soal});
 
 implementation
-	function inv(NBahanM,NBahanO,j:integer;c : Asimulasi ):Boolean;
+	function inv(c : Asimulasi ):Boolean;
 	begin
-		if (((NBahanM+NBahanO)<c[NSim].maxInventori))
-		then begin
+		if ((NInvBM[NomorSim]+ NInvBO[NomorSim])<c[NomorSim].maxInventori)then 
+		begin
 			inv := True;
 		end else
 		begin
 			inv :=False;
 		end;
 	end;
-	procedure beliBahan(var a:Ainventori{type inv dari F1};d:Abahanmentah{untuk data bahan};var b,e:integer{neff inv bahan};var c:Asimulasi{type dari soal});
+	procedure beliBahan(var a:Ainventori{type inv dari F1};d:Abahanmentah{untuk data bahan};var c:Asimulasi{type dari soal});
 	var
 		namabahan:string;
-		i,j:longint;
+		i,j,k:longint;
+		ketemu:boolean;
 	begin{satu kali prosedur satu kali beli satu unit}
 		write('nama bahan :' );
 		readln(namabahan);{asumsi nama bahan terdapat dalam file}
@@ -30,21 +28,36 @@ implementation
 		readln(j);
 		write('total harga : ');
 		i:=1;
-		while not(namabahan=d[i].nama) do
-		begin
+		while (not(namabahan = d[i].nama)) do
+		begin 
 			i:=i+1;
 		end;
 		writeln(d[i].harga*j);
 		
-		if ((inv (b,e,j,c))and (c[NSim].tEnergi>0) and (c[NSim].tUang >= (d[i].harga*j)) ) then 
+		if ((inv (c))and (c[NomorSim].tEnergi>0) and (c[NomorSim].tUang >= (d[i].harga*j)) ) then 
 		begin
-				b:=b+1;{neff baru(total bahan mentah dibeli)}
-				c[NSim].tEnergi:=c[NSim].tEnergi-1;{energibaru}
-				{a[b].nama := namabahan; a[b].tanggal :=;
-				a[b].jumlah := j;}
-				c[NSim].tPengeluaran:=c[NSim].tPengeluaran+(d[i].harga*j);{total pengeluaran}
-				c[NSim].tUang:=c[NSim].tUang-(d[i].harga*j);{pendapatan bersih berkurang}
-				c[NSim].tBMentahDibeli := c[NSim].tBMentahDibeli + j ;
+				NInvBM[NomorSim]:=NInvBM[NomorSim]+1;
+				c[NomorSim].tEnergi:=c[NomorSim].tEnergi-1;{energibaru}
+				c[NomorSim].tPengeluaran:=c[NomorSim].tPengeluaran+(d[i].harga*j);{total pengeluaran}
+				c[NomorSim].tUang:=c[NomorSim].tUang-(d[i].harga*j);{pendapatan bersih berkurang}
+				c[NomorSim].tBMentahDibeli := c[NomorSim].tBMentahDibeli + j ;
+				ketemu:=False;
+				k:=1;
+				while((ketemu=False)and(k<= NInvBO[NomorSim])) do 
+				begin
+					if((namabahan = a[NomorSim][k].nama) and (c[NomorSim].tanggal= a[NomorSim][k].tanggal)) then
+					begin
+						a[NomorSim][k].jumlah :=a[NomorSim][k].jumlah+j;
+						ketemu:=True;
+					end;
+					k:=k+1;
+				end;
+				if (ketemu = false) then 
+				begin
+					a[NomorSim][k].nama:=namabahan;
+					a[NomorSim][k].tanggal:=c[NomorSim].tanggal;
+					a[NomorSim][k].jumlah:=j;
+				end;
 				writeln('berhasil dibeli');
 		end else writeln('gagal dibeli');
 	end;
