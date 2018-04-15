@@ -10,7 +10,9 @@ implementation
 	procedure stopSimulasi(var FESimulasi: Asimulasi; NomorSim: Integer);
 	begin
 		writeln ('Nomor Simulasi: ', FESimulasi[NomorSim].nomor);
-		writeln ('Tanggal: ', FESimulasi[NomorSim].tanggal);
+		DefaultFormatSettings.ShortDateFormat := 'd/m/yyyy';
+		DefaultFormatSettings.DateSeparator := '/';
+		writeln ('Tanggal: ', FormatDateTime('ddddd',FESimulasi[NomorSim].tanggal));
 		writeln ('Jumlah Hari Hidup: ', FESimulasi[NomorSim].tHariHidup);
 		writeln ('Jumlah Energi: ', FESimulasi[NomorSim].tEnergi);
 		writeln ('Kapasitas Maksimum Inventori: ', FESimulasi[NomorSim].maxInventori);

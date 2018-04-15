@@ -68,7 +68,7 @@ begin
 					
 				end else {Input salah}
 				begin
-					writeln('Masukan masukan simulasi yang benar.');
+					writeln('Masukan input simulasi yang benar.');
 				end;
 				write('>> ');
 				readln(input);
