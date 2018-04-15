@@ -236,6 +236,7 @@ implementation
 	close(a);
 	close(b);
 	close(c);
+	close(d);
 	close(e);					
 	close(f);
 	writeln('Loading file sukses.');	
