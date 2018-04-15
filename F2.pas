@@ -7,8 +7,7 @@ uses uDef, sysutils;
 		NMax = 100;	
 
 	var
-		a,b,e,f: Text;
-		c,d: array[1..NMax] of Text;
+		a,b,c,d,e,f: Text;
 		i,j : Integer;
 		S:String;
 	
@@ -17,8 +16,8 @@ uses uDef, sysutils;
 	procedure exit( var FEInventoriBahanMentah: Ainventori;
 					var FEInventoriBahanOlahan: Ainventori;
 					var FEResep: Aresep;
-					var NInvBM: Afileinventori;
-					var NInvBO: Afileinventori;
+					var NInvBM: Integer;
+					var NInvBO: Integer;
 					var NResep: Integer;
 					var NSim: Integer);
 
@@ -27,56 +26,48 @@ implementation
 	procedure exit( var FEInventoriBahanMentah: Ainventori;
 					var FEInventoriBahanOlahan: Ainventori;
 					var FEResep: Aresep;
-					var NInvBM: Afileinventori;
-					var NInvBO: Afileinventori;
+					var NInvBM: Integer;
+					var NInvBO: Integer;
 					var NResep: Integer;
 					var NSim: Integer);
 
 	var
-	 	temp, temp1 : AnsiString;
+	 	temp, temp1: AnsiString;
 	
 	begin
-	for i:=1 to NSim do
-	begin
-	S:='InvBahanMentah.txt';
-	Insert (IntToStr(i),s,15);
-	assign (c[i], s);
-	rewrite (c[i]);
-	for j:=1 to NInvBM[i] do
+	assign (c, 'InvBahanMentah.txt');
+	rewrite (c);
+	for j:=1 to NInvBM do
 		begin
 		temp:='';
-		DefaultFormatSettings.ShortDateFormat := 'dd/mm/yyyy';
+		DefaultFormatSettings.ShortDateFormat := 'd/m/yyyy';
 		DefaultFormatSettings.DateSeparator := '/';
-		temp:= FEInventoriBahanMentah[i,j].nama + ' | ' + FormatDateTime('ddddd',FEInventoriBahanMentah[i,j].tanggal) + ' | ' + IntToStr(FEInventoriBahanMentah[i,j].jumlah);
-		writeln(c[i], temp);
+		temp:= FEInventoriBahanMentah[j].nama + ' | ' + FormatDateTime('ddddd',FEInventoriBahanMentah[j].tanggal) + ' | ' + IntToStr(FEInventoriBahanMentah[j].jumlah);
+		writeln(c, temp);
 		end;
-	close(c[i]);
-	{for j:=1 to NInvBM[i] do
+	close(c);
+	{for j:=1 to NInvBM do
 	begin
-		writeln (FEInventoriBahanMentah[i,j].nama, ' ', FormatDateTime('ddddd',FEInventoriBahanMentah[i,j].tanggal), ' ', FEInventoriBahanMentah[i,j].jumlah);
+		writeln (FEInventoriBahanMentah[j].nama, ' ', FormatDateTime('ddddd',FEInventoriBahanMentah[j].tanggal), ' ', FEInventoriBahanMentah[j].jumlah);
 	end;
 	writeln();}
 
-	S:='InvBahanOlahan.txt';
-	Insert (IntToStr(i),s,15);
-	assign (d[i], s);
-	rewrite (d[i]);
-	for j:=1 to NInvBO[i] do
+	assign (d, 'InvBahanOlahan.txt');
+	rewrite (d);
+	for j:=1 to NInvBO do
 		begin
 		temp:='';
-		DefaultFormatSettings.ShortDateFormat := 'dd/mm/yyyy';
+		DefaultFormatSettings.ShortDateFormat := 'd/m/yyyy';
 		DefaultFormatSettings.DateSeparator := '/';
-		temp:= FEInventoriBahanOlahan[i,j].nama + ' | ' + FormatDateTime('ddddd',FEInventoriBahanOlahan[i,j].tanggal) + ' | ' + IntToStr(FEInventoriBahanOlahan[i,j].jumlah);
-		writeln(d[i], temp);
+		temp:= FEInventoriBahanOlahan[j].nama + ' | ' + FormatDateTime('ddddd',FEInventoriBahanOlahan[j].tanggal) + ' | ' + IntToStr(FEInventoriBahanOlahan[j].jumlah);
+		writeln(d, temp);
 		end;
-	close(d[i]);
-	{for j:=1 to NInvBO[i] do
+	close(d);
+	{for j:=1 to NInvBO do
 	begin
-		writeln (FEInventoriBahanOlahan[i,j].nama, ' ', FormatDateTime('ddddd',FEInventoriBahanOlahan[i,j].tanggal), ' ', FEInventoriBahanOlahan[i,j].jumlah);
+		writeln (FEInventoriBahanOlahan[j].nama, ' ', FormatDateTime('ddddd',FEInventoriBahanOlahan[j].tanggal), ' ', FEInventoriBahanOlahan[j].jumlah);
 	end;
 	writeln();}
-
-	end;
 
 	assign (e, 'Resep.txt');
 	rewrite (e);

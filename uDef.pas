@@ -47,8 +47,7 @@ uses sysutils;
 		end;
 		Abahanmentah = array [1..Nmax] of bahanmentah; {Untuk menentukan bahan mentah ke-N}
 		Abahanolahan = array [1..Nmax] of bahanolahan; {Untuk menentukan bahan olahan ke-N}
-		Ainventori = array [1..Nmax] of array [1..Nmax] of inventoribahan; {Untuk menentukan inventori ke-N1 file inventori ke-N2}
-		Afileinventori = array [1..NMax] of Integer; {Untuk menentukan file inventori ke-N sesuai simulasi ke-N yang dijalankan}
+		Ainventori = array [1..Nmax] of inventoribahan; {Untuk menentukan inventori ke-N}
 		Aresep = array [1..Nmax] of resep; {Untuk menentukan resep ke-N}
 		Asimulasi = array [1..Nmax] of simulasi;  {Untuk menentukan simulasi ke-N}
 
@@ -59,10 +58,9 @@ uses sysutils;
 		FEInventoriBahanOlahan: Ainventori; {Array dari file inventori bahan olahan}
 		FEResep: Aresep; {Array dari file resep}
 		FESimulasi: Asimulasi; {Array dari file simulasi}
-		NBahanM, NBahanO, NResep, NSim: Integer; {Nilai efektif}
+		NBahanM, NBahanO, NInvBM, NInvBO, NResep, NSim: Integer; {Nilai efektif}
 		NomorSim: Integer; {Nomor Simulasi yang dijalankan}
-		NInvBM, NInvBO: Afileinventori; {Nilai efektif inventori}
-		countis, energiawal, countm: Integer;
+		countis, countm: Integer;
 		i:Integer;
 		teks:String;
 
