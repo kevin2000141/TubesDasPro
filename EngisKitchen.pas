@@ -41,7 +41,7 @@ begin
 					jualolahan(FEBahanOlahan, FEInventoriBahanOlahan, FESimulasi, NomorSim);
 				end else if input = 'jualresep'	then
 				begin
-					
+					jualresep(FEResep, FESimulasi, FEInventoriBahanMentah, FEInventoriBahanOlahan, NomorSim);
 				end else if input = 'makan' then
 				begin
 					makan(FESimulasi[NomorSim].tEnergi, countm);
@@ -63,6 +63,9 @@ begin
 				end else if input = 'cariresep' then
 				begin
 					cariresep(FEResep, NResep);
+				end else if input = 'tambahresep' then
+				begin
+					
 				end else if input = 'upgradeinventori' then
 				begin
 					upgradeInventori(FESimulasi[NomorSim].tEnergi);

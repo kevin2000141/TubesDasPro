@@ -1,15 +1,16 @@
 unit F8;
 interface
 	uses uDef,F1;//untuk ngambil data
-	procedure jualresep (resep:Aresep; var c:Asimulasi;var mentah,olah:Ainventori);
+	procedure jualresep (resep:Aresep; var c:Asimulasi;var mentah,olah:Ainventori; NomorSim: Integer);
+
 implementation
-	procedure jualresep (resep:Aresep; var c:Asimulasi;var mentah,olah:Ainventori);
+	procedure jualresep (resep:Aresep; var c:Asimulasi;var mentah,olah:Ainventori; NomorSim: Integer);
 	var
-	nama:string;
-	i,j,count,k:longint;
-	ketemu:boolean;
+		nama:string;
+		i,j,count,k:longint;
+		ketemu:boolean;
 	begin
-			writeln('resep yang mau dibuat : ');
+			writeln('Hidangan yang ingin dijual dari resep: ');
 			readln(nama);
 			i:=1;
 			while (resep[i].nama <> nama) do//mencari dimana bahan resepan yang ingin dibuat pada kamus
@@ -21,14 +22,14 @@ implementation
 			begin
 				ketemu:=False;//var untuk nyari
 				k:=1;
-				while((ketemu=False)and((k<= NInvBM[NomorSim])or(k<= NInvBO[NomorSim]))) do 
+				while((ketemu=False)and((k<=NInvBM)or(k<=NInvBO))) do 
 				begin
-					if((k<=NInvBM[NomorSim])and(resep[i].bahan[j]=mentah[NomorSim][k].nama) and (mentah[NomorSim][k].jumlah>0)) then
+					if((k<=NInvBM)and(resep[i].bahan[j]=mentah[k].nama) and (mentah[k].jumlah>0)) then
 					begin
 						ketemu:=True;
 						count:=count+1;
 					end;
-					if((k<=NInvBO[NomorSim])and(resep[i].bahan[j]=olah[NomorSim][k].nama) and (olah[NomorSim][k].jumlah>0)) then
+					if((k<=NInvBO)and(resep[i].bahan[j]=olah[k].nama) and (olah[k].jumlah>0)) then
 					begin
 						ketemu:=True;
 						count:=count+1;
@@ -42,23 +43,22 @@ implementation
 				begin
 					ketemu:=False;//var untuk nyari
 					k:=1;
-					while((ketemu=False)and((k<= NInvBM[NomorSim])or(k<= NInvBO[NomorSim]))) do 
+					while((ketemu=False)and((k<=NInvBM)or(k<=NInvBO))) do 
 					begin
-						if((k<=NInvBM[NomorSim])and (resep[i].bahan[j]=mentah[NomorSim][k].nama) and (mentah[NomorSim][k].jumlah>0)) then//hapus mentah
+						if((k<=NInvBM)and (resep[i].bahan[j]=mentah[k].nama) and (mentah[k].jumlah>0)) then//hapus mentah
 						begin
 							ketemu:=True;
-							mentah[NomorSim][k].jumlah:=mentah[NomorSim][k].jumlah-1;//ngurangi jumlah bahan mentah di inventori
+							mentah[k].jumlah:=mentah[k].jumlah-1;//ngurangi jumlah bahan mentah di inventori
 						end;
-						if((k<=NInvBO[NomorSim]) and(resep[i].bahan[j]=olah[NomorSim][k].nama) and (olah[NomorSim][k].jumlah>0)) then//hapus olah
+						if((k<=NInvBO) and(resep[i].bahan[j]=olah[k].nama) and (olah[k].jumlah>0)) then//hapus olah
 						begin
 							ketemu:=True;
-							olah[NomorSim][k].jumlah:=olah[NomorSim][k].jumlah-1;//ngurangi jumlah bahan mentah di inventori
+							olah[k].jumlah:=olah[k].jumlah-1;//ngurangi jumlah bahan mentah di inventori
 						end;
 						k:=k+1;
 					end;
 					c[NomorSim].tEnergi:=c[NomorSim].tEnergi-1;
 					c[NomorSim].tResepDijual:=c[NomorSim].tResepDijual+1;
-					c[NomorSim].tEnergi:=c[NomorSim].tEnergi-1;
 					c[NomorSim].tPemasukan:=c[NomorSim].tPemasukan+resep[i].harga;
 					c[NomorSim].tUang:=c[NomorSim].tUang+resep[i].harga;
 				end;

@@ -13,10 +13,10 @@ implementation
 		i : integer;
 		j : integer;
 	
-begin
+	begin
 		readln(resepbaru);
 		readln(a);
-		FEResep.N[NResep + 1] := 0 ;
+		FEResep[NResep + 1].N:= 0 ;
 		for i:=1 to NBahanM do
 		begin
 			if a = FEBahanMentah[i].nama then
@@ -30,21 +30,22 @@ begin
 					FEResep.N[NResep +1] := FEResep.N[NResep +1] + 1;
 				end;
 			end;
-	end;
-	readln(b);
-	for i:=1 to NBahanM do
-	begin
-		if a = FEBahanMentah[i].nama then
+		end;
+		readln(b);
+		for i:=1 to NBahanM do
 		begin
-			writeln('Bahan tidak tersedia');
-		end
-		else
-			for j := 1 to NResep do
+			if a = FEBahanMentah[i].nama then
 			begin
-				FEResep.bahan[NResep + 1] := b;
-				FEResep.N[NResep +1] := FEResep.N[NResep +1] + 1;
+				writeln('Bahan tidak tersedia');
+			end	else
+			begin
+				for j := 1 to NResep do
+				begin
+					FEResep.bahan[NResep + 1] := b;
+					FEResep.N[NResep +1] := FEResep.N[NResep +1] + 1;
+				end;
 			end;
-	FEResep.harga[NResep + 1] := 0.125 * (
-end;
-end;
+		FEResep.harga[NResep + 1] := 0.125 * (
+	end;
+
 end.
