@@ -62,10 +62,10 @@ begin
 					
 				end else if input = 'cariresep' then
 				begin
-					
+					cariresep(FEResep, NResep);
 				end else if input = 'upgradeinventori' then
 				begin
-					
+					upgradeInventori(FESimulasi[NomorSim].tEnergi);
 				end else {Input salah}
 				begin
 					writeln('Masukan input simulasi yang benar.');

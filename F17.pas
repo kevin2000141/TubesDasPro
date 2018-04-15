@@ -2,13 +2,13 @@ unit F17;
 
 interface
 	uses uDef,F1;
-	procedure upstorage(Nmax : integer);
+	procedure upgradeInventori(Nmax: integer);
 
 implementation
 
-procedure upstorage(Nmax : integer);
+	procedure upgradeInventori(Nmax: integer);
+	begin
+		Nmax := Nmax + 25;
+	end;
 
-begin
-	Nmax := Nmax + 25;
-end;
 end.
