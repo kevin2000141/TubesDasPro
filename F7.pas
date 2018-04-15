@@ -9,13 +9,8 @@ implementation
 		ketemu,ketemu2:boolean;
 		i,j:integer;
 	begin
-<<<<<<< HEAD
-		write('masukan nama bahan olahan : ');
-		readln(nama);//nama yang mau dijual
-=======
 		write('Masukan nama bahan olahan: ');
 		readln(nama);
->>>>>>> e26b5cd4614fe75a47e282a747bf61ee04662248
 		ketemu:=False;
 		i:=1;
 		while ((ketemu = False) and (i<=NInvBO)) do

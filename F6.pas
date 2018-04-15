@@ -21,11 +21,7 @@ implementation
 			begin
 				ketemu:=False;//var untuk nyari
 				k:=1;
-<<<<<<< HEAD
-				while((ketemu=False)and(k<= NInvBM[NomorSim])) do 
-=======
-				while((ketemu=False)and(k<NInvBM)) do 
->>>>>>> e26b5cd4614fe75a47e282a747bf61ee04662248
+				while((ketemu=False)and(k<=NInvBM)) do 
 				begin
 					if((olah[i].bahan[j]=mentah[k].nama) and (mentah[k].jumlah>0)) then
 					begin
@@ -66,17 +62,10 @@ implementation
 				end;
 				if (ketemu = false) then 
 				begin
-<<<<<<< HEAD
-					NInvBO[NomorSim]:=NInvBO[NomorSim]+1;
-					olahb[NomorSim][NInvBO[NomorSim]].nama:=nama;
-					olahb[NomorSim][NInvBO[NomorSim]].tanggal:=c[NomorSim].tanggal;
-					olahb[NomorSim][NInvBO[NomorSim]].jumlah:=1;
-=======
 					olahb[k].nama:=nama;
 					olahb[k].tanggal:=c[NomorSim].tanggal;
 					olahb[k].jumlah:=1;
 					NInvBO:=NInvBO+1;
->>>>>>> e26b5cd4614fe75a47e282a747bf61ee04662248
 				end;
 			end else writeln('Tidak bisa beli');
 	end;
