@@ -9,7 +9,7 @@ implementation
 	i,j,count,k:longint;
 	ketemu:boolean;
 	begin
-			writeln('bahan yang mau dibuat : ');
+			writeln('Bahan yang mau dibuat : ');
 			readln(nama);
 			i:=1;
 			while (olah[i].nama <> nama) do//mencari dimana bahan olahan yang ingin dibuat pada kamus
@@ -67,7 +67,7 @@ implementation
 					olahb[k].jumlah:=1;
 					NInvBO:=NInvBO+1;
 				end;
-			end else writeln('gak bisa beli');
+			end else writeln('Tidak bisa beli');
 	end;
 end.
 				

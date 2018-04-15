@@ -22,7 +22,7 @@ implementation
 		i,j,k:longint;
 		ketemu:boolean;
 	begin{satu kali prosedur satu kali beli satu unit}
-		write('Nama bahan :' );
+		write('Nama bahan : ' );
 		readln(namabahan);{asumsi nama bahan terdapat dalam file}
 		write('Kuantitas : ');
 		readln(j);
