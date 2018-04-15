@@ -1,51 +1,84 @@
 unit F16;
 
 interface
-	uses uDef,F1;
-	procedure tambahresep (FEResep: Aresep; NResep: integer; FEBahanMentah: Abahanmentah ; FEBahanOlahan: Abahanolahan);
+	uses uDef,F1,math;
+	procedure tambahresep (var FEResep: Aresep; var NResep: integer; FEBahanMentah: Abahanmentah; FEBahanOlahan: Abahanolahan; FEInventoriBahanMentah, FEInventoriBahanOlahan: AInventori; NBahanM, NBahanO, NInvBM, NInvBO: Integer);
 	
 implementation
 
-	procedure tambahresep (FEResep: Aresep; NResep: integer; FEBahanMentah: Abahanmentah ; FEBahanOlahan: Abahanolahan);
-	var
-		resepbaru : string;
-		a, b : string;
-		i : integer;
-		j : integer;
+procedure tambahresep (var FEResep: Aresep; var NResep: integer; FEBahanMentah: Abahanmentah; FEBahanOlahan: Abahanolahan; FEInventoriBahanMentah, FEInventoriBahanOlahan: AInventori; NBahanM, NBahanO, NInvBM, NInvBO: Integer);
+
+var
+	resepbaru : string;
+	n,i,j,k,l : integer;
+	sumBhn : Longint;
+	hargaresep : Real;
+	x : string;
+	found: Boolean;
 	
+begin
+	write('Masukkan nama resep : ');
+	readln(resepbaru);
+	write('Masukkan jumlah bahan : ');
+	readln(n);
+	NResep := NResep + 1;
+	sumBhn := 0;
+	
+	for i:=1 to n do
 	begin
-		readln(resepbaru);
-		readln(a);
-		FEResep[NResep + 1].N:= 0 ;
-		for i:=1 to NBahanM do
+		found:=False;
+		while not(found) do
 		begin
-			if a = FEBahanMentah[i].nama then
+		write('Masukkan nama bahan ke-', i, ' : ');
+		readln(x);
+		for j := 1 to NInvBM do
+		begin
+			if x = FEInventoriBahanMentah[j].nama then
 			begin
-					writeln('Bahan tidak tersedia');
-			end else
-			begin	
-				for j := 1 to NResep do
+				FEResep[NResep].bahan[i] := x;
+				FEResep[NResep].N := FEResep[NResep].N + 1;
+				for l:=1 to NBahanM do
 				begin
-					FEResep.bahan[NResep + 1] := a;
-					FEResep.N[NResep +1] := FEResep.N[NResep +1] + 1;
+					if x = FEBahanMentah[l].nama then
+					begin
+						sumBhn := sumBhn + FEBahanMentah[l].harga;
+					end;
 				end;
+				found := True;
 			end;
 		end;
-		readln(b);
-		for i:=1 to NBahanM do
+		for k := 1 to NInvBO do
 		begin
-			if a = FEBahanMentah[i].nama then
+			if x = FEInventoriBahanOlahan[k].nama then
 			begin
-				writeln('Bahan tidak tersedia');
-			end	else
-			begin
-				for j := 1 to NResep do
+				FEResep[NResep].bahan[i] := x;
+				FEResep[NResep].N := FEResep[NResep].N + 1;
+				for l:=1 to NBahanM do
 				begin
-					FEResep.bahan[NResep + 1] := b;
-					FEResep.N[NResep +1] := FEResep.N[NResep +1] + 1;
+					if x = FEBahanOlahan[l].nama then
+					begin
+						sumBhn := sumBhn + FEBahanOlahan[l].harga;
+					end;
 				end;
+				found := True;
 			end;
-		FEResep.harga[NResep + 1] := 0.125 * (
+		end;
+		if not(found) then
+		begin
+			writeln('Bahan tidak tersedia');
+			write('Masukkan nama bahan ke-', i, ' : ');
+			readln(x);
+		end;
+		end;
 	end;
-
+	write('Masukkan harga yang diinginkan : ');
+	readln(hargaresep);
+	while hargaresep < (sumBhn / 8) do
+	begin
+		writeln('Masukkan harga harus 12,5% lebih tinggi dari total harga bahan.');
+		write('Masukkan harga yang diinginkan : ');
+		readln(hargaresep);
+	end;
+	FEResep[NResep].harga:= ceil(hargaresep);
+end;
 end.

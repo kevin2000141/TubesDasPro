@@ -21,7 +21,7 @@ implementation
 				writeln('Nama Resep: ', FEResep[i].nama);
 				writeln('Harga Resep: ', FEResep[i].harga);
 				writeln('Jumlah Bahan: ', FEResep[i].n);
-				writeln('Bahan-bahan: ', FEResep[i].bahan[j])
+				writeln('Bahan-bahan: ', FEResep[i].bahan[j]);
 				for j := 2 to FEResep[i].n do
 				begin
 					write(', ', FEResep[i].bahan[j]);

@@ -1,6 +1,6 @@
 Program EngisKitchen;
 
-uses uDef, sysutils, F1, F2, F3, F4, F5, F6, F7, {F8,} F9, F10, F11{, F12, F13, F14,F15, F16, F17};
+uses uDef, sysutils, F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, F11{, F12, F13, F14},F15, F16, F17;
 //uses B1_cekKesalahanLoading;
 //uses B3_validasi;
 //uses B4_restock;
@@ -35,7 +35,7 @@ begin
 				end else
 				if input = 'olahbahan' then
 				begin
-					olahbahan(FEBahanOlahan, FEInventoriBahanOlahan,FEInventoriBahanMentah, FESimulasi, NomorSim);
+					olahbahan(FEBahanOlahan, FEInventoriBahanOlahan, FEInventoriBahanMentah, FESimulasi, NomorSim);
 				end else if input = 'jualolahan' then
 				begin
 					jualolahan(FEBahanOlahan, FEInventoriBahanOlahan, FESimulasi, NomorSim);
@@ -65,7 +65,7 @@ begin
 					cariresep(FEResep, NResep);
 				end else if input = 'tambahresep' then
 				begin
-					
+					tambahresep(FEResep, NResep, FEBahanMentah, FEBahanOlahan, FEInventoriBahanMentah, FEInventoriBahanOlahan, NBahanM, NBahanO, NInvBM, NInvBO);
 				end else if input = 'upgradeinventori' then
 				begin
 					upgradeInventori(FESimulasi[NomorSim].tEnergi);
