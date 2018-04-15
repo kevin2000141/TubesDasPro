@@ -1,4 +1,4 @@
-unit F11_tidur;
+unit F11;
 
 interface
 
@@ -28,22 +28,22 @@ implementation
 				writeln('Energi chef sekarang: 10');
 			end;
 		datenow:=datenow+1;
-		writeln('tanggal sekarang: ',DateToStr(datenow));
+		writeln('Tanggal sekarang: ',DateToStr(datenow));
 		writeln('Jumlah Hari : ',countd);
-		for i:=1 to NInvBM[NomorSim] do
+		for i:=1 to NInvBM do
 			begin
 				j:=i;
-				if (DaysBetween(datenow,FEInventoriBahanMentah[NomorSim][i].tanggal)>FEBahanMentah[i].kadaluarsa) then
+				if (DaysBetween(datenow,FEInventoriBahanMentah[i].tanggal)>FEBahanMentah[i].kadaluarsa) then
 					begin
-						deletearray(FEInventoriBahanMentah,NInvBM[NomorSim],j)	{i adalah index elemen array}
+						deletearray(FEInventoriBahanMentah,NInvBM,j)	{i adalah index elemen array}
 					end;
 			end;
-		for i:=1 to NInvBO[NomorSim] do
+		for i:=1 to NInvBO do
 			begin
 				j:=i;
-				if (DaysBetween(datenow,FEInventoriBahanOlahan[NomorSim][i].tanggal)>3) then
+				if (DaysBetween(datenow,FEInventoriBahanOlahan[i].tanggal)>3) then
 					begin
-						deletearray(FEInventoriBahanOlahan,NInvBO[NomorSim],j)	{i adalah index elemen array}
+						deletearray(FEInventoriBahanOlahan,NInvBO,j)	{i adalah index elemen array}
 					end;
 			end;
 	end;

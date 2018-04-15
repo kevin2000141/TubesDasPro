@@ -1,4 +1,4 @@
-unit F10_istirahat;
+unit F10;
 
 interface
 
@@ -13,7 +13,7 @@ implementation
 			begin
 				if (energiawal<10) then
 					begin
-						write('energi chef sekarang: ');
+						write('Energi chef sekarang: ');
 						energiawal:=energiawal+1;
 						writeln(energiawal);
 					end else
@@ -23,7 +23,7 @@ implementation
 				countis:=countis+1;
 			end else
 			begin
-				writeln('istirahat tidak boleh >6 kali');
+				writeln('Istirahat tidak boleh >6 kali');
 			end;	
 	end;
 end.

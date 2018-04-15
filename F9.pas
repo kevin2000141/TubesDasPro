@@ -1,4 +1,4 @@
-unit F9_makan;
+unit F9;
 
 interface
 
@@ -13,7 +13,7 @@ implementation
 			begin
 				if (energiawal<10) then
 					begin
-						write('energi chef sekarang: ');
+						write('Energi chef sekarang: ');
 						energiawal:=energiawal+3;
 							if (energiawal>10) then
 							begin
@@ -27,7 +27,7 @@ implementation
 				countm:=countm+1;
 			end else
 			begin
-				writeln('makan tidak boleh >3 kali');
+				writeln('Makan tidak boleh >3 kali');
 			end;	
 	end;
 end.

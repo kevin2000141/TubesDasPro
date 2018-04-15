@@ -3,12 +3,12 @@ interface
 	uses uDef,F1;//untuk ngambil data
 	function inv (c : Asimulasi ): Boolean ; //gak perlu dipanggil
 
-	procedure beliBahan(var a:Ainventori{type inv dari F1};d:Abahanmentah{untuk data bahan};var c:Asimulasi{type dari soal});
+	procedure beliBahan(var a:Ainventori{type inv dari F1};d:Abahanmentah{untuk data bahan};var c:Asimulasi{type dari soal}; NomorSim: Integer);
 
 implementation
 	function inv(c : Asimulasi ):Boolean;
 	begin
-		if ((NInvBM[NomorSim]+ NInvBO[NomorSim])<c[NomorSim].maxInventori)then 
+		if ((NInvBM + NInvBO)<c[NomorSim].maxInventori)then 
 		begin
 			inv := True;
 		end else
@@ -16,17 +16,17 @@ implementation
 			inv :=False;
 		end;
 	end;
-	procedure beliBahan(var a:Ainventori{type inv dari F1};d:Abahanmentah{untuk data bahan};var c:Asimulasi{type dari soal});
+	procedure beliBahan(var a:Ainventori{type inv dari F1};d:Abahanmentah{untuk data bahan};var c:Asimulasi{type dari soal}; NomorSim: Integer);
 	var
 		namabahan:string;
 		i,j,k:longint;
 		ketemu:boolean;
 	begin{satu kali prosedur satu kali beli satu unit}
-		write('nama bahan :' );
+		write('Nama bahan :' );
 		readln(namabahan);{asumsi nama bahan terdapat dalam file}
-		write('kuantitas : ');
+		write('Kuantitas : ');
 		readln(j);
-		write('total harga : ');
+		write('Total harga : ');
 		i:=1;
 		while (not(namabahan = d[i].nama)) do
 		begin 
@@ -43,23 +43,23 @@ implementation
 				c[NomorSim].tBMentahDibeli := c[NomorSim].tBMentahDibeli + j ;
 				ketemu:=False;
 				k:=1;
-				while((ketemu=False)and(k<= NInvBO[NomorSim])) do 
+				while((ketemu=False)and(k<= NInvBO)) do 
 				begin
-					if((namabahan = a[NomorSim][k].nama) and (c[NomorSim].tanggal= a[NomorSim][k].tanggal)) then
+					if((namabahan = a[k].nama) and (c[NomorSim].tanggal= a[k].tanggal)) then
 					begin
-						a[NomorSim][k].jumlah :=a[NomorSim][k].jumlah+j;
+						a[k].jumlah :=a[k].jumlah+j;
 						ketemu:=True;
 					end;
 					k:=k+1;
 				end;
 				if (ketemu = false) then 
 				begin
-					a[NomorSim][k].nama:=namabahan;
-					a[NomorSim][k].tanggal:=c[NomorSim].tanggal;
-					a[NomorSim][k].jumlah:=j;
-					NInvBM[NomorSim]:=NInvBM[NomorSim]+1;
+					a[k].nama:=namabahan;
+					a[k].tanggal:=c[NomorSim].tanggal;
+					a[k].jumlah:=j;
+					NInvBM:=NInvBM+1;
 				end;
-				writeln('berhasil dibeli');
-		end else writeln('gagal dibeli');
+				writeln('Berhasil dibeli');
+		end else writeln('Gagal dibeli');
 	end;
 end.

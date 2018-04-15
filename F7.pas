@@ -1,21 +1,21 @@
 unit F7;
 interface
 	uses uDef,F1;//untuk ngambil data
-	procedure jualbahan(olah:Abahanolahan;var olahb:Ainventori;var c : Asimulasi);
+	procedure jualolahan(olah:Abahanolahan;var olahb:Ainventori;var c : Asimulasi; NomorSim: Integer);
 implementation
-	procedure jualbahan(olah:Abahanolahan;var olahb:Ainventori;var c : Asimulasi);
+	procedure jualolahan(olah:Abahanolahan;var olahb:Ainventori;var c : Asimulasi; NomorSim: Integer);
 	var
 		nama:string;
 		ketemu,ketemu2:boolean;
 		i,j:integer;
 	begin
-		write('masukan nama bahan olahan : ');
+		write('Masukan nama bahan olahan: ');
 		readln(nama);
 		ketemu:=False;
 		i:=1;
-		while ((ketemu = False) and (i<=NInvBO[NomorSim])) do
+		while ((ketemu = False) and (i<=NInvBO)) do
 		begin
-			if((nama = olahb[NomorSim][i].nama) and ( olahb[NomorSim][i].jumlah>=1)) then
+			if((nama = olahb[i].nama) and ( olahb[i].jumlah>=1)) then
 			begin
 				ketemu:=True;
 			end;
@@ -33,12 +33,12 @@ implementation
 		end;
 		if(ketemu = True) then
 		begin
-			olahb[NomorSim][i].jumlah:=olahb[NomorSim][i].jumlah-1;
+			olahb[i].jumlah:=olahb[i].jumlah-1;
 			c[NomorSim].tBOlahanDijual:=c[NomorSim].tBOlahanDijual+1;
 			c[NomorSim].tEnergi:=c[NomorSim].tEnergi-1;
 			c[NomorSim].tPemasukan:=c[NomorSim].tPemasukan+olah[j-1].harga;
 			c[NomorSim].tUang:=c[NomorSim].tUang+olah[j-1].harga;
-		end else writeln('gak bisa dibeli');
+		end else writeln('Tidak bisa dibeli');
 		end;
 		end.
 		

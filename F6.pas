@@ -1,9 +1,9 @@
 unit F6;
 interface
 	uses uDef,F1;//untuk ngambil data
-	procedure olahbahan(olah:Abahanolahan;var olahb,mentah:Ainventori;var c : Asimulasi);
+	procedure olahbahan(olah:Abahanolahan;var olahb,mentah:Ainventori;var c : Asimulasi; NomorSim: Integer);
 implementation
-	procedure olahbahan(olah:Abahanolahan;var olahb,mentah:Ainventori;var c : Asimulasi);
+	procedure olahbahan(olah:Abahanolahan;var olahb,mentah:Ainventori;var c : Asimulasi; NomorSim: Integer);
 	var
 	nama:string;
 	i,j,count,k:longint;
@@ -21,9 +21,9 @@ implementation
 			begin
 				ketemu:=False;//var untuk nyari
 				k:=1;
-				while((ketemu=False)and(k< NInvBM[NomorSim])) do 
+				while((ketemu=False)and(k<NInvBM)) do 
 				begin
-					if((olah[i].bahan[j]=mentah[NomorSim][k].nama) and (mentah[NomorSim][k].jumlah>0)) then
+					if((olah[i].bahan[j]=mentah[k].nama) and (mentah[k].jumlah>0)) then
 					begin
 						ketemu:=True;
 						count:=count+1;
@@ -37,12 +37,12 @@ implementation
 				begin
 					ketemu:=False;//var untuk nyari
 					k:=1;
-					while((ketemu=False)and(k<= NInvBM[NomorSim])) do 
+					while((ketemu=False)and(k<= NInvBM)) do 
 					begin
-						if((olah[i].bahan[j]=mentah[NomorSim][k].nama) and (mentah[NomorSim][k].jumlah>0)) then
+						if((olah[i].bahan[j]=mentah[k].nama) and (mentah[k].jumlah>0)) then
 						begin
 							ketemu:=True;
-							mentah[NomorSim][k].jumlah:=mentah[NomorSim][k].jumlah-1;//ngurangi jumlah bahan mentah di inventori
+							mentah[k].jumlah:=mentah[k].jumlah-1;//ngurangi jumlah bahan mentah di inventori
 						end;
 						k:=k+1;
 					end;
@@ -51,21 +51,21 @@ implementation
 				c[NomorSim].tBOlahanDibuat:=c[NomorSim].tBOlahanDibuat+1;
 				ketemu:=False;
 				k:=1;
-				while((ketemu=False)and(k<= NInvBO[NomorSim])) do 
+				while((ketemu=False)and(k<= NInvBO)) do 
 				begin
-					if((nama = olahb[NomorSim][k].nama) and (c[NomorSim].tanggal= olahb[NomorSim][k].tanggal)) then
+					if((nama = olahb[k].nama) and (c[NomorSim].tanggal= olahb[k].tanggal)) then
 					begin
-						olahb[NomorSim][k].jumlah :=olahb[NomorSim][k].jumlah+1;
+						olahb[k].jumlah :=olahb[k].jumlah+1;
 						ketemu:=True;
 					end;
 					k:=k+1;
 				end;
 				if (ketemu = false) then 
 				begin
-					olahb[NomorSim][k].nama:=nama;
-					olahb[NomorSim][k].tanggal:=c[NomorSim].tanggal;
-					olahb[NomorSim][k].jumlah:=1;
-					NInvBO[NomorSim]:=NInvBO[NomorSim]+1;
+					olahb[k].nama:=nama;
+					olahb[k].tanggal:=c[NomorSim].tanggal;
+					olahb[k].jumlah:=1;
+					NInvBO:=NInvBO+1;
 				end;
 			end else writeln('gak bisa beli');
 	end;

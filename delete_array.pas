@@ -10,16 +10,13 @@ implementation
 
 procedure deletearray (var arr : Ainventori; var Neff : Integer; var index : Integer);
 	begin	
-		if (Neff=index) then
+		if (Neff<>index) then
 			begin
-				Neff:=Neff-1; {delete elemen terakhir}
-			end else
-			begin
-				for i := index to Neff-1 do
-					begin
-						arr[i] := arr[i+1];
-					end;
-			end;
+			for i := index to Neff-1 do
+				begin
+					arr[i] := arr[i+1];
+				end;
+		end;
 		Neff:=Neff-1; { Mengeset panjang array menjadi panjang array-1 }
 	end;
 end.
