@@ -3,11 +3,11 @@ unit F12;
 interface
 uses uDef, F1, sysutils;
 
-procedure lihatStatistik (SimulasiX: simulasi);
+procedure lihatStatistik (var SimulasiX: simulasi);
 
 implementation
 
-procedure lihatStatistik (SimulasiX: simulasi);
+procedure lihatStatistik (var SimulasiX: simulasi);
 begin
 		writeln('Nomor simulasi              : ', SimulasiX.nomor);
 		DefaultFormatSettings.ShortDateFormat := 'd/m/yyyy';
@@ -15,7 +15,7 @@ begin
 		writeln('Tanggal 					 : ', FormatDateTime('ddddd',SimulasiX.tanggal));
 		writeln('Hari hidup                  : ', SimulasiX.tHariHidup);
 		writeln('Energi                      : ', SimulasiX.tEnergi);
-		writeln('Iventori maksimum           : ', SimulasiX.maxInventori);
+		writeln('Inventori maksimum          : ', SimulasiX.maxInventori);
 		writeln('Total barang mentah dibeli  : ', SimulasiX.tBMentahDibeli);
 		writeln('Total barang olahan dibuat  : ', SimulasiX.tBOlahanDibuat);
 		writeln('Total barang olahan dijual  : ', SimulasiX.tBOlahanDijual);

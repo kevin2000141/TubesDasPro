@@ -23,7 +23,7 @@ begin
 		if copy(input, 1, 5)='start' then
 		begin
 			NomorSim:=StrToInt(copy(input, 7, 7));
-			startSimulasi(countis, countm);
+			startSimulasi(countis, countm, aksi);
 			writeln('Mulai simulasi ', NomorSim);
 			write('>> ');
 			readln(input);
@@ -31,17 +31,17 @@ begin
 			begin
 				if input = 'belibahan' then
 				begin
-					beliBahan(FEInventoriBahanMentah, FEBahanMentah, FESimulasi, NomorSim);	
+					beliBahan(FEInventoriBahanMentah, FEBahanMentah, FESimulasi, aksi, NInvBO, NInvBM, NomorSim);	
 				end else
 				if input = 'olahbahan' then
 				begin
-					olahbahan(FEBahanOlahan, FEInventoriBahanOlahan, FEInventoriBahanMentah, FESimulasi, NomorSim);
+					olahbahan(FEBahanOlahan, FEInventoriBahanOlahan, FEInventoriBahanMentah, FESimulasi, NInvBO, NInvBM, NomorSim, aksi);
 				end else if input = 'jualolahan' then
 				begin
-					jualolahan(FEBahanOlahan, FEInventoriBahanOlahan, FESimulasi, NomorSim);
+					jualolahan(FEBahanOlahan, FEInventoriBahanOlahan, FESimulasi, NInvBO, NBahanO, NomorSim, aksi);
 				end else if input = 'jualresep'	then
 				begin
-					jualresep(FEResep, FESimulasi, FEInventoriBahanMentah, FEInventoriBahanOlahan, NomorSim);
+					jualresep(FEResep, FESimulasi, FEInventoriBahanMentah, FEInventoriBahanOlahan, NInvBM, NInvBO, NomorSim, aksi);
 				end else if input = 'makan' then
 				begin
 					makan(FESimulasi[NomorSim].tEnergi, countm);
@@ -50,7 +50,7 @@ begin
 					istirahat(FESimulasi[NomorSim].tEnergi, countis);
 				end else if input = 'tidur' then
 				begin
-					tidur(FESimulasi[NomorSim].tEnergi, countm, countis, FESimulasi[NomorSim].tHariHidup, FESimulasi[NomorSim].tanggal);
+					tidur(FESimulasi[NomorSim].tEnergi, countm, countis, FESimulasi[NomorSim].tHariHidup, FESimulasi[NomorSim].tanggal, NInvBM, NInvBO, aksi);
 				end else if input = 'lihatstatistik' then
 				begin
 					lihatStatistik(FESimulasi[NomorSim]);
@@ -68,7 +68,7 @@ begin
 					tambahresep(FEResep, NResep, FEBahanMentah, FEBahanOlahan, FEInventoriBahanMentah, FEInventoriBahanOlahan, NBahanM, NBahanO, NInvBM, NInvBO);
 				end else if input = 'upgradeinventori' then
 				begin
-					upgradeInventori(FESimulasi[NomorSim].tEnergi);
+					upgradeInventori(FESimulasi[NomorSim].maxInventori);
 				end else {Input salah}
 				begin
 					writeln('Masukan input simulasi yang benar.');
@@ -81,9 +81,9 @@ begin
 	end else
 	begin
 		writeln('File harus diload terlebih dahulu.');
+		write('> ');
+		readln(input);
 	end;
-	write('> ');
-	readln(input);
 end;
-exit(FEInventoriBahanMentah, FEInventoriBahanOlahan, FEResep, NInvBM, NInvBO, NResep, NSim);
+exit(FEInventoriBahanMentah, FEInventoriBahanOlahan, FEResep, NInvBM, NInvBO, NResep);
 end.

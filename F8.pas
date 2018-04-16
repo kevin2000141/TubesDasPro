@@ -1,16 +1,16 @@
 unit F8;
 interface
 	uses uDef,F1;//untuk ngambil data
-	procedure jualresep (resep:Aresep; var c:Asimulasi;var mentah,olah:Ainventori; NomorSim: Integer);
+	procedure jualresep (resep:Aresep; var c:Asimulasi;var mentah,olah:Ainventori; var NInvBM, NInvBO, NomorSim,aksi: Integer);
 
 implementation
-	procedure jualresep (resep:Aresep; var c:Asimulasi;var mentah,olah:Ainventori; NomorSim: Integer);
+	procedure jualresep (resep:Aresep; var c:Asimulasi;var mentah,olah:Ainventori; var NInvBM, NInvBO, NomorSim,aksi: Integer);
 	var
 		nama:string;
 		i,j,count,k:longint;
 		ketemu:boolean;
 	begin
-			writeln('Hidangan yang ingin dijual dari resep: ');
+			write('Hidangan yang ingin dijual dari resep: ');
 			readln(nama);
 			i:=1;
 			while (resep[i].nama <> nama) do//mencari dimana bahan resepan yang ingin dibuat pada kamus
@@ -61,6 +61,7 @@ implementation
 					c[NomorSim].tResepDijual:=c[NomorSim].tResepDijual+1;
 					c[NomorSim].tPemasukan:=c[NomorSim].tPemasukan+resep[i].harga;
 					c[NomorSim].tUang:=c[NomorSim].tUang+resep[i].harga;
+					aksi:=aksi+1;
 				end;
 			end else writeln('gak bisa dibeli');
 		end;

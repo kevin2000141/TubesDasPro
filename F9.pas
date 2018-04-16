@@ -9,7 +9,7 @@ implementation
 	procedure makan(var energiawal:Integer; var countm:Integer );
 	
 	begin
-		if (countm <= 3) then
+		if (countm < 3) then
 			begin
 				if (energiawal<10) then
 					begin

@@ -52,7 +52,7 @@ implementation
 	 	temp : AnsiString;
 	
 	begin
-	assign(a,'bahanmentah.txt');
+	assign (a, 'BahanMentah.txt');
 	reset (a);
 	assign (b, 'BahanOlahan.txt');
 	reset (b);
@@ -193,7 +193,6 @@ implementation
 		NInvBO:=NInvBO + 1;
 		end;
 	NInvBO:= NInvBO - 1;
-	close(d);
 	{for j:=1 to NInvBO do
 	begin
 		writeln (FEInventoriBahanOlahan[i,j].nama, ' ', FormatDateTime('ddddd',FEInventoriBahanOlahan[i,j].tanggal), ' ', FEInventoriBahanOlahan[i,j].jumlah);

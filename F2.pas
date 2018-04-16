@@ -18,8 +18,7 @@ uses uDef, sysutils;
 					var FEResep: Aresep;
 					var NInvBM: Integer;
 					var NInvBO: Integer;
-					var NResep: Integer;
-					var NSim: Integer);
+					var NResep: Integer);
 
 implementation
 	
@@ -28,8 +27,7 @@ implementation
 					var FEResep: Aresep;
 					var NInvBM: Integer;
 					var NInvBO: Integer;
-					var NResep: Integer;
-					var NSim: Integer);
+					var NResep: Integer);
 
 	var
 	 	temp, temp1: AnsiString;

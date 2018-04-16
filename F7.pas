@@ -1,9 +1,9 @@
 unit F7;
 interface
 	uses uDef,F1;//untuk ngambil data
-	procedure jualolahan(olah:Abahanolahan;var olahb:Ainventori;var c : Asimulasi; NomorSim: Integer);
+	procedure jualolahan(olah:Abahanolahan;var olahb:Ainventori;var c : Asimulasi; var NInvBO, NBahanO, NomorSim,aksi: Integer);
 implementation
-	procedure jualolahan(olah:Abahanolahan;var olahb:Ainventori;var c : Asimulasi; NomorSim: Integer);
+	procedure jualolahan(olah:Abahanolahan;var olahb:Ainventori;var c : Asimulasi; var NInvBO, NBahanO, NomorSim,aksi: Integer);
 	var
 		nama:string;
 		ketemu,ketemu2:boolean;
@@ -38,6 +38,8 @@ implementation
 			c[NomorSim].tEnergi:=c[NomorSim].tEnergi-1;
 			c[NomorSim].tPemasukan:=c[NomorSim].tPemasukan+olah[j-1].harga;
 			c[NomorSim].tUang:=c[NomorSim].tUang+olah[j-1].harga;
+			aksi:=aksi;
+			writeln('makan nih ',nama);
 		end else writeln('Tidak bisa dibeli');
 		end;
 		end.

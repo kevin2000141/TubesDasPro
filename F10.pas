@@ -9,7 +9,7 @@ implementation
 	procedure istirahat(var energiawal:Integer; var countis:Integer );
 	
 	begin
-		if (countis <= 6) then
+		if (countis < 6) then
 			begin
 				if (energiawal<10) then
 					begin

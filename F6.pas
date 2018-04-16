@@ -1,15 +1,15 @@
 unit F6;
 interface
 	uses uDef,F1;//untuk ngambil data
-	procedure olahbahan(olah:Abahanolahan;var olahb,mentah:Ainventori;var c : Asimulasi; NomorSim: Integer);
+	procedure olahbahan(olah:Abahanolahan;var olahb,mentah:Ainventori;var c : Asimulasi; var NInvBO, NInvBM, NomorSim,aksi: Integer);
 implementation
-	procedure olahbahan(olah:Abahanolahan;var olahb,mentah:Ainventori;var c : Asimulasi; NomorSim: Integer);
+	procedure olahbahan(olah:Abahanolahan;var olahb,mentah:Ainventori;var c : Asimulasi; var NInvBO, NInvBM, NomorSim,aksi: Integer);
 	var
 	nama:string;
 	i,j,count,k:longint;
 	ketemu:boolean;
 	begin
-			writeln('Bahan yang mau dibuat : ');
+			write('Bahan yang mau dibuat : ');
 			readln(nama);
 			i:=1;
 			while (olah[i].nama <> nama) do//mencari dimana bahan olahan yang ingin dibuat pada kamus
@@ -49,6 +49,7 @@ implementation
 				end;
 				c[NomorSim].tEnergi:=c[NomorSim].tEnergi-1;
 				c[NomorSim].tBOlahanDibuat:=c[NomorSim].tBOlahanDibuat+1;
+				aksi:=aksi+1;
 				ketemu:=False;
 				k:=1;
 				while((ketemu=False)and(k<= NInvBO)) do 
@@ -67,7 +68,8 @@ implementation
 					olahb[k].jumlah:=1;
 					NInvBO:=NInvBO+1;
 				end;
-			end else writeln('Tidak bisa beli');
+				writeln('bisa dungs');
+			end else writeln('Tidak bisa buat');
 	end;
 end.
 				

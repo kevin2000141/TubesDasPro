@@ -2,11 +2,11 @@ unit F17;
 
 interface
 	uses uDef,F1;
-	procedure upgradeInventori(Nmax: integer);
+	procedure upgradeInventori(var Nmax: longint);
 
 implementation
 
-	procedure upgradeInventori(Nmax: integer);
+	procedure upgradeInventori(var Nmax: longint);
 	begin
 		Nmax := Nmax + 25;
 	end;
