@@ -12,7 +12,7 @@ begin
 		writeln('Nomor simulasi              : ', SimulasiX.nomor);
 		DefaultFormatSettings.ShortDateFormat := 'd/m/yyyy';
 		DefaultFormatSettings.DateSeparator := '/';
-		writeln('Tanggal 					 : ', FormatDateTime('ddddd',SimulasiX.tanggal));
+		writeln('Tanggal                     : ', FormatDateTime('ddddd',SimulasiX.tanggal));
 		writeln('Hari hidup                  : ', SimulasiX.tHariHidup);
 		writeln('Energi                      : ', SimulasiX.tEnergi);
 		writeln('Inventori maksimum          : ', SimulasiX.maxInventori);

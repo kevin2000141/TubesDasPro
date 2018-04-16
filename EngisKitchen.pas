@@ -1,6 +1,6 @@
 Program EngisKitchen;
 
-uses uDef, sysutils, F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, F11, F12{, F13, F14},F15, F16, F17;
+uses uDef, sysutils, F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, F11, F12, F13, F14, F15, F16, F17;
 //uses B1_cekKesalahanLoading;
 //uses B3_validasi;
 //uses B4_restock;
@@ -56,10 +56,10 @@ begin
 					lihatStatistik(FESimulasi[NomorSim]);
 				end else if input = 'lihatinventori' then
 				begin
-					
+					lihatInventori(NInvBO, NInvBM, FEInventoriBahanOlahan, FEInventoriBahanMentah);
 				end else if input = 'lihatresep' then
 				begin
-					
+					lihatResep(FEResep, NResep);
 				end else if input = 'cariresep' then
 				begin
 					cariresep(FEResep, NResep);
@@ -77,6 +77,8 @@ begin
 				readln(input);
 			end;
 			stopSimulasi(FESimulasi, NomorSim);
+			write('> ');
+			readln(input);
 		end;	
 	end else
 	begin
