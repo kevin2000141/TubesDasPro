@@ -74,7 +74,9 @@ implementation
 		delete(temp,1,(pos('|',temp)));
 		FEBahanMentah[NBahanM].harga:=StrToInt(copy(temp, 1, (pos('|',temp) -1)));
 		delete(temp,1,(pos('|',temp)));
-		FEBahanMentah[NBahanM].kadaluarsa:=StrToInt(temp);
+		FEBahanMentah[NBahanM].kadaluarsa:=StrToInt(copy(temp, 1, (pos('|',temp) -1)));
+		delete(temp,1,(pos('|',temp)));
+		FEBahanMentah[NBahanM].jumlah:=StrToInt(temp);
 		NBahanM:=NBahanM+1;
 		end;
 	NBahanM:=NBahanM-1;	

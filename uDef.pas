@@ -12,7 +12,8 @@ uses sysutils;
 		bahanmentah=record
 			nama		: String;
 			harga		: Longint;
-			kadaluarsa 	: Longint;	
+			kadaluarsa 	: Longint;
+			jumlah		: Longint;	
 		end;
 		bahanolahan=record
 			nama		: String;
