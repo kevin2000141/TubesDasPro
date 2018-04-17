@@ -34,7 +34,6 @@ implementation
 		lihatInventoriBahanMentah(urutan, NInvBM, FEInventoriBahanMentah);
 		writeln();
 		lihatInventoriBahanOlahan(urutan, NInvBO, FEInventoriBahanOlahan);
-		writeln();
 	end;
 	
 	procedure lihatInventoriBahanMentah(urutan: String; NInvBM:Integer; var FEInventoriBahanMentah: Ainventori);

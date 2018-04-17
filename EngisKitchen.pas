@@ -9,64 +9,70 @@ uses uDef, sysutils, F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, F11, F12, F13, F14
 var
 	input: AnsiString;
 	countis, countm, NomorSim : Integer;
+	l: Boolean;
 
 begin
+l:=False;
 write('> ');
 readln(input);
-while input <> 'exit' do
+while lowercase(input) <> 'exit' do
 begin
-	if input = 'load' then
+	if lowercase(input) = 'load' then
 	begin
 		load(FEBahanMentah, FEBahanOlahan, FEInventoriBahanMentah, FEInventoriBahanOlahan, FEResep, FESimulasi, NBahanM, NBahanO, NInvBM, NInvBO, NResep, NSim); 
+		l:=True;
 		write('> ');
 		readln(input);
-		if copy(input, 1, 5)='start' then
+	end;
+	if (lowercase(copy(input, 1, 5))='start') and l then
+	begin
+		delete(input,1,6);
+		if StrToInt(input) <= NSim then
 		begin
-			NomorSim:=StrToInt(copy(input, 7, 7));
-			startSimulasi(countis, countm, aksi);
-			writeln('Mulai simulasi ', NomorSim);
-			write('>> ');
-			readln(input);
-			while input <> 'stop' do
-			begin
-				if input = 'belibahan' then
+		NomorSim:=StrToInt(input);
+		startSimulasi(countis, countm, aksi, FESimulasi, NomorSim, FEBahanMentah, NBahanM);
+		writeln('Mulai simulasi ', NomorSim);
+		write('>> ');
+		readln(input);
+		while lowercase(input) <> 'stop' do
+		begin
+				if lowercase(input) = 'belibahan' then
 				begin
 					beliBahan(FEInventoriBahanMentah, FEBahanMentah, FESimulasi, aksi, NInvBO, NInvBM, NomorSim);	
-				end else
-				if input = 'olahbahan' then
+				end else if lowercase(input) = 'olahbahan' then
 				begin
 					olahbahan(FEBahanOlahan, FEInventoriBahanOlahan, FEInventoriBahanMentah, FESimulasi, NInvBO, NInvBM, NomorSim, aksi);
-				end else if input = 'jualolahan' then
+				end else if lowercase(input) = 'jualolahan' then
 				begin
 					jualolahan(FEBahanOlahan, FEInventoriBahanOlahan, FESimulasi, NInvBO, NBahanO, NomorSim, aksi);
-				end else if input = 'jualresep'	then
+				end else if lowercase(input) = 'jualresep'	then
 				begin
 					jualresep(FEResep, FESimulasi, FEInventoriBahanMentah, FEInventoriBahanOlahan, NInvBM, NInvBO, NomorSim, aksi);
-				end else if input = 'makan' then
+				end else if lowercase(input) = 'makan' then
 				begin
 					makan(FESimulasi[NomorSim].tEnergi, countm);
-				end else if input = 'istirahat' then
+				end else if lowercase(input) = 'istirahat' then
 				begin
 					istirahat(FESimulasi[NomorSim].tEnergi, countis);
-				end else if input = 'tidur' then
+				end else if lowercase(input) = 'tidur' then
 				begin
 					tidur(FESimulasi[NomorSim].tEnergi, countm, countis, FESimulasi[NomorSim].tHariHidup, FESimulasi[NomorSim].tanggal, NInvBM, NInvBO, aksi);
-				end else if input = 'lihatstatistik' then
+				end else if lowercase(input) = 'lihatstatistik' then
 				begin
 					lihatStatistik(FESimulasi[NomorSim]);
-				end else if input = 'lihatinventori' then
+				end else if lowercase(input) = 'lihatinventori' then
 				begin
 					lihatInventori(NInvBO, NInvBM, FEInventoriBahanOlahan, FEInventoriBahanMentah);
-				end else if input = 'lihatresep' then
+				end else if lowercase(input) = 'lihatresep' then
 				begin
 					lihatResep(FEResep, NResep);
-				end else if input = 'cariresep' then
+				end else if lowercase(input) = 'cariresep' then
 				begin
 					cariresep(FEResep, NResep);
-				end else if input = 'tambahresep' then
+				end else if lowercase(input) = 'tambahresep' then
 				begin
 					tambahresep(FEResep, NResep, FEBahanMentah, FEBahanOlahan, FEInventoriBahanMentah, FEInventoriBahanOlahan, NBahanM, NBahanO, NInvBM, NInvBO);
-				end else if input = 'upgradeinventori' then
+				end else if lowercase(input) = 'upgradeinventori' then
 				begin
 					upgradeInventori(FESimulasi[NomorSim].maxInventori);
 				end else {Input salah}
@@ -75,17 +81,43 @@ begin
 				end;
 				write('>> ');
 				readln(input);
-			end;
-			stopSimulasi(FESimulasi, NomorSim);
+		end;
+		stopSimulasi(FESimulasi, NomorSim);
+		write('> ');
+		readln(input);
+		end else
+		begin
+			writeln('Masukan nomor simulasi yang ada/valid.');
 			write('> ');
 			readln(input);
-		end;	
-	end else
+		end;
+	end else if (lowercase(input)='lihatinventori') and l then  
 	begin
+		lihatInventori(NInvBO, NInvBM, FEInventoriBahanOlahan, FEInventoriBahanMentah);
+		write('> ');
+		readln(input);
+	end else if (lowercase(input)='lihatresep') and l then 
+	begin
+		lihatResep(FEResep, NResep);
+		write('> ');
+		readln(input);
+	end else if (lowercase(input)='cariresep') and l then 
+	begin
+		cariresep(FEResep, NResep);
+		write('> ');
+		readln(input);
+	end else if (lowercase(input)='tambahresep') and l then 
+	begin
+		tambahresep(FEResep, NResep, FEBahanMentah, FEBahanOlahan, FEInventoriBahanMentah, FEInventoriBahanOlahan, NBahanM, NBahanO, NInvBM, NInvBO);
+		write('> ');
+		readln(input);
+	end;
+	if not(l) then
+	begin 
 		writeln('File harus diload terlebih dahulu.');
 		write('> ');
 		readln(input);
 	end;
 end;
-exit(FEInventoriBahanMentah, FEInventoriBahanOlahan, FEResep, NInvBM, NInvBO, NResep);
+exit(FEBahanMentah, FEInventoriBahanMentah, FEInventoriBahanOlahan, FEResep, NBahanM, NInvBM, NInvBO, NResep);
 end.

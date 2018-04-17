@@ -13,18 +13,22 @@ uses uDef, sysutils;
 	
 	{ Deklarasi Fungsi/Prosedur }
 	
-	procedure exit( var FEInventoriBahanMentah: Ainventori;
+	procedure exit( var FEBahanMentah: Abahanmentah;
+					var FEInventoriBahanMentah: Ainventori;
 					var FEInventoriBahanOlahan: Ainventori;
 					var FEResep: Aresep;
+					var NBahanM: Integer;
 					var NInvBM: Integer;
 					var NInvBO: Integer;
 					var NResep: Integer);
 
 implementation
 	
-	procedure exit( var FEInventoriBahanMentah: Ainventori;
+	procedure exit( var FEBahanMentah: Abahanmentah;
+					var FEInventoriBahanMentah: Ainventori;
 					var FEInventoriBahanOlahan: Ainventori;
 					var FEResep: Aresep;
+					var NBahanM: Integer;
 					var NInvBM: Integer;
 					var NInvBO: Integer;
 					var NResep: Integer);
@@ -33,6 +37,16 @@ implementation
 	 	temp, temp1: AnsiString;
 	
 	begin
+	assign (a, 'BahanMentah.txt');
+	rewrite (a);
+	for j:=1 to NInvBM do
+		begin
+		temp:='';
+		temp:= FEBahanMentah[j].nama + ' | ' + IntToStr(FEBahanMentah[j].harga) + ' | ' + IntToStr(FEBahanMentah[j].kadaluarsa) + ' | ' + IntToStr(FEBahanMentah[j].jumlah);
+		writeln(a, temp);
+		end;
+	close (a);
+
 	assign (c, 'InvBahanMentah.txt');
 	rewrite (c);
 	for j:=1 to NInvBM do
