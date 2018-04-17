@@ -2,7 +2,7 @@ unit F11;
 
 interface
 
-	uses  sysutils,F1,delete_array,Dateutils,uDef;
+	uses  sysutils,F1,delete_array,Dateutils,uDef,restock;
 	
 	procedure tidur (	var energiawal	:Integer; 			//energi awal chef
 						var countm		:Integer; 			//menghitung jumlah makan
@@ -11,7 +11,11 @@ interface
 						var datenow		:TDateTime;
 						var NInvBM: Integer;
 						var NInvBO: Integer;
-						var aksi: Integer);		//tanggal untuk dibaca di simulasi	
+						var aksi: Integer;
+						FESimulasi: ASimulasi; 
+						NomorSim: Integer; 
+						var FEBahanMentah: Abahanmentah; 
+						NBahanM: Integer);		//tanggal untuk dibaca di simulasi	
 
 implementation
 
@@ -22,7 +26,11 @@ implementation
 						var datenow		:TDateTime;
 						var NInvBM: Integer;
 						var NInvBO: Integer;
-						var aksi: Integer);	//tanggal untuk dibaca di simulasi	
+						var aksi: Integer;
+						FESimulasi: ASimulasi; 
+						NomorSim: Integer; 
+						var FEBahanMentah: Abahanmentah; 
+						NBahanM: Integer);	//tanggal untuk dibaca di simulasi	
 	var
 		k: Integer;
 	begin
@@ -66,6 +74,6 @@ implementation
 			 	end;
 			end;
 		end;
+	restockbahan(FESimulasi,NomorSim,FEBahanMentah,NBahanM);
 	end;
-
 end.
