@@ -39,7 +39,7 @@ implementation
 	begin
 	assign (a, 'BahanMentah.txt');
 	rewrite (a);
-	for j:=1 to NInvBM do
+	for j:=1 to NBahanM do
 		begin
 		temp:='';
 		temp:= FEBahanMentah[j].nama + ' | ' + IntToStr(FEBahanMentah[j].harga) + ' | ' + IntToStr(FEBahanMentah[j].kadaluarsa) + ' | ' + IntToStr(FEBahanMentah[j].jumlah);

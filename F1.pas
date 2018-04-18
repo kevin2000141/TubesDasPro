@@ -14,7 +14,8 @@ uses uDef, sysutils;
 	{ Deklarasi Fungsi/Prosedur }
 	function shorten(panjang:AnsiString):AnsiString;
 
-	procedure load( var FEBahanMentah: Abahanmentah; 
+	procedure load( var l : Boolean;
+					var FEBahanMentah: Abahanmentah; 
 					var FEBahanOlahan: Abahanolahan;
 					var FEInventoriBahanMentah: Ainventori;
 					var FEInventoriBahanOlahan: Ainventori;
@@ -35,7 +36,8 @@ implementation
 		shorten := StringReplace(panjang, ' | ', '|', [rfReplaceAll]);
 	end;
 
-	procedure load( var FEBahanMentah: Abahanmentah; 
+	procedure load( var l : Boolean;
+					var FEBahanMentah: Abahanmentah; 
 					var FEBahanOlahan: Abahanolahan;
 					var FEInventoriBahanMentah: Ainventori;
 					var FEInventoriBahanOlahan: Ainventori;
@@ -52,194 +54,193 @@ implementation
 	 	temp : AnsiString;
 	
 	begin
-	assign (a, 'BahanMentah.txt');
-	reset (a);
-	assign (b, 'BahanOlahan.txt');
-	reset (b);
-	assign (c, 'InvBahanMentah.txt');
-	reset (c);
-	assign (d, 'InvBahanOlahan.txt');
-	reset (d);
-	assign (e, 'Resep.txt');
-	reset (e);
-	assign (f, 'Simulasi.txt');
-	reset (f);
-	
-	NBahanM:=1;
-	while not(eof(a)) do
-		begin
-		readln (a, temp);
-		temp := shorten(temp);
-		FEBahanMentah[NBahanM].nama:=copy(temp, 1, (pos('|',temp) -1));
-		delete(temp,1,(pos('|',temp)));
-		FEBahanMentah[NBahanM].harga:=StrToInt(copy(temp, 1, (pos('|',temp) -1)));
-		delete(temp,1,(pos('|',temp)));
-		FEBahanMentah[NBahanM].kadaluarsa:=StrToInt(copy(temp, 1, (pos('|',temp) -1)));
-		delete(temp,1,(pos('|',temp)));
-		FEBahanMentah[NBahanM].jumlah:=StrToInt(temp);
-		NBahanM:=NBahanM+1;
-		end;
-	NBahanM:=NBahanM-1;	
-	{for i:=1 to NBahanM do
+	if (FileExists('BahanMentah.txt')) and (FileExists('BahanOlahan.txt')) and (FileExists('InvBahanMentah.txt')) and (FileExists('InvBahanOlahan.txt')) and (FileExists('Resep.txt')) and (FileExists('Simulasi.txt')) then
 	begin
-		writeln(FEBahanMentah[i].nama, ' ', FEBahanMentah[i].harga, ' ', FEBahanMentah[i].kadaluarsa);
-	end;
-	writeln();}
-
-	NBahanO:=1;
-	while not(eof(b)) do
-		begin
-		readln (b, temp);
-		temp := shorten(temp);
-		FEBahanOlahan[NBahanO].nama:=copy(temp, 1, (pos('|',temp) -1));
-		delete(temp,1,(pos('|',temp)));
-		FEBahanOlahan[NBahanO].harga:=StrToInt(copy(temp, 1, (pos('|',temp) -1)));
-		delete(temp,1,(pos('|',temp)));
-		FEBahanOlahan[NBahanO].n:=StrToInt(copy(temp, 1, (pos('|',temp) -1)));
-		delete(temp,1,(pos('|',temp)));
-		if FEBahanOlahan[NBahanO].n>1 then 
-		begin
-			for i:=1 to (FEBahanOlahan[NBahanO].n - 1) do
+		assign (a, 'BahanMentah.txt');
+		reset (a);
+		assign (b, 'BahanOlahan.txt');
+		reset (b);
+		assign (c, 'InvBahanMentah.txt');
+		reset (c);
+		assign (d, 'InvBahanOlahan.txt');
+		reset (d);
+		assign (e, 'Resep.txt');
+		reset (e);
+		assign (f, 'Simulasi.txt');
+		reset (f);
+		
+		NBahanM:=0;
+		while not(eof(a)) do
 			begin
-				FEBahanOlahan[NBahanO].bahan[i]:=(copy(temp, 1, (pos('|',temp) -1)));
+			NBahanM:=NBahanM+1;
+			readln (a, temp);
+			temp := shorten(temp);
+			FEBahanMentah[NBahanM].nama:=copy(temp, 1, (pos('|',temp) -1));
+			delete(temp,1,(pos('|',temp)));
+			FEBahanMentah[NBahanM].harga:=StrToInt(copy(temp, 1, (pos('|',temp) -1)));
+			delete(temp,1,(pos('|',temp)));
+			FEBahanMentah[NBahanM].kadaluarsa:=StrToInt(copy(temp, 1, (pos('|',temp) -1)));
+			delete(temp,1,(pos('|',temp)));
+			FEBahanMentah[NBahanM].jumlah:=StrToInt(temp);
+			end;	
+		{for i:=1 to NBahanM do
+		begin
+			writeln(FEBahanMentah[i].nama, ' ', FEBahanMentah[i].harga, ' ', FEBahanMentah[i].kadaluarsa);
+		end;
+		writeln();}
+
+		NBahanO:=0;
+		while not(eof(b)) do
+			begin
+			NBahanO:=NBahanO+1;
+			readln (b, temp);
+			temp := shorten(temp);
+			FEBahanOlahan[NBahanO].nama:=copy(temp, 1, (pos('|',temp) -1));
+			delete(temp,1,(pos('|',temp)));
+			FEBahanOlahan[NBahanO].harga:=StrToInt(copy(temp, 1, (pos('|',temp) -1)));
+			delete(temp,1,(pos('|',temp)));
+			FEBahanOlahan[NBahanO].n:=StrToInt(copy(temp, 1, (pos('|',temp) -1)));
+			delete(temp,1,(pos('|',temp)));
+			if FEBahanOlahan[NBahanO].n>1 then 
+			begin
+				for i:=1 to (FEBahanOlahan[NBahanO].n - 1) do
+				begin
+					FEBahanOlahan[NBahanO].bahan[i]:=(copy(temp, 1, (pos('|',temp) -1)));
+					delete(temp,1,(pos('|',temp)));
+				end;
+			end;
+			FEBahanOlahan[NBahanO].bahan[FEBahanOlahan[NBahanO].n]:=temp;
+			
+			end;
+		{for i:=1 to NBahanO do
+		begin
+			write(FEBahanOlahan[i].nama, ' ', FEBahanOlahan[i].harga, ' ', FEBahanOlahan[i].n);
+			for j:=1 to FEBahanOlahan[NBahanO].n do
+			begin
+				write(' ', FEBahanOlahan[i].bahan[j]);
+			end;
+			writeln();
+		end;
+		writeln();}
+
+		NSim:=0;
+		while not(eof(f)) do
+			begin
+			NSim:=NSim + 1;
+			readln (f, temp);
+			temp := shorten(temp);
+			FESimulasi[NSim].nomor:=StrToInt(copy(temp, 1, (pos('|',temp) -1)));
+			delete(temp,1,(pos('|',temp)));
+			DefaultFormatSettings.ShortDateFormat := 'd/m/yyyy';
+			DefaultFormatSettings.DateSeparator := '/';
+			FESimulasi[NSim].tanggal:=StrToDate(copy(temp, 1, (pos('|',temp) -1)));
+			delete(temp,1,(pos('|',temp)));
+			FESimulasi[NSim].tHariHidup:=StrToInt(copy(temp, 1, (pos('|',temp) -1)));
+			delete(temp,1,(pos('|',temp)));
+			FESimulasi[NSim].tEnergi:=StrToInt(copy(temp, 1, (pos('|',temp) -1)));
+			delete(temp,1,(pos('|',temp)));
+			FESimulasi[NSim].maxInventori:=StrToInt(copy(temp, 1, (pos('|',temp) -1)));
+			delete(temp,1,(pos('|',temp)));
+			FESimulasi[NSim].tBMentahDibeli:=StrToInt(copy(temp, 1, (pos('|',temp) -1)));
+			delete(temp,1,(pos('|',temp)));
+			FESimulasi[NSim].tBOlahanDibuat:=StrToInt(copy(temp, 1, (pos('|',temp) -1)));
+			delete(temp,1,(pos('|',temp)));
+			FESimulasi[NSim].tBOlahanDijual:=StrToInt(copy(temp, 1, (pos('|',temp) -1)));
+			delete(temp,1,(pos('|',temp)));
+			FESimulasi[NSim].tResepDijual:=StrToInt(copy(temp, 1, (pos('|',temp) -1)));
+			delete(temp,1,(pos('|',temp)));
+			FESimulasi[NSim].tPemasukan:=StrToInt(copy(temp, 1, (pos('|',temp) -1)));
+			delete(temp,1,(pos('|',temp)));
+			FESimulasi[NSim].tPengeluaran:=StrToInt(copy(temp, 1, (pos('|',temp) -1)));
+			delete(temp,1,(pos('|',temp)));
+			FESimulasi[NSim].tUang:=StrToInt(temp);
+			end;
+		{for i:=1 to NSim do
+		begin
+			writeln(FESimulasi[i].nomor, ' ', FormatDateTime('ddddd',FESimulasi[NSim].tanggal), ' ', FESimulasi[NSim].tHariHidup, ' ', FESimulasi[NSim].tEnergi, ' ', FESimulasi[NSim].maxInventori, ' ', FESimulasi[NSim].tBMentahDibeli, ' ', FESimulasi[NSim].tBOlahanDibuat, ' ', FESimulasi[NSim].tBOlahanDijual, ' ',FESimulasi[NSim].tResepDijual, ' ', FESimulasi[NSim].tPemasukan, ' ', FESimulasi[NSim].tPengeluaran, ' ', FESimulasi[NSim].tUang);
+		end;}
+		
+		NInvBM:=0;
+		while not(eof(c)) do
+			begin
+			NInvBM:=NInvBM + 1;
+			readln (c, temp);
+			temp := shorten(temp);
+			FEInventoriBahanMentah[NInvBM].nama:=copy(temp, 1, (pos('|',temp) -1));
+			delete(temp,1,(pos('|',temp)));
+			DefaultFormatSettings.ShortDateFormat := 'd/m/yyyy';
+			DefaultFormatSettings.DateSeparator := '/';
+			FEInventoriBahanMentah[NInvBM].tanggal:=StrToDate(copy(temp, 1, (pos('|',temp) -1)));
+			delete(temp,1,(pos('|',temp)));
+			FEInventoriBahanMentah[NInvBM].jumlah:=StrToInt(temp);
+			end;
+		
+		{for j:=1 to NInvBM do
+		begin
+			writeln (FEInventoriBahanMentah[i,j].nama, ' ', FormatDateTime('ddddd',FEInventoriBahanMentah[i,j].tanggal), ' ', FEInventoriBahanMentah[i,j].jumlah);
+		end;
+		writeln();}
+		
+		NInvBO:=0;
+		while not(eof(d)) do
+			begin
+			NInvBO:=NInvBO + 1;
+			readln (d, temp);
+			temp := shorten(temp);
+			FEInventoriBahanOlahan[NInvBO].nama:=copy(temp, 1, (pos('|',temp) -1));
+			delete(temp,1,(pos('|',temp)));
+			DefaultFormatSettings.ShortDateFormat := 'd/m/yyyy';
+			DefaultFormatSettings.DateSeparator := '/';
+			FEInventoriBahanOlahan[NInvBO].tanggal:=StrToDate(copy(temp, 1, (pos('|',temp) -1)));
+			delete(temp,1,(pos('|',temp)));
+			FEInventoriBahanOlahan[NInvBO].jumlah:=StrToInt(temp);
+			end;
+		{for j:=1 to NInvBO do
+		begin
+			writeln (FEInventoriBahanOlahan[i,j].nama, ' ', FormatDateTime('ddddd',FEInventoriBahanOlahan[i,j].tanggal), ' ', FEInventoriBahanOlahan[i,j].jumlah);
+		end;
+		writeln();}
+
+		NResep:=0;
+		while not(eof(e)) do
+			begin
+			NResep:=NResep+1;
+			readln (e, temp);
+			temp := shorten(temp);
+			FEResep[NResep].nama:=copy(temp, 1, (pos('|',temp) -1));
+			delete(temp,1,(pos('|',temp)));
+			FEResep[NResep].harga:=StrToInt(copy(temp, 1, (pos('|',temp) -1)));
+			delete(temp,1,(pos('|',temp)));
+			FEResep[NResep].n:=StrToInt(copy(temp, 1, (pos('|',temp) -1)));
+			delete(temp,1,(pos('|',temp)));
+			for i:=1 to (FEResep[NResep].n - 1) do
+			begin
+				FEResep[NResep].bahan[i]:=(copy(temp, 1, (pos('|',temp) -1)));
 				delete(temp,1,(pos('|',temp)));
 			end;
-		end;
-		FEBahanOlahan[NBahanO].bahan[FEBahanOlahan[NBahanO].n]:=temp;
-		NBahanO:=NBahanO+1;
-		end;
-	NBahanO:=NBahanO-1;
-	{for i:=1 to NBahanO do
-	begin
-		write(FEBahanOlahan[i].nama, ' ', FEBahanOlahan[i].harga, ' ', FEBahanOlahan[i].n);
-		for j:=1 to FEBahanOlahan[NBahanO].n do
+			FEResep[NResep].bahan[FEResep[NResep].n]:=temp;
+			end;
+		{for i:=1 to NResep do
 		begin
-			write(' ', FEBahanOlahan[i].bahan[j]);
+			write(FEResep[i].nama, ' ', FEResep[i].harga, ' ', FEResep[i].n);
+			for j:=1 to FEResep[NResep].n do
+			begin
+				write(' ', FEResep[i].bahan[j]);
+			end;
+			writeln();
 		end;
-		writeln();
-	end;
-	writeln();}
-
-	NSim:=1;
-	while not(eof(f)) do
+		writeln();}
+		close(a);
+		close(b);
+		close(c);
+		close(d);
+		close(e);					
+		close(f);
+		writeln('Loading file sukses.');
+		l:= True;	
+	end else
 		begin
-		readln (f, temp);
-		temp := shorten(temp);
-		FESimulasi[NSim].nomor:=StrToInt(copy(temp, 1, (pos('|',temp) -1)));
-		delete(temp,1,(pos('|',temp)));
-		DefaultFormatSettings.ShortDateFormat := 'd/m/yyyy';
-		DefaultFormatSettings.DateSeparator := '/';
-		FESimulasi[NSim].tanggal:=StrToDate(copy(temp, 1, (pos('|',temp) -1)));
-		delete(temp,1,(pos('|',temp)));
-		FESimulasi[NSim].tHariHidup:=StrToInt(copy(temp, 1, (pos('|',temp) -1)));
-		delete(temp,1,(pos('|',temp)));
-		FESimulasi[NSim].tEnergi:=StrToInt(copy(temp, 1, (pos('|',temp) -1)));
-		delete(temp,1,(pos('|',temp)));
-		FESimulasi[NSim].maxInventori:=StrToInt(copy(temp, 1, (pos('|',temp) -1)));
-		delete(temp,1,(pos('|',temp)));
-		FESimulasi[NSim].tBMentahDibeli:=StrToInt(copy(temp, 1, (pos('|',temp) -1)));
-		delete(temp,1,(pos('|',temp)));
-		FESimulasi[NSim].tBOlahanDibuat:=StrToInt(copy(temp, 1, (pos('|',temp) -1)));
-		delete(temp,1,(pos('|',temp)));
-		FESimulasi[NSim].tBOlahanDijual:=StrToInt(copy(temp, 1, (pos('|',temp) -1)));
-		delete(temp,1,(pos('|',temp)));
-		FESimulasi[NSim].tResepDijual:=StrToInt(copy(temp, 1, (pos('|',temp) -1)));
-		delete(temp,1,(pos('|',temp)));
-		FESimulasi[NSim].tPemasukan:=StrToInt(copy(temp, 1, (pos('|',temp) -1)));
-		delete(temp,1,(pos('|',temp)));
-		FESimulasi[NSim].tPengeluaran:=StrToInt(copy(temp, 1, (pos('|',temp) -1)));
-		delete(temp,1,(pos('|',temp)));
-		FESimulasi[NSim].tUang:=StrToInt(temp);
-		NSim:=NSim + 1;
+			writeln('Salah satu file tidak ada, loading file gagal.');
 		end;
-	NSim:= NSim - 1;
-	{for i:=1 to NSim do
-	begin
-		writeln(FESimulasi[i].nomor, ' ', FormatDateTime('ddddd',FESimulasi[NSim].tanggal), ' ', FESimulasi[NSim].tHariHidup, ' ', FESimulasi[NSim].tEnergi, ' ', FESimulasi[NSim].maxInventori, ' ', FESimulasi[NSim].tBMentahDibeli, ' ', FESimulasi[NSim].tBOlahanDibuat, ' ', FESimulasi[NSim].tBOlahanDijual, ' ',FESimulasi[NSim].tResepDijual, ' ', FESimulasi[NSim].tPemasukan, ' ', FESimulasi[NSim].tPengeluaran, ' ', FESimulasi[NSim].tUang);
-	end;}
-	
-	NInvBM:=1;
-	while not(eof(c)) do
-		begin
-		readln (c, temp);
-		temp := shorten(temp);
-		FEInventoriBahanMentah[NInvBM].nama:=copy(temp, 1, (pos('|',temp) -1));
-		delete(temp,1,(pos('|',temp)));
-		DefaultFormatSettings.ShortDateFormat := 'd/m/yyyy';
-		DefaultFormatSettings.DateSeparator := '/';
-		FEInventoriBahanMentah[NInvBM].tanggal:=StrToDate(copy(temp, 1, (pos('|',temp) -1)));
-		delete(temp,1,(pos('|',temp)));
-		FEInventoriBahanMentah[NInvBM].jumlah:=StrToInt(temp);
-		NInvBM:=NInvBM + 1;
-		end;
-	NInvBM:=NInvBM - 1;
-	
-	{for j:=1 to NInvBM do
-	begin
-		writeln (FEInventoriBahanMentah[i,j].nama, ' ', FormatDateTime('ddddd',FEInventoriBahanMentah[i,j].tanggal), ' ', FEInventoriBahanMentah[i,j].jumlah);
-	end;
-	writeln();}
-	
-	NInvBO:=1;
-	while not(eof(d)) do
-		begin
-		readln (d, temp);
-		temp := shorten(temp);
-		FEInventoriBahanOlahan[NInvBO].nama:=copy(temp, 1, (pos('|',temp) -1));
-		delete(temp,1,(pos('|',temp)));
-		DefaultFormatSettings.ShortDateFormat := 'd/m/yyyy';
-		DefaultFormatSettings.DateSeparator := '/';
-		FEInventoriBahanOlahan[NInvBO].tanggal:=StrToDate(copy(temp, 1, (pos('|',temp) -1)));
-		delete(temp,1,(pos('|',temp)));
-		FEInventoriBahanOlahan[NInvBO].jumlah:=StrToInt(temp);
-		NInvBO:=NInvBO + 1;
-		end;
-	NInvBO:= NInvBO - 1;
-	{for j:=1 to NInvBO do
-	begin
-		writeln (FEInventoriBahanOlahan[i,j].nama, ' ', FormatDateTime('ddddd',FEInventoriBahanOlahan[i,j].tanggal), ' ', FEInventoriBahanOlahan[i,j].jumlah);
-	end;
-	writeln();}
-
-	NResep:=1;
-	while not(eof(e)) do
-		begin
-		readln (e, temp);
-		temp := shorten(temp);
-		FEResep[NResep].nama:=copy(temp, 1, (pos('|',temp) -1));
-		delete(temp,1,(pos('|',temp)));
-		FEResep[NResep].harga:=StrToInt(copy(temp, 1, (pos('|',temp) -1)));
-		delete(temp,1,(pos('|',temp)));
-		FEResep[NResep].n:=StrToInt(copy(temp, 1, (pos('|',temp) -1)));
-		delete(temp,1,(pos('|',temp)));
-		for i:=1 to (FEResep[NResep].n - 1) do
-		begin
-			FEResep[NResep].bahan[i]:=(copy(temp, 1, (pos('|',temp) -1)));
-			delete(temp,1,(pos('|',temp)));
-		end;
-		FEResep[NResep].bahan[FEResep[NResep].n]:=temp;
-		NResep:=NResep+1;
-		end;
-	NResep:=NResep-1;
-	{for i:=1 to NResep do
-	begin
-		write(FEResep[i].nama, ' ', FEResep[i].harga, ' ', FEResep[i].n);
-		for j:=1 to FEResep[NResep].n do
-		begin
-			write(' ', FEResep[i].bahan[j]);
-		end;
-		writeln();
-	end;
-	writeln();}
-
-
-
-	close(a);
-	close(b);
-	close(c);
-	close(d);
-	close(e);					
-	close(f);
-	writeln('Loading file sukses.');	
 	end;
 end.

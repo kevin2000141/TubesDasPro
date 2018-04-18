@@ -1,6 +1,6 @@
 Program EngisKitchen;
 
-uses uDef, sysutils,restock, F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, F11, F12, F13, F14, F15, F16, F17;
+uses uDef, sysutils, F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, F11, F12, F13, F14, F15, F16, F17;
 //uses B1_cekKesalahanLoading;
 //uses B3_validasi;
 //uses B4_restock;
@@ -19,8 +19,7 @@ while lowercase(input) <> 'exit' do
 begin
 	if lowercase(input) = 'load' then
 	begin
-		load(FEBahanMentah, FEBahanOlahan, FEInventoriBahanMentah, FEInventoriBahanOlahan, FEResep, FESimulasi, NBahanM, NBahanO, NInvBM, NInvBO, NResep, NSim); 
-		l:=True;
+		load(l, FEBahanMentah, FEBahanOlahan, FEInventoriBahanMentah, FEInventoriBahanOlahan, FEResep, FESimulasi, NBahanM, NBahanO, NInvBM, NInvBO, NResep, NSim); 
 		write('> ');
 		readln(input);
 	end;
@@ -112,7 +111,7 @@ begin
 		write('> ');
 		readln(input);
 	end;
-	if not(l) then
+	if not(lowercase(input) = 'load') and (not(l)) then
 	begin 
 		writeln('File harus diload terlebih dahulu.');
 		write('> ');
