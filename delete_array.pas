@@ -1,3 +1,7 @@
+// Nama File: delete_array.pas
+// Deskripsi File: Unit prosedur delete array untuk beberapa prosedur pada program utama Engi's Kitchen
+// Tanggal terakhir diubah: 22/04/2018
+
 unit delete_array;
 
 interface

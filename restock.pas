@@ -1,6 +1,6 @@
 // Nama File: restock.pas
-// Deskripsi File: Unit fungsi restock untuk merestock bahan
-// Tanggal terakhir diubah: 20/04/2018
+// Deskripsi File: Unit prosedur restock bahan untuk beberapa prosedur pada program utama Engi's Kitchen
+// Tanggal terakhir diubah: 22/04/2018
 
 unit restock;
 
