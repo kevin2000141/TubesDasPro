@@ -48,11 +48,11 @@ implementation
 			end;
 		while cekmaksimum(FESimulasi, NInvBO, NInvBM, NomorSim, 0, FEInventoriBahanMentah, FEInventoriBahanOlahan) do
 		begin
-			if NInvBO>=1 then
+			if (NInvBO>=1) then
 			begin
 				NInvBO:=NInvBO-1;
 			end else
-			if NInvBM>=1 then
+			if (NInvBM>=1) then
 			begin
 				NInvBM:=NInvBM-1;
 			end;

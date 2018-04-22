@@ -18,8 +18,10 @@ uses uDef, sysutils;
 	
 	{ Deklarasi Fungsi/Prosedur }
 	function shorten(panjang:AnsiString):AnsiString;
+	{Fungsi yang mengubah ' | ' atau ' |' atau '| ' menjadi '|'}
 
 	function jumlahchar(S: Ansistring): integer;
+	{Fungsi yang mengeluarkan jumlah karakter '|' pada sebuah string}
 
 	procedure load( var l : Boolean;
 					var FEBahanMentah: Abahanmentah; 
@@ -39,6 +41,11 @@ uses uDef, sysutils;
 implementation
 	
 	function shorten(panjang:AnsiString):AnsiString;
+	{Fungsi yang mengubah ' | ' atau ' |' atau '| ' menjadi '|'}
+
+	{KAMUS}
+
+	{ALGORITMA}
 	begin
 		panjang := StringReplace(panjang, ' | ', '|', [rfReplaceAll]);
 		panjang := StringReplace(panjang, '| ', '|', [rfReplaceAll]);
@@ -47,8 +54,13 @@ implementation
 	end;
 
 	function jumlahchar(S: Ansistring): integer;
+	{Fungsi yang mengeluarkan jumlah karakter '|' pada sebuah string}
+
+	{KAMUS}
 	var
 		i: Integer;
+	
+	{ALGORITMA}
 	begin
 		jumlahchar := 0;
 		for i := 1 to Length(S) do
