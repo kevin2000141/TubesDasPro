@@ -7,6 +7,8 @@ unit F3;
 interface
 uses uDef, sysutils, Dateutils, restock, delete_array, C_Maks;
 
+	{ Deklarasi Fungsi/Prosedur }
+	
 	procedure startSimulasi(var countis, countm, aksi: Integer; FESimulasi: ASimulasi; NomorSim: Integer; var FEBahanMentah: Abahanmentah; NBahanM: Integer; var FEInventoriBahanMentah, FEInventoriBahanOlahan: AInventori; var NInvBM, NInvBO: integer);
 	{Prosedur yang menyiapkan array inventori bahan mentah, array inventori bahan olahan, dan array bahan mentah}
 	{I.S.: Nomor Simulasi yang ingin dijalankan terinisialisasi}

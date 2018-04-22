@@ -6,6 +6,8 @@ unit F9;
 
 interface
 
+	{ Deklarasi Fungsi/Prosedur }
+	
 	procedure makan(var energiawal:Longint; var countm:Integer ); 
 	{procedure ini menerima input energi chef saat ini dan countm. countm merupakan counter yang menghitung berapa kali chef telah
 	 makan dalam sehari}
@@ -45,5 +47,5 @@ implementation
 			writeln('Makan tidak boleh >3 kali');
 		end;	
 	end;
-	
+
 end.

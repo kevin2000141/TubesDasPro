@@ -6,6 +6,9 @@ unit F15;
 
 interface
 	uses uDef,F1,sysutils;
+
+	{ Deklarasi Fungsi/Prosedur }
+	
 	procedure cariresep(FEResep: Aresep; NResep: integer);
 	{Prosedur untuk mancari resep dalam array ressep}
 	{I.S. Prosedur menerima masukkan nama resep dari pengguna}

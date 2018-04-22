@@ -6,6 +6,8 @@ unit F10;
 
 interface
 
+	{ Deklarasi Fungsi/Prosedur }
+	
 	procedure istirahat(var energiawal:Longint; var countis:Integer );
 	
 	{procedure ini menerima input energi chef saat ini dan countis. countis merupakan counter yang menghitung berapa kali chef telah

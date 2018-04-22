@@ -7,6 +7,8 @@ unit F4;
 interface
 uses uDef, sysutils;
 
+	{ Deklarasi Fungsi/Prosedur }
+	
 	procedure stopSimulasi(var FESimulasi: Asimulasi; NomorSim: Integer);
 	{Prosedur yang menampilkan kondisi simulasi terakhir dan memberhentikan simulasi}
 	{I.S.: FESimulasi dan NomorSim terdefinisi}

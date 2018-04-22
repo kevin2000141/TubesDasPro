@@ -7,6 +7,8 @@ unit restock;
 interface
 uses F1, sysutils, uDef;
 
+	{ Deklarasi Fungsi/Prosedur }
+	
 	procedure restockbahan(FESimulasi: ASimulasi; NomorSim: Integer; var FEBahanMentah: Abahanmentah; NBahanM: Integer);
 	{Prosedur yang menambah jumlah stock bahan menjadi 25 pada file bahan mentah jika tanggal genap} 
 	{I.S. : FESimulasi, NomorSim, FEBahanMentah, NBahanM terdefinisi}

@@ -17,6 +17,7 @@ uses uDef, sysutils;
 		error: Boolean;
 	
 	{ Deklarasi Fungsi/Prosedur }
+
 	function shorten(panjang:AnsiString):AnsiString;
 	{Fungsi yang mengubah ' | ' atau ' |' atau '| ' menjadi '|'}
 
@@ -40,6 +41,8 @@ uses uDef, sysutils;
 
 implementation
 	
+	{ Implementasi Fungsi/Prosedur }
+
 	function shorten(panjang:AnsiString):AnsiString;
 	{Fungsi yang mengubah ' | ' atau ' |' atau '| ' menjadi '|'}
 

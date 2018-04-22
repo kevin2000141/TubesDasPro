@@ -6,6 +6,9 @@ unit F16;
 
 interface
 	uses uDef,F1,math, sysutils;
+
+	{ Deklarasi Fungsi/Prosedur }
+
 	procedure tambahresep (var FEResep: Aresep; var NResep: integer; FEBahanMentah: Abahanmentah; FEBahanOlahan: Abahanolahan; FEInventoriBahanMentah, FEInventoriBahanOlahan: AInventori; NBahanM, NBahanO, NInvBM, NInvBO: Integer);
 	{Prosedur untuk menambahkan resep ke dalam array resep}
 	{I.S. Prosedur menerima masukkan berupa nama resep dari pengguna}

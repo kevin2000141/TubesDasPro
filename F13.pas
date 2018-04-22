@@ -14,6 +14,8 @@ interface
 		urutan : string;
 		j,k : integer;
 	
+	{ Deklarasi Fungsi/Prosedur }
+
 	procedure lihatInventori(NInvBO, NInvBM: Integer; var FEInventoriBahanOlahan, FEInventoriBahanMentah: Ainventori);
 	{Menampilkan data daftar Bahan Mentah dan Bahan Olahan yang tersedia di inventori}
 	
@@ -106,7 +108,7 @@ implementation
 	procedure lihatInventoriBahanOlahan(urutan: String; NInvBO:Integer; var FEInventoriBahanOlahan: Ainventori);
 	{Menampilkan data daftar Bahan Olahan yang tersedia di inventori secara berurutan sesuai dengan abjad}
 
-	
+
 	{KAMUS}
 
 	{ALGORITMA}

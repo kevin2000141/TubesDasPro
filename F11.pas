@@ -9,6 +9,8 @@ interface
 	uses  sysutils,F1,delete_array,Dateutils,uDef,restock;	
 		  {delete_array adalah unit untuk menghapus elemen dari sebuah array, restock adalah unit untuk merestock barang}
 	
+	{ Deklarasi Fungsi/Prosedur }
+
 	procedure tidur (	var energiawal	:Longint; 			{energiawal		: energi chef sekarang}
 						var countm		:Integer; 			{countm			: counter sudah berapa kali chef makan} 
 						var countis		:Integer; 			{countis		: counter sudah berapa kali chef istirahat} 

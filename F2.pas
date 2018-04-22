@@ -25,6 +25,9 @@ uses uDef, sysutils;
 					var NInvBM: Integer;
 					var NInvBO: Integer;
 					var NResep: Integer);
+	{Prosedur yang menuliskan perubahan array  bahan mentah, inventori bahan mentah, inventori bahan olahan, dan resep yang terjadi ketika simulasi pada file eksternal}
+	{I.S.: Array-array bahan mentah, inventori bahan mentah, inventori bahan olahan, dan resep terinisialisasi dan juga nilai efektifnya}
+	{F.S.: File eksternal bahan mentah, inventori bahan mentah, inventori bahan olahan, dan resep ditulis dengan data dari array-array}
 
 implementation
 	
@@ -36,10 +39,15 @@ implementation
 					var NInvBM: Integer;
 					var NInvBO: Integer;
 					var NResep: Integer);
+	{Prosedur yang menuliskan perubahan array  bahan mentah, inventori bahan mentah, inventori bahan olahan, dan resep yang terjadi ketika simulasi pada file eksternal}
+	{I.S.: Array-array bahan mentah, inventori bahan mentah, inventori bahan olahan, dan resep terinisialisasi dan juga nilai efektifnya}
+	{F.S.: File eksternal bahan mentah, inventori bahan mentah, inventori bahan olahan, dan resep ditulis dengan data dari array-array}
 
+	{KAMUS}
 	var
 	 	temp, temp1: AnsiString;
 	
+	{ALGORITMA}
 	begin
 	assign (a, 'BahanMentah.txt');
 	rewrite (a);

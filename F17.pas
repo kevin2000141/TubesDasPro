@@ -6,6 +6,9 @@ unit F17;
 
 interface
 	uses uDef,F1;
+
+	{ Deklarasi Fungsi/Prosedur }
+	
 	procedure upgradeInventori(var Nmax: longint);
 	{Prosedur untuk menambah jumlah kapasitas inventori}
 	{I.S. Prosedur upgradeInventori terinisialisasi}

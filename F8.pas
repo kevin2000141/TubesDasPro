@@ -5,6 +5,9 @@
 unit F8;
 interface
 	uses uDef,F1,sysutils;//untuk ngambil data
+
+	{ Deklarasi Fungsi/Prosedur }
+	
 	procedure jualresep (resep:Aresep; var c:Asimulasi;var mentah,olah:Ainventori; var NInvBM, NInvBO, NomorSim,aksi: Integer);
 	{Prosedur akan memvalidasi resep yang diterima,dan memroses data mengubah data simulasi dan inventori}
 	{I.S menerima masukan berupa string,yang merupakan resep yang akan dijual}

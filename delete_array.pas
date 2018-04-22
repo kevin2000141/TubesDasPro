@@ -8,6 +8,8 @@ interface
 
 uses uDef,F1;
 
+	{ Deklarasi Fungsi/Prosedur }
+	
 	procedure deletearray (var arr : Ainventori; var Neff : Integer; var index : Integer);
 	{procedure deletearrat menerima masukan array dengan tipe Ainventori, Neff suatu array, dan indexnya.
 	 misal indeks dinyatakan dengan i, makan procedure deletearray akan menimpa elemen ke i dengan i+1,

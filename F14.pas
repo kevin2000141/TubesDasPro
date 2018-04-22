@@ -5,10 +5,12 @@
 unit F14;
 
 interface
-uses uDef,sysutils;
+	uses uDef,sysutils;
 
-procedure lihatResep(var FEResep: AResep; NResep: Integer);
-{Melihat daftar resep yang tersedia, termasuk semua daftar bahan penyusunnya}
+	{ Deklarasi Fungsi/Prosedur }
+
+	procedure lihatResep(var FEResep: AResep; NResep: Integer);
+	{Melihat daftar resep yang tersedia, termasuk semua daftar bahan penyusunnya}
 
 
 implementation
