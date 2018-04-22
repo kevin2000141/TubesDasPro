@@ -14,6 +14,8 @@ interface
 
 implementation
 
+	{ Implementasi Fungsi/Prosedur }
+	
 	procedure lihatStatistik (var SimulasiX: simulasi);
 	{Manampilkan array hasil load dari file eksternal simulasi}
 

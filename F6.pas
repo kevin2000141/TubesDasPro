@@ -7,13 +7,16 @@ interface
 	uses uDef,sysutils,F1;//untuk ngambil data
 
 	{ Deklarasi Fungsi/Prosedur }
-	
+
 	procedure olahbahan(olah:Abahanolahan;var olahb,mentah:Ainventori;var c : Asimulasi; var NInvBO, NInvBM, NomorSim,aksi,NBahanO: Integer);
 	{Prosedur akan mengolah bahan yang ingin dibuat jika sudah benar}
 	{I.S menerima masukan berupa string  yang akan di cek kevalidannya}
 	{F.S mengambil bahan dan mengubah isi inventori serta mengubah data simulasi}
 
 implementation
+
+	{ Implementasi Fungsi/Prosedur }
+	
 	procedure olahbahan(olah:Abahanolahan;var olahb,mentah:Ainventori;var c : Asimulasi; var NInvBO, NInvBM, NomorSim,aksi,NBahanO: Integer);
 	{Prosedur akan mengolah bahan yang ingin dibuat jika sudah benar}
 	{I.S menerima masukan berupa string  yang akan di cek kevalidannya}

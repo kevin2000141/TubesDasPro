@@ -31,6 +31,8 @@ uses uDef, sysutils;
 
 implementation
 	
+	{ Implementasi Fungsi/Prosedur }
+	
 	procedure exit( var FEBahanMentah: Abahanmentah;
 					var FEInventoriBahanMentah: Ainventori;
 					var FEInventoriBahanOlahan: Ainventori;

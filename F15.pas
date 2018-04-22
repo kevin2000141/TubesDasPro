@@ -17,6 +17,8 @@ interface
 
 implementation
 
+	{ Implementasi Fungsi/Prosedur }
+	
 	procedure cariresep(FEResep: Aresep; NResep: integer);
 	{Prosedur untuk mancari resep dalam array ressep}
 	{I.S. Prosedur menerima masukkan nama resep dari pengguna}

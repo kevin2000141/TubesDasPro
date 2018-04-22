@@ -15,6 +15,8 @@ interface
 
 implementation
 
+	{ Implementasi Fungsi/Prosedur }
+	
 	procedure lihatResep(var FEResep: AResep; NResep: Integer);
 	{Melihat daftar resep yang tersedia, termasuk semua daftar bahan penyusunnya}
 

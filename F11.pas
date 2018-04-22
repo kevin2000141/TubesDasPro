@@ -37,6 +37,8 @@ interface
 
 implementation
 
+	{ Implementasi Fungsi/Prosedur }
+	
 	procedure tidur (	var energiawal	:Longint; 		
 						var countm		:Integer; 		
 						var countis		:Integer; 		

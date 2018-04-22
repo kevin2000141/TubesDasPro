@@ -26,6 +26,9 @@ interface
 	{Menampilkan data daftar Bahan Olahan yang tersedia di inventori secara berurutan sesuai dengan abjad}
 
 implementation
+
+	{ Implementasi Fungsi/Prosedur }
+	
 	procedure lihatInventori(NInvBO, NInvBM: Integer; var FEInventoriBahanOlahan, FEInventoriBahanMentah: Ainventori);
 	{Menampilkan data daftar Bahan Mentah dan Bahan Olahan yang tersedia di inventori}
 
