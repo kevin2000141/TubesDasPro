@@ -1,4 +1,11 @@
 Nasi Goreng Sapi | 15000 | 2 | Nasi Goreng | Daging Sapi
-Soda Float | 10000 | 2 | Es Krim | Soda
-Nasi Sate Ayam | 15000 | 3 | Nasi Putih | Daging Sapi | Kecap
+Nasi Sate Ayam | 15000 | 3 | Nasi Putih | Ayam | Kecap
 Roti Lapis | 10000 | 6 | Roti | Selada | Tomat | Telur | Garam | Lada
+Soda Float | 10000 | 2 | Es Krim | Soda
+Es Teh Susu | 11000 | 2 | Es Teh Manis | Susu
+Es Kopi Susu | 12500 | 2 | Es Kopi | Gula
+Omelette | 30000 | 7 | Telur | Garam | Lada | Sosis | Keju | Tomat | Jamur
+Kangkung Jengkol Goreng | 50000 | 4 | Kangkung | Jengkol | Minyak | Garam
+Nasi Goreng Jengkol | 15000 | 3 | Nasi Goreng | Jengkol | Minyak
+Omurice | 15000 | 3 | Nasi Putih | Telur | Kecap
+Sop sayur | 8000 | 6 | Air | Daun Bawang | Garam | Jagung | Telur Puyuh | Wortel

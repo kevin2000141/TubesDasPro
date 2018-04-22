@@ -1,2 +1,7 @@
+Ayam Katsu | 6500 | 4 | Ayam | Minyak | Tepung | Bawang Putih
+Es Kopi | 7000 | 4 | Es | Bubuk Kopi | Air | Gula
+Es Teh Manis | 6000 | 4 | Es | Bubuk Teh | Air | Gula
+Jengkol Goreng | 2500 | 2 | Jengkol | Minyak 
+Nasi Goreng | 4000 | 5 | Beras | Air | Bawang Putih | Lada | Kecap
 Nasi Putih | 1200 | 2 | Beras | Air
-Nasi Goreng | 2000 | 5 | Beras | Air | Bawang Putih | Lada | Kecap
+Teh Manis | 6000 | 4 | Es | Bubuk Teh | Air | Gula

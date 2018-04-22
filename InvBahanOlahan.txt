@@ -1,2 +1,5 @@
-Sosis | 24/2/2018 | 100
-Nasi Goreng | 10/2/2018 | 34
+Nasi Putih | 13/2/2018 | 2
+Nasi Goreng | 12/2/2018 | 2
+Es Teh Manis | 10/2/2018 | 14
+Es Kopi | 10/2/2018 | 12
+Ayam Katsu | 16/2/2018 | 13

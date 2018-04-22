@@ -1,8 +1,31 @@
-Daging Sapi | 5000 | 10 | 25
-Kangkung | 1000 | 3 | 25
-Lada | 200 | 100 | 25
-Bawang Putih | 500 | 30 | 25
 Air | 500 | 100 | 25
-Es Krim | 2000 | 10 | 25
-Kecap | 400 | 300 | 25
+Ayam | 3000 | 3 | 25
+Bawang Merah | 500 | 30 | 25
+Bawang Putih | 500 | 30 | 25
 Beras | 500 | 100 | 25
+Bubuk Kopi | 2000 | 100 | 25
+Bubuk Teh | 1000 | 50 | 25
+Cabai | 3000 | 8 | 25
+Daging Sapi | 5000 | 10 | 25
+Daun Bawang | 700 | 5 | 25
+Es | 500 | 2 | 25
+Es Krim | 2000 | 10 | 25
+Garam | 500 | 100 | 25
+Gula | 500 | 100 | 25
+Ikan | 2500 | 4 | 25
+Jagung | 1500 | 3 | 25
+Jahe | 2000 | 7 | 25
+Jamur | 1500 | 3 | 25
+Jengkol | 1000 | 3 | 25
+Kangkung | 1000 | 3 | 25
+Kecap | 400 | 300 | 25
+Keju | 1500 | 10 | 25
+Lada | 200 | 100 | 25
+Minyak | 1000 | 6 | 25
+Sosis | 2000 | 30 | 25
+Susu | 2000 | 100 | 25
+Telur | 1000 | 14 | 25
+Telur Puyuh | 500 | 14 | 25
+Tepung | 1000 | 2 | 25
+Tomat | 2000 | 20 | 25
+Wortel | 1000 | 5 | 25
