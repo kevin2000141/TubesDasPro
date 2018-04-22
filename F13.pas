@@ -18,13 +18,17 @@ interface
 	{Menampilkan data daftar Bahan Mentah dan Bahan Olahan yang tersedia di inventori}
 	
 	procedure lihatInventoriBahanMentah(urutan: String; NInvBM:Integer; var FEInventoriBahanMentah: Ainventori);
-	{Menampilkan data daftar Bahan Mentah yang tersedia di inventori}
+	{Menampilkan data daftar Bahan Mentah yang tersedia di inventori secara berurutan sesuai dengan abjad}
 	
 	procedure lihatInventoriBahanOlahan(urutan: String; NInvBO:Integer; var FEInventoriBahanOlahan: Ainventori);
-	{Menampilkan data daftar Bahan Olahan yang tersedia di inventori}
+	{Menampilkan data daftar Bahan Olahan yang tersedia di inventori secara berurutan sesuai dengan abjad}
 
 implementation
 	procedure lihatInventori(NInvBO, NInvBM: Integer; var FEInventoriBahanOlahan, FEInventoriBahanMentah: Ainventori);
+	
+	{KAMUS}
+
+	{ALGORITMA}
 	begin
 		repeat
 			write ('Penampilan sesuai abjad "membesar" atau "mengecil" : '); 
@@ -40,6 +44,10 @@ implementation
 	end;
 	
 	procedure lihatInventoriBahanMentah(urutan: String; NInvBM:Integer; var FEInventoriBahanMentah: Ainventori);
+	
+	{KAMUS}
+
+	{ALGORITMA}
 	begin
 		{Mengurutkan array berdasarkan nama sesui abjad}
 		writeln ('DAFTAR BAHAN MENTAH DI INVENTORI');
@@ -93,6 +101,10 @@ implementation
 	end;
 		
 	procedure lihatInventoriBahanOlahan(urutan: String; NInvBO:Integer; var FEInventoriBahanOlahan: Ainventori);
+	
+	{KAMUS}
+
+	{ALGORITMA}
 	begin
 		{Mengurutkan array berdasarkan nama dari A ke Z}
 		writeln ('DAFTAR BAHAN OLAHAN DI INVENTORI');

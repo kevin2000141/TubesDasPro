@@ -8,15 +8,24 @@ interface
 	uses uDef,F1,sysutils;
 	procedure cariresep(FEResep: Aresep; NResep: integer);
 	{Prosedur untuk mancari resep dalam array ressep}
-	{Prosedur ini akan meminta masukkan dari pengguna berupa naam resep, lalu jika nama reeep ada di dalam array resep, maka
-	program akan menampilkan nama resep yang dimasukkan, harga resep, jumlah bahan, dan bahan - bahan yang digunakan.}
+	{I.S. Prosedur menerima masukkan nama resep dari pengguna}
+	{F.S. Prosedur akan menampilkan nama resep yang dicari, harga resep, jumlah bahan yang digunakan, dan nama bahan - bahan yang digunakan.
+	Jika nama resep yang dimasukkan tidak ada, maka akan muncul pesan kesalahan.}
+
 implementation
 
 	procedure cariresep(FEResep: Aresep; NResep: integer);
+	{Prosedur untuk mancari resep dalam array ressep}
+	{I.S. Prosedur menerima masukkan nama resep dari pengguna}
+	{F.S. Prosedur akan menampilkan nama resep yang dicari, harga resep, jumlah bahan yang digunakan, dan nama bahan - bahan yang digunakan.
+	 Jika nama resep yang dimasukkan tidak ada, maka akan muncul pesan kesalahan.}
+
+	{KAMUS}
 	var
 		i : integer;
 		namaresep : string;
 	
+	{ALGORITMA}
 	begin
 		write('Masukkan nama resep yang ingin dicari: ');
 		readln(namaresep);
