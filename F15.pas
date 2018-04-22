@@ -8,7 +8,7 @@ interface
 	uses uDef,F1,sysutils;
 
 	{ Deklarasi Fungsi/Prosedur }
-	
+
 	procedure cariresep(FEResep: Aresep; NResep: integer);
 	{Prosedur untuk mancari resep dalam array ressep}
 	{I.S. Prosedur menerima masukkan nama resep dari pengguna}
@@ -27,30 +27,41 @@ implementation
 
 	{KAMUS}
 	var
-		i : integer;
-		namaresep : string; {variabel masukkan dari pengguna berupa nama resep}
+		j,k : integer;
+		namaresep : string;{variabel masukkan dari pengguna berupa nama resep}
+		found : boolean;
 	
-	{ALGORITMA}
+	{ALGORITMA}	
 	begin
+	repeat
 		write('Masukkan nama resep yang ingin dicari: ');
 		readln(namaresep);
-		for i := 1 to NResep do
+		k := 1;
+		found := false;
+		while ((found = false) and (k <= NResep)) do
 		begin
-			if (lowercase(FEResep[i].nama) = lowercase(namaresep)) then
+			if (lowercase(FEResep[k].nama) = lowercase(namaresep)) then
 			begin
-				writeln('Nama Resep: ', FEResep[i].nama);{Menampilkan nama resep yang dicari}
-				writeln('Harga Resep: ', FEResep[i].harga);{Menampilkan harga resep}
-				writeln('Jumlah Bahan: ', FEResep[i].n);{Menampilkan jumlah bahan yang digunakan}
-				writeln('Bahan-bahan: ', FEResep[i].bahan[j]);{Menampilkan bahan - bahan yang digunakan}
-				for j := 2 to FEResep[i].n do
-				begin
-					write(', ', FEResep[i].bahan[j]);
-				end;
-			end else 
+				found := true;
+			end else
 			begin
-				writeln('Nama Resep yang dimasukkan tidak ada');{Pesan kesalahan ketika nama resep yang dicari tidak ada di array}
+				k := k + 1;
 			end;
 		end;
+		if (found = false) then writeln('Resep tidak ada');
+	until(found = true);
+		
+	j := 1;
+	if (found) then 
+		writeln('Nama Resep : ', namaresep);{Menampilkan nama resep yang dicari}
+		writeln('Harga Resep : ', FEResep[k].harga);{Menampilkan harga resep}
+		writeln('Jumlah Bahan : ', FEResep[k].n);{Menampilkan jumlah bahan yang digunakan}
+		write('Bahan-bahan : ', FEResep[k].bahan[j]);{Menampilkan bahan - bahan yang digunakan}
+		for j := 2 to FEResep[k].n do
+		begin
+			write(', ', FEResep[k].bahan[j]);
+		end;
+	writeln;
 	end;
 
 end.
