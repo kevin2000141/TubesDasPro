@@ -69,30 +69,25 @@ implementation
 		cek:=cekmaksimum(FESimulasi, NInvBO, NInvBM, NomorSim, 0, FEInventoriBahanMentah, FEInventoriBahanOlahan);
 		while not(cek) do {Ketika jumlah inventori melebihi maksimum inventori simulasi}
 		begin
-			if (NInvBO>0) then {Mulai penghapusan line paling bawah inventori bahan olahan}
+			if (NInvBO>0) then {Mulai pengurangan jumlah bahan paling bawah inventori bahan olahan}
 			begin
 				j:=NInvBO;
-				if FEInventoriBahanOlahan[j].jumlah = 0 then
+				FEInventoriBahanOlahan[j].jumlah := FEInventoriBahanOlahan[j].jumlah - 1;
+				if FEInventoriBahanOlahan[j].jumlah = 0 then {Ketika inventori sudah mencapai 0 inventori dihapus}
 				begin
-					deletearray(FEInventoriBahanOlahan,NInvBO,j);
-				end else
-				begin
-					FEInventoriBahanOlahan[j].jumlah := FEInventoriBahanOlahan[j].jumlah - 1;
-					cek:=cekmaksimum(FESimulasi, NInvBO, NInvBM, NomorSim, 0, FEInventoriBahanMentah, FEInventoriBahanOlahan);
+					deletearray(FEInventoriBahanOlahan,NInvBO,j); 
 				end;
+				cek:=cekmaksimum(FESimulasi, NInvBO, NInvBM, NomorSim, 0, FEInventoriBahanMentah, FEInventoriBahanOlahan);
 			end else
-			if (NInvBM>0) then {Ketika inventori bahan olahan habis, hapus inventori bahan mentah dari bawah keatas}
+			if (NInvBM>0) then {Ketika inventori bahan olahan habis, kurangi inventori bahan mentah satu-satu bawah keatas}
 			begin
 				j:=NInvBM;
-				if FEInventoriBahanMentah[j].jumlah = 0 then
+				FEInventoriBahanMentah[j].jumlah := FEInventoriBahanMentah[j].jumlah - 1;
+				if FEInventoriBahanOlahan[j].jumlah = 0 then {Ketika inventori sudah mencapai 0 inventori dihapus}
 				begin
-					deletearray(FEInventoriBahanMentah,NInvBM,j);
-				end else
-				begin
-					FEInventoriBahanMentah[j].jumlah := FEInventoriBahanMentah[j].jumlah - 1;
-					cek:=cekmaksimum(FESimulasi, NInvBO, NInvBM, NomorSim, 0, FEInventoriBahanMentah, FEInventoriBahanOlahan);
-				end;
-				
+					deletearray(FEInventoriBahanOlahan,NInvBO,j); 
+				end; 
+				cek:=cekmaksimum(FESimulasi, NInvBO, NInvBM, NomorSim, 0, FEInventoriBahanMentah, FEInventoriBahanOlahan);		
 			end;
 		end;
 
