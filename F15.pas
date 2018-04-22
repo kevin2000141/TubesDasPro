@@ -1,9 +1,11 @@
 unit F15;
 
 interface
-	uses uDef,F1;
+	uses uDef,F1,sysutils;
 	procedure cariresep(FEResep: Aresep; NResep: integer);
-
+	{Prosedur untuk mancari resep dalam array ressep}
+	{Prosedur ini akan meminta masukkan dari pengguna berupa naam resep, lalu jika nama reeep ada di dalam array resep, maka
+	program akan menampilkan nama resep yang dimasukkan, harga resep, jumlah bahan, dan bahan - bahan yang digunakan.}
 implementation
 
 	procedure cariresep(FEResep: Aresep; NResep: integer);
