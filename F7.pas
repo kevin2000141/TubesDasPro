@@ -1,6 +1,6 @@
 unit F7;
 interface
-	uses uDef,F1;//untuk ngambil data
+	uses uDef,sysutils,F1;//untuk ngambil data
 	procedure jualolahan(olah:Abahanolahan;var olahb:Ainventori;var c : Asimulasi; var NInvBO, NBahanO, NomorSim,aksi: Integer);
 	{akan menerima masukan nama bahan yang ingin dijual,dan akan memvalidas,lalu melaukan perubahan pada inventori dan juga mengubah dat simulasi}
 implementation

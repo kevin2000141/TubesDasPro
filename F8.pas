@@ -1,6 +1,6 @@
 unit F8;
 interface
-	uses uDef,F1;//untuk ngambil data
+	uses uDef,F1,sysutils;//untuk ngambil data
 	procedure jualresep (resep:Aresep; var c:Asimulasi;var mentah,olah:Ainventori; var NInvBM, NInvBO, NomorSim,aksi: Integer);
 	{akan memvalidasi resep yang diterima,dan memroses data mengubah data simulasi dan inventori}
 implementation

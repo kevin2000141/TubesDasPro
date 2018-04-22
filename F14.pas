@@ -1,7 +1,7 @@
 unit F14;
 
 interface
-uses uDef;
+uses uDef,sysutils;
 
 procedure lihatResep(var FEResep: AResep; NResep: Integer);
 
@@ -18,11 +18,11 @@ implementation
 		repeat 
 			write('Penampilan terurut abjad "membesar" atau "mengecil" : ');
 			readln(urutan);
-			if not (urutan = 'membesar') and not(urutan = 'mengecil') then
+			if not (lowercase(urutan) = 'membesar') and not (lowercase(urutan) = 'mengecil') then
 			begin
 				writeln('Input salah, masukkan lagi');
 			end;
-		until (urutan ='membesar') or (urutan = 'mengecil');
+		until (lowercase(urutan) ='membesar') or (lowercase(urutan) = 'mengecil');
 		
 		{Menampilkan isi resep sesuai abjad}
 		writeln('DAFTAR RESEP');

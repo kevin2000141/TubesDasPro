@@ -1,6 +1,6 @@
 unit F6;
 interface
-	uses uDef,F1;//untuk ngambil data
+	uses uDef,sysutils,F1;//untuk ngambil data
 	procedure olahbahan(olah:Abahanolahan;var olahb,mentah:Ainventori;var c : Asimulasi; var NInvBO, NInvBM, NomorSim,aksi,NBahanO: Integer);
 	{akan mengolah bahan yang ingin dibuat jika sudah benar}
 implementation

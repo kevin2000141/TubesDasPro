@@ -16,7 +16,7 @@ implementation
 		readln(namaresep);
 		for i := 1 to NResep do
 		begin
-			if (FEResep[i].nama = namaresep) then
+			if (lowercase(FEResep[i].nama) = lowercase(namaresep)) then
 			begin
 				writeln('Nama Resep: ', FEResep[i].nama);
 				writeln('Harga Resep: ', FEResep[i].harga);

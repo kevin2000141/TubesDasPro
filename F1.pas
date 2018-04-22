@@ -35,14 +35,11 @@ uses uDef, sysutils;
 implementation
 	
 	function shorten(panjang:AnsiString):AnsiString;
-	var
-		temp:Ansistring;
 	begin
-		temp := panjang;	
-		temp := StringReplace(panjang, ' | ', '|', [rfReplaceAll]);
-		temp := StringReplace(panjang, '| ', '|', [rfReplaceAll]);
-		temp := StringReplace(panjang, ' |', '|', [rfReplaceAll]);
-		shorten := temp;
+		panjang := StringReplace(panjang, ' | ', '|', [rfReplaceAll]);
+		panjang := StringReplace(panjang, '| ', '|', [rfReplaceAll]);
+		panjang := StringReplace(panjang, ' |', '|', [rfReplaceAll]);
+		shorten := panjang;
 	end;
 
 	function jumlahchar(S: Ansistring): integer;
