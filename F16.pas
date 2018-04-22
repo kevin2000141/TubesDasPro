@@ -29,87 +29,79 @@ implementation
 
 	{KAMUS}
 	var
-		resepbaru : string; {Variabel nama resep baru}
-		n,i,j,k,l,m : integer;
-		sumBhn : Longint; {Untuk menjumlah harga bahan - bahan yang digunakan}
-		hargaresep : Real;
-		x : string;
-		found: Boolean; {Untuk mengecek apakah nama resep baru sudah ada atau belum}
-
-	{ALGORITMA}	
+	resepbaru, namabahan : string;{Variabel nama resep baru}
+	n,i,k,l,m : integer;
+	harga : Real;{Variabel untuk harga resep}
+	ketemu : boolean;{Untuk mengecek apakah bahan ada atau tidak}
+	
+	{ALGORITMA}
 	begin
-		write('Masukkan nama resep : '); {Menerima masukkan nama resep dari pengguna}
+		repeat {Validasi masukkan nama resep}
+		write('Masukkan nama resep : ');{Menerima masukkan nama resep dari pengguna}
 		readln(resepbaru);
-		for m := 1 to NResep do {Mengecek nama resep yang ada di array FEResep}
+		m := 1;
+		ketemu := false;
+		while ((ketemu=false) and (m<=NResep)) do
 		begin
-			if lowercase(resepbaru) = lowercase(FEResep[m].nama) then
+			if (lowercase(resepbaru)=lowercase(FEResep[m].nama)) then
 			begin
-				writeln('Resep Sudah Ada')
-			end
-			else
-			begin
-				write('Masukkan jumlah bahan : '); {Memasukkan jumlah bahan yang digunakan}
-				readln(n);
-				NResep := NResep + 1;
-				sumBhn := 0;
+				ketemu := true;
+			end else 
+				begin
+					m := m + 1;
+				end;
+			end;
+			if (m<=NResep) then writeln('Resep Sudah Ada');
+		until (m > NResep);
 		
+		if (ketemu = false) then
+			begin
+				write('Masukkan jumlah bahan : ');{Memasukkan jumlah bahan yang digunakan}
+				readln(n);
+				while (n<2) do
+				begin
+					writeln('Resep harus terbuat dari minimal 2 bahan');
+					write('Masukkan jumlah bahan : ');{Memasukkan jumlah bahan yang digunakan}
+					readln(n);
+				end;
+				NResep := m;
+				harga := 0;
 				for i:=1 to n do
 				begin
-					found:=False;
-					while not(found) do
-					begin
-						write('Masukkan nama bahan ke-', i, ' : '); {Memasukkan nama bahan yang digunakan untuk membuat resep}
-						readln(x);
-					for j := 1 to NInvBM do
-					begin
-						if x = FEInventoriBahanMentah[j].nama then
-						begin
-							FEResep[NResep].bahan[i] := x;
-							FEResep[NResep].N := FEResep[NResep].N + 1;
-							for l:=1 to NBahanM do
-							begin
-								if x = FEBahanMentah[l].nama then
-								begin
-									sumBhn := sumBhn + FEBahanMentah[l].harga;
-								end;
-							end;
-							found := True;
-						end;
-					end;
-					for k := 1 to NInvBO do
-					begin
-						if x = FEInventoriBahanOlahan[k].nama then
-						begin
-							FEResep[NResep].bahan[i] := x;
-							FEResep[NResep].N := FEResep[NResep].N + 1; {Jumlah elemen efektif dari array FEResep bertambah 1}
-							for l:=1 to NBahanM do
-							begin
-								if x = FEBahanOlahan[l].nama then
-								begin
-									sumBhn := sumBhn + FEBahanOlahan[l].harga;
-								end;
-							end;
-							found := True;
-						end;
-					end;
-					if not(found) then
-					begin
-						writeln('Bahan tidak tersedia');
-						write('Masukkan nama bahan ke-', i, ' : ');
-						readln(x);
-					end;
-					end;
-				end;
-				write('Masukkan harga yang diinginkan : ');
-				readln(hargaresep);
-				while hargaresep < (sumBhn / 8) do {Mengecek apakah harga resep sudah sesuai dengan spesifikasi(12,5% lebih tinggi dari total harga bahan)}
+				repeat {Validasi masukkan nama bahan}
+				k:=1;
+				l := 1;
+				write('Nama bahan ke - ',i, ': ' );
+				readln(namabahan);
+				ketemu:=False;
+				while((ketemu = False) and (k<=NBahanM)) do
 				begin
-					writeln('Masukkan harga harus 12,5% lebih tinggi dari total harga bahan.');
-					write('Masukkan harga yang diinginkan : ');
-					readln(hargaresep);
+					if (LowerCase(namabahan)=LowerCase(FEBahanMentah[k].nama)) then
+					begin
+						ketemu:=True;
+						FEResep[m].bahan[i]:= namabahan;
+						harga:=harga + FEBahanMentah[k].harga;
+					end else
+					begin
+						k:=k+1;
+					end;
 				end;
-				FEResep[NResep].harga:= ceil(hargaresep);
+				while((ketemu = False) and (l<=NBahanO)) do
+				begin
+					if (LowerCase(namabahan)=LowerCase(FEBahanOlahan[l].nama)) then
+					begin
+						ketemu:=True;
+						FEResep[m].bahan[i]:= namabahan;
+						harga:=harga + FEBahanOlahan[l].harga;
+					end else
+					begin
+						l:=l+1;
+					end;
+				end;
+				if (ketemu=False) then writeln('Bahan tidak terdaftar');				
+				until (ketemu =True);	
 			end;
-			end;
-			end;
+	end;
+	writeln('Harga resep : ',harga:0:0);{Memunculkan harga resep}
+	end;
 end.
