@@ -40,51 +40,41 @@ implementation
 	assign (a, 'BahanMentah.txt');
 	rewrite (a);
 	for j:=1 to NBahanM do
-		begin
+	begin
 		temp:='';
 		temp:= FEBahanMentah[j].nama + ' | ' + IntToStr(FEBahanMentah[j].harga) + ' | ' + IntToStr(FEBahanMentah[j].kadaluarsa) + ' | ' + IntToStr(FEBahanMentah[j].jumlah);
 		writeln(a, temp);
-		end;
+	end;
 	close (a);
 
 	assign (c, 'InvBahanMentah.txt');
 	rewrite (c);
 	for j:=1 to NInvBM do
-		begin
+	begin
 		temp:='';
 		DefaultFormatSettings.ShortDateFormat := 'd/m/yyyy';
 		DefaultFormatSettings.DateSeparator := '/';
 		temp:= FEInventoriBahanMentah[j].nama + ' | ' + FormatDateTime('ddddd',FEInventoriBahanMentah[j].tanggal) + ' | ' + IntToStr(FEInventoriBahanMentah[j].jumlah);
 		writeln(c, temp);
-		end;
-	close(c);
-	{for j:=1 to NInvBM do
-	begin
-		writeln (FEInventoriBahanMentah[j].nama, ' ', FormatDateTime('ddddd',FEInventoriBahanMentah[j].tanggal), ' ', FEInventoriBahanMentah[j].jumlah);
 	end;
-	writeln();}
+	close(c);
 
 	assign (d, 'InvBahanOlahan.txt');
 	rewrite (d);
 	for j:=1 to NInvBO do
-		begin
+	begin
 		temp:='';
 		DefaultFormatSettings.ShortDateFormat := 'd/m/yyyy';
 		DefaultFormatSettings.DateSeparator := '/';
 		temp:= FEInventoriBahanOlahan[j].nama + ' | ' + FormatDateTime('ddddd',FEInventoriBahanOlahan[j].tanggal) + ' | ' + IntToStr(FEInventoriBahanOlahan[j].jumlah);
 		writeln(d, temp);
-		end;
-	close(d);
-	{for j:=1 to NInvBO do
-	begin
-		writeln (FEInventoriBahanOlahan[j].nama, ' ', FormatDateTime('ddddd',FEInventoriBahanOlahan[j].tanggal), ' ', FEInventoriBahanOlahan[j].jumlah);
 	end;
-	writeln();}
+	close(d);
 
 	assign (e, 'Resep.txt');
 	rewrite (e);
 	for i:=1 to NResep do
-		begin
+	begin
 		temp:='';
 		for j:=1 to FEResep[i].n do
 		begin
@@ -92,17 +82,8 @@ implementation
 		end;
 		temp1 := FEResep[i].nama + ' | ' + IntToStr(FEResep[i].harga) + ' | ' + IntToStr(FEResep[i].n) + temp;
 		writeln(e, temp1);
-		end;
-	{for i:=1 to NResep do
-	begin
-		write(FEResep[i].nama, ' ', FEResep[i].harga, ' ', FEResep[i].n);
-		for j:=1 to FEResep[NResep].n do
-		begin
-			write(' ', FEResep[i].bahan[j]);
-		end;
-		writeln();
 	end;
-	writeln();}
 	close(e);
+
 	end;
 end.
