@@ -11,7 +11,8 @@ interface
 
 	procedure lihatResep(var FEResep: AResep; NResep: Integer);
 	{Melihat daftar resep yang tersedia, termasuk semua daftar bahan penyusunnya}
-
+	{I.S : FEResep terdefinifisi, NResep merupakan jumlah dari resep}
+	{F.S : daftar resep serta bahan penyusunnya tertulis di layar}
 
 implementation
 
@@ -19,7 +20,9 @@ implementation
 	
 	procedure lihatResep(var FEResep: AResep; NResep: Integer);
 	{Melihat daftar resep yang tersedia, termasuk semua daftar bahan penyusunnya}
-
+	{I.S : FEResep terdefinifisi, NResep merupakan jumlah dari resep}
+	{F.S : daftar resep serta bahan penyusunnya tertulis di layar}
+	
 	{KAMUS}
 	var
 		N: longint;

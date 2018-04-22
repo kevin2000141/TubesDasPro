@@ -23,12 +23,13 @@ writeln('Aksi yang tersedia:');
 	writeln('2. Exit');
 write('> ');
 readln(input);
-while lowercase(input) <> 'exit' do
+while lowercase(input) <> 'exit' do {Ketika input bukan 'exit' program akan menjalankan loop}
 begin
 	if (lowercase(input) = 'load') or (lowercase(input) = 'reload') then
 	begin
 		load(l, FEBahanMentah, FEBahanOlahan, FEInventoriBahanMentah, FEInventoriBahanOlahan, FEResep, FESimulasi, NBahanM, NBahanO, NInvBM, NInvBO, NResep, NSim); 
-		writeln('Aksi yang tersedia:'); {Pilihan aksi yang ingin dijalankan}
+		{l akan menjadi true yang berarti file telah diload}
+		writeln('Aksi yang tersedia:'); {Pilihan aksi yang bisa dijalankan}
 			writeln('1. Start [1-', NSim,']');
 			writeln('2. LihatInventori');
 			writeln('3. LihatResep');
@@ -39,15 +40,15 @@ begin
 		write('> ');
 		readln(input);
 	end;
-	if (lowercase(copy(input, 1, 5))='start') and l then
+	if (lowercase(copy(input, 1, 5))='start') and l then {Memeriksa apakah input adalah start dan apakah file sudah diload}
 	begin
 		delete(input,1,6);
-		if StrToInt(input) <= NSim then
+		if StrToInt(input) <= NSim then {Mengecek apakah angka setelah start adalah angka yang ada}
 		begin
 		NomorSim:=StrToInt(input);
 		startSimulasi(countis, countm, aksi, FESimulasi, NomorSim, FEBahanMentah, NBahanM, FEInventoriBahanMentah, FEInventoriBahanOlahan, NInvBM, NInvBO);
 		writeln('Mulai simulasi ', NomorSim);
-		writeln('Aksi yang tersedia:'); {Pilihan aksi simulasi yang ingin dijalankan}
+		writeln('Aksi yang tersedia:'); {Pilihan aksi yang bisa dijalankan}
 			writeln('1. BeliBahan');
 			writeln('2. Olahbahan');
 			writeln('3. JualOlahan');
@@ -64,8 +65,8 @@ begin
 			writeln('14. Stop');
 		write('>> ');
 		readln(input);
-		while lowercase(input) <> 'stop' do
-		begin
+		while lowercase(input) <> 'stop' do {Keluar loop ketika input adalah 'stop'}
+		begin {Pengecekan apakah input adalah salah satu input yang valid}
 				if lowercase(input) = 'belibahan' then
 				begin
 					beliBahan(FEInventoriBahanMentah,FEInventoriBahanOlahan, FEBahanMentah, FESimulasi, aksi, NInvBO, NInvBM, NomorSim,NBahanM);	
@@ -109,7 +110,7 @@ begin
 				begin
 					writeln('Masukan input simulasi yang benar.');
 				end;
-				writeln('Aksi yang tersedia:'); {Pilihan aksi simulasi yang ingin dijalankan}
+				writeln('Aksi yang tersedia:'); {Pilihan aksi yang ingin dijalankan}
 					writeln('1. BeliBahan');
 					writeln('2. Olahbahan');
 					writeln('3. JualOlahan');
@@ -127,8 +128,8 @@ begin
 				write('>> ');
 				readln(input);
 		end;
-		stopSimulasi(FESimulasi, NomorSim);
-		writeln('Aksi yang tersedia:');
+		stopSimulasi(FESimulasi, NomorSim); {Hasil keluar loop ketika input adalah 'stop'}
+		writeln('Aksi yang tersedia:'); {Pilihan aksi yang bisa dijalankan}
 			writeln('1. Start [1-', NSim,']');
 			writeln('2. LihatInventori');
 			writeln('3. LihatResep');
@@ -138,10 +139,10 @@ begin
 			writeln('7. Exit');
 		write('> ');
 		readln(input);
-		end else
+		end else {Jika input nomor simulasi tidak valid}
 		begin
 			writeln('Masukan nomor simulasi yang ada/valid.');
-			writeln('Aksi yang tersedia:');
+			writeln('Aksi yang tersedia:'); {Pilihan aksi yang bisa dijalankan}
 				writeln('1. Start [1-', NSim,']');
 				writeln('2. LihatInventori');
 				writeln('3. LihatResep');
@@ -155,7 +156,7 @@ begin
 	end else if (lowercase(input)='lihatinventori') and l then  
 	begin
 		lihatInventori(NInvBO, NInvBM, FEInventoriBahanOlahan, FEInventoriBahanMentah);
-		writeln('Aksi yang tersedia:');
+		writeln('Aksi yang tersedia:'); {Pilihan aksi yang bisa dijalankan}
 			writeln('1. Start [1-', NSim,']');
 			writeln('2. LihatInventori');
 			writeln('3. LihatResep');
@@ -168,7 +169,7 @@ begin
 	end else if (lowercase(input)='lihatresep') and l then 
 	begin
 		lihatResep(FEResep, NResep);
-		writeln('Aksi yang tersedia:');
+		writeln('Aksi yang tersedia:'); {Pilihan aksi yang bisa dijalankan}
 			writeln('1. Start [1-', NSim,']');
 			writeln('2. LihatInventori');
 			writeln('3. LihatResep');
@@ -181,7 +182,7 @@ begin
 	end else if (lowercase(input)='cariresep') and l then 
 	begin
 		cariresep(FEResep, NResep);
-		writeln('Aksi yang tersedia:');
+		writeln('Aksi yang tersedia:'); {Pilihan aksi yang bisa dijalankan}
 			writeln('1. Start [1-', NSim,']');
 			writeln('2. LihatInventori');
 			writeln('3. LihatResep');
@@ -194,7 +195,7 @@ begin
 	end else if (lowercase(input)='tambahresep') and l then 
 	begin
 		tambahresep(FEResep, NResep, FEBahanMentah, FEBahanOlahan, FEInventoriBahanMentah, FEInventoriBahanOlahan, NBahanM, NBahanO, NInvBM, NInvBO);
-		writeln('Aksi yang tersedia:');
+		writeln('Aksi yang tersedia:'); {Pilihan aksi yang bisa dijalankan}
 			writeln('1. Start [1-', NSim,']');
 			writeln('2. LihatInventori');
 			writeln('3. LihatResep');
@@ -205,10 +206,10 @@ begin
 		write('> ');
 		readln(input);
 	end;
-	if not(lowercase(input) = 'load') and (not(l)) then
+	if not(lowercase(input) = 'load') and (not(l)) then {Ketika file belum diload sama sekali}
 	begin 
 		writeln('File harus diload terlebih dahulu.');
-		writeln('Aksi yang tersedia:');
+		writeln('Aksi yang tersedia:'); {Pilihan aksi yang bisa dijalankan}
 			writeln('1. Load');
 			writeln('2. Exit');
 		write('> ');
@@ -217,4 +218,5 @@ begin
 end;
 writeln('Terima kasih telah menggunakan simulasi Engi''s Kitchen!');
 exit(FEBahanMentah, FEInventoriBahanMentah, FEInventoriBahanOlahan, FEResep, NBahanM, NInvBM, NInvBO, NResep);
+{File ditulis kembali}
 end.

@@ -11,6 +11,8 @@ interface
 
 	procedure lihatStatistik (var SimulasiX: simulasi);
 	{Menampilkan array hasil load dari file eksternal simulasi}
+	{I.S : simulasiX terdefinisi}
+	{F.S : Array hasil load dari file eksternal simulasi tampil di layar}
 
 implementation
 
@@ -18,7 +20,8 @@ implementation
 	
 	procedure lihatStatistik (var SimulasiX: simulasi);
 	{Manampilkan array hasil load dari file eksternal simulasi}
-
+	{I.S : simulasiX terdefinisi}
+	{F.S : Array hasil load dari file eksternal simulasi tampil di layar}
 
 	{KAMUS}
 

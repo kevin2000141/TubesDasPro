@@ -54,7 +54,7 @@ implementation
 	begin
 		panjang := StringReplace(panjang, ' | ', '|', [rfReplaceAll]);
 		panjang := StringReplace(panjang, '| ', '|', [rfReplaceAll]);
-		panjang := StringReplace(panjang, ' |', '|', [rfReplaceAll]);
+		panjang := StringReplace(panjang, ' |', '|', [rfReplaceAll]); 
 		shorten := panjang;
 	end;
 
@@ -72,7 +72,7 @@ implementation
 		begin
 			if S[i] = '|' then
 			begin
-				jumlahchar:=jumlahchar+1;
+				jumlahchar:=jumlahchar+1; {Incremen untuk jumlah '|' yang ditemukan}
 			end;
 		end;
 		end;
@@ -101,6 +101,7 @@ implementation
 	{ALGORITMA}
 	begin
 	if (FileExists('BahanMentah.txt')) and (FileExists('BahanOlahan.txt')) and (FileExists('InvBahanMentah.txt')) and (FileExists('InvBahanOlahan.txt')) and (FileExists('Resep.txt')) and (FileExists('Simulasi.txt')) then
+	{Pengecekan apakah file ada}
 	begin
 		assign (a, 'BahanMentah.txt');
 		reset (a);
@@ -114,15 +115,17 @@ implementation
 		reset (e);
 		assign (f, 'Simulasi.txt');
 		reset (f);
-		
-		NBahanM:=0;
-		counterror:=0;
+		{File diassign dengan masing-masing variabel}
+
+		NBahanM:=0; {Inisialisasi}
+		counterror:=0; {Inisialisasi}
 		while not(eof(a)) do
 			begin
-			error:=False;
-			NBahanM:=NBahanM+1;
-			readln (a, temp);
-			temp := shorten(temp);
+			error:=False; {Inisialisasi}
+			NBahanM:=NBahanM+1; {Next Element}
+			readln (a, temp); {Membaca line file}
+			temp := shorten(temp); {Ubah ' | ' menjadi '|'}
+			{Validasi tipe data kemudian menuliskannya, jika tidak menghasilkan error}
 			if jumlahchar(temp) <> 3 then
 			begin
 				error:=True;
@@ -152,25 +155,26 @@ implementation
 			begin
 				error:=True;
 			end;
-			if error then
+			if error then {Jika ditemukan error}
 			begin
-				NBahanM:=NBahanM-1;
-				counterror:=counterror+1;
+				NBahanM:=NBahanM-1; {Jumlah efektif tidak jadi bertambah}
+				counterror:=counterror+1; {Jumlah error bertambah}
 			end;
 			end;	
-		if counterror > 0 then
+		if counterror > 0 then {Jika jumlah error lebih dari 0}
 		begin
 			writeln(counterror, ' line pada file BahanMentah.txt tidak diload karena ada kesalahan data.');
 		end;
 
-		NBahanO:=0;
-		counterror:=0;
+		NBahanO:=0; {Inisialisasi}
+		counterror:=0; {Inisialisasi}
 		while not(eof(b)) do
 			begin
-			error:=False;
-			NBahanO:=NBahanO+1;
-			readln (b, temp);
-			temp := shorten(temp);
+			error:=False; {Inisialisasi}
+			NBahanO:=NBahanO+1; {Next Element}
+			readln (b, temp); {Membaca line file}
+			temp := shorten(temp); {Ubah ' | ' menjadi '|'}
+			{Validasi tipe data kemudian menuliskannya, jika tidak menghasilkan error}
 			FEBahanOlahan[NBahanO].nama:=copy(temp, 1, (pos('|',temp) -1));
 			delete(temp,1,(pos('|',temp)));
 			if TryStrToInt(copy(temp, 1, (pos('|',temp) -1)),FEBahanOlahan[NBahanO].harga) then
@@ -213,25 +217,26 @@ implementation
 			begin
 				error:=True;
 			end;
-			if error then
+			if error then {Jika ditemukan error}
 			begin
-				NBahanO:=NBahanO-1;
-				counterror:=counterror+1;
+				NBahanO:=NBahanO-1; {Jumlah efektif tidak jadi bertambah}
+				counterror:=counterror+1; {Jumlah error bertambah}
 			end;
 			end;
-		if counterror > 0 then
+		if counterror > 0 then {Jika jumlah error lebih dari 0}
 		begin
 			writeln(counterror, ' line pada file BahanOlahan.txt tidak diload karena ada kesalahan data.');
 		end;
 
-		NSim:=0;
-		counterror:=0;
+		NSim:=0; {Inisialisasi}
+		counterror:=0; {Inisialisasi}
 		while not(eof(f)) do
 			begin
-			error:=False;
-			NSim:=NSim + 1;
-			readln (f, temp);
-			temp := shorten(temp);
+			error:=False; {Inisialisasi}
+			NSim:=NSim + 1; {Next Element}
+			readln (f, temp); {Membaca line file}
+			temp := shorten(temp); {Ubah ' | ' menjadi '|'}
+			{Validasi tipe data kemudian menuliskannya, jika tidak menghasilkan error}
 			if jumlahchar(temp) <> 11 then
 			begin
 				error:=True;
@@ -333,13 +338,13 @@ implementation
 			begin
 				error:=True;
 			end;
-			if error then
+			if error then {Jika ditemukan error}
 			begin
-				NSim:=NSim-1;
-				counterror:=counterror+1;
+				NSim:=NSim-1; {Jumlah efektif tidak jadi bertambah}
+				counterror:=counterror+1; {Jumlah error bertambah}
 			end;
 			end;
-		if counterror > 0 then
+		if counterror > 0 then {Jika jumlah error lebih dari 0}
 		begin
 			writeln(counterror, ' line pada file Simulasi.txt tidak diload karena ada kesalahan data.');
 		end;
@@ -348,10 +353,11 @@ implementation
 		counterror:=0;
 		while not(eof(c)) do
 			begin
-			error:=False;
-			NInvBM:=NInvBM + 1;
-			readln (c, temp);
-			temp := shorten(temp);
+			error:=False; {Inisialisasi}
+			NInvBM:=NInvBM + 1; {Next Element}
+			readln (c, temp); {Membaca line file}
+			temp := shorten(temp); {Ubah ' | ' menjadi '|'}
+			{Validasi tipe data kemudian menuliskannya, jika tidak menghasilkan error}
 			if jumlahchar(temp) <> 2 then
 			begin
 				error:=True;
@@ -375,25 +381,26 @@ implementation
 			begin
 				error:=True;
 			end;
-			if error then
+			if error then {Jika ditemukan error}
 			begin
-				NInvBM:=NInvBM-1;
-				counterror:=counterror+1;
+				NInvBM:=NInvBM-1; {Jumlah efektif tidak jadi bertambah}
+				counterror:=counterror+1; {Jumlah error bertambah}
 			end;
 			end;
-		if counterror > 0 then
+		if counterror > 0 then {Jika jumlah error lebih dari 0}
 		begin
 			writeln(counterror, ' line pada file InvBahanMentah.txt tidak diload karena ada kesalahan data.');
 		end;
 		
-		NInvBO:=0;
-		counterror:=0;
+		NInvBO:=0; {Inisialisasi}
+		counterror:=0; {Inisialisasi}
 		while not(eof(d)) do
 			begin
-			error:=False;
-			NInvBO:=NInvBO + 1;
-			readln (d, temp);
-			temp := shorten(temp);
+			error:=False; {Inisialisasi}
+			NInvBO:=NInvBO + 1; {Next Element}
+			readln (d, temp); {Membaca line file}
+			temp := shorten(temp); {Ubah ' | ' menjadi '|'}
+			{Validasi tipe data kemudian menuliskannya, jika tidak menghasilkan error}
 			if jumlahchar(temp) <> 2 then
 			begin
 				error:=True;
@@ -417,26 +424,27 @@ implementation
 			begin
 				error:=True;
 			end;
-			if error then
+			if error then {Jika ditemukan error}
 			begin
-				NInvBO:=NInvBO-1;
-				counterror:=counterror+1;
+				NInvBO:=NInvBO-1; {Jumlah efektif tidak jadi bertambah}
+				counterror:=counterror+1; {Jumlah error bertambah}
 			end;
 			end;
-		if counterror > 0 then
+		if counterror > 0 then {Jika jumlah error lebih dari 0}
 		begin
 			writeln(counterror, ' line pada file InvBahanOlahan.txt tidak diload karena ada kesalahan data.');
 		end;
 
 
-		NResep:=0;
-		counterror:=0;
+		NResep:=0; {Inisialisasi}
+		counterror:=0; {Inisialisasi}
 		while not(eof(e)) do
 			begin
-			error:=False;
-			NResep:=NResep+1;
-			readln (e, temp);
-			temp := shorten(temp);
+			error:=False; {Inisialisasi}
+			NResep:=NResep+1; {Next Element}
+			readln (e, temp); {Membaca line file}
+			temp := shorten(temp); {Ubah ' | ' menjadi '|'}
+			{Validasi tipe data kemudian menuliskannya, jika tidak menghasilkan error}
 			FEResep[NResep].nama:=copy(temp, 1, (pos('|',temp) -1));
 			delete(temp,1,(pos('|',temp)));
 			if TryStrToInt(copy(temp, 1, (pos('|',temp) -1)),FEResep[NResep].harga) then
@@ -476,13 +484,13 @@ implementation
 			begin
 				error:=True;
 			end;
-			if error then
+			if error then {Jika ditemukan error}
 			begin
-				NResep:=NResep-1;
-				counterror:=counterror+1;
+				NResep:=NResep-1; {Jumlah efektif tidak jadi bertambah}
+				counterror:=counterror+1; {Jumlah error bertambah}
 			end;
 			end;
-		if counterror > 0 then
+		if counterror > 0 then {Jika jumlah error lebih dari 0}
 		begin
 			writeln(counterror, ' line pada file Resep.txt tidak diload karena ada kesalahan data.');
 		end;
@@ -493,9 +501,10 @@ implementation
 		close(d);
 		close(e);					
 		close(f);
+		{Penutupan file}
 		writeln('Loading file sukses.');
-		l:= True;	
-	end else
+		l:= True; {Petanda bahwa file berhasil diload}	
+	end else {Salah satu file tidak ada}
 	begin
 		writeln('Salah satu file tidak ada, loading file gagal.');
 	end;

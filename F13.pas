@@ -18,19 +18,27 @@ interface
 
 	procedure lihatInventori(NInvBO, NInvBM: Integer; var FEInventoriBahanOlahan, FEInventoriBahanMentah: Ainventori);
 	{Menampilkan data daftar Bahan Mentah dan Bahan Olahan yang tersedia di inventori}
-	
+	{I.S : FEInventoriBahanOlahan, FEInventoriBahanMentah terdefinisi}
+	{F.S : Data daftar Bahan Mentah dan Bahan Olahan yang tersedia di inventori tampil di layar}
+
 	procedure lihatInventoriBahanMentah(urutan: String; NInvBM:Integer; var FEInventoriBahanMentah: Ainventori);
 	{Menampilkan data daftar Bahan Mentah yang tersedia di inventori secara berurutan sesuai dengan abjad}
+	{I.S : FEInventoriBahanMentah terdefinisi}
+	{F.S : Data daftar Bahan Mentah yang tersedia di inventori di tampilkan di layar secara berurutan sesuai dengan abjad}
 	
 	procedure lihatInventoriBahanOlahan(urutan: String; NInvBO:Integer; var FEInventoriBahanOlahan: Ainventori);
 	{Menampilkan data daftar Bahan Olahan yang tersedia di inventori secara berurutan sesuai dengan abjad}
+	{I.S : FEInventoriBahanOlahan terdefinisi}
+	{F.S : Data daftar Bahan Oalhan yang tersedia di inventori di tampilkan di layar secara berurutan sesuai dengan abjad}
 
 implementation
 
 	{ Implementasi Fungsi/Prosedur }
-	
+
 	procedure lihatInventori(NInvBO, NInvBM: Integer; var FEInventoriBahanOlahan, FEInventoriBahanMentah: Ainventori);
 	{Menampilkan data daftar Bahan Mentah dan Bahan Olahan yang tersedia di inventori}
+	{I.S : FEInventoriBahanOlahan, FEInventoriBahanMentah terdefinisi}
+	{F.S : Data daftar Bahan Mentah dan Bahan Olahan yang tersedia di inventori tampil di layar}
 
 	{KAMUS}
 
@@ -51,8 +59,9 @@ implementation
 	
 	procedure lihatInventoriBahanMentah(urutan: String; NInvBM:Integer; var FEInventoriBahanMentah: Ainventori);
 	{Menampilkan data daftar Bahan Mentah yang tersedia di inventori secara berurutan sesuai dengan abjad}
-
-
+	{I.S : FEInventoriBahanMentah terdefinisi}
+	{F.S : Data daftar Bahan Mentah yang tersedia di inventori di tampilkan di layar secara berurutan sesuai dengan abjad}
+	
 	{KAMUS}
 
 	{ALGORITMA}
@@ -110,7 +119,8 @@ implementation
 		
 	procedure lihatInventoriBahanOlahan(urutan: String; NInvBO:Integer; var FEInventoriBahanOlahan: Ainventori);
 	{Menampilkan data daftar Bahan Olahan yang tersedia di inventori secara berurutan sesuai dengan abjad}
-
+	{I.S : FEInventoriBahanOlahan terdefinisi}
+	{F.S : Data daftar Bahan Oalhan yang tersedia di inventori di tampilkan di layar secara berurutan sesuai dengan abjad}
 
 	{KAMUS}
 
