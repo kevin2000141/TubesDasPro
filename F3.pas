@@ -30,6 +30,7 @@ implementation
 	{KAMUS}
 	var
 		i,j,k: Integer;
+		cek: Boolean;
 
 	{ALGORITMA}
 	begin
@@ -63,7 +64,8 @@ implementation
 						deletearray(FEInventoriBahanOlahan,NInvBO,j);		{menghapus array elemen ke j}
 					end;
 			end;
-		while cekmaksimum(FESimulasi, NInvBO, NInvBM, NomorSim, 0, FEInventoriBahanMentah, FEInventoriBahanOlahan) do
+		cek:=cekmaksimum(FESimulasi, NInvBO, NInvBM, NomorSim, 0, FEInventoriBahanMentah, FEInventoriBahanOlahan);
+		while not(cek) do
 		begin
 			if (NInvBO>=1) then
 			begin
