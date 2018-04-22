@@ -28,7 +28,7 @@ begin
 	if (lowercase(input) = 'load') or (lowercase(input) = 'reload') then
 	begin
 		load(l, FEBahanMentah, FEBahanOlahan, FEInventoriBahanMentah, FEInventoriBahanOlahan, FEResep, FESimulasi, NBahanM, NBahanO, NInvBM, NInvBO, NResep, NSim); 
-		writeln('Aksi yang tersedia:');
+		writeln('Aksi yang tersedia:'); {Pilihan aksi yang ingin dijalankan}
 			writeln('1. Start [1-', NSim,']');
 			writeln('2. LihatInventori');
 			writeln('3. LihatResep');
@@ -47,7 +47,7 @@ begin
 		NomorSim:=StrToInt(input);
 		startSimulasi(countis, countm, aksi, FESimulasi, NomorSim, FEBahanMentah, NBahanM, FEInventoriBahanMentah, FEInventoriBahanOlahan, NInvBM, NInvBO);
 		writeln('Mulai simulasi ', NomorSim);
-		writeln('Aksi yang tersedia:');
+		writeln('Aksi yang tersedia:'); {Pilihan aksi simulasi yang ingin dijalankan}
 			writeln('1. BeliBahan');
 			writeln('2. Olahbahan');
 			writeln('3. JualOlahan');
@@ -109,7 +109,7 @@ begin
 				begin
 					writeln('Masukan input simulasi yang benar.');
 				end;
-				writeln('Aksi yang tersedia:');
+				writeln('Aksi yang tersedia:'); {Pilihan aksi simulasi yang ingin dijalankan}
 					writeln('1. BeliBahan');
 					writeln('2. Olahbahan');
 					writeln('3. JualOlahan');

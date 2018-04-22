@@ -27,6 +27,11 @@ interface
 		2. Membuat hari berganti(Hari berganti jika chef melakukan aksi yang mengurangi atau menambahkan energi, jika energi tidak berubah makan chef tidak bisa tidur)
 		3. Menghapus bahan-bahan mentah dan olahan yang sudah kadaluarsa pada inventori, dan menyebabkan berkurangnya inventori
 		4. Melakukan restock bahan mentah} 				
+	{I.S. energi awal, countm, countis,aksi diambil dari hasil penambahan atau pengurangan energi di procedure-procedure sebelumnya, countd diambil 
+	 dari FESimulasi.tHariHidup, datenow diambil dari FESimulasi.tanggal, NInvBM, NInvBO, NBahanM, NomorSim diambil dari uDef,
+	 FESimulasi menggunakan array FESimulasi, FEBahanMentah menggunakan array FEBahanMentah}
+	{F.S. energi awal akan bertambah menjadi 10, countm,countis,dan aksi akan menjadi 0, countd (untuk menghitung berapa hari yang berlangsung) akan bertambah satu,
+	 bahan mentah dan olahan yang telah kadaluarsa akan dihapus dari inventori, dan penghapusan menyebabkan kapasitas inventori berkurang.}
 
 implementation
 
@@ -42,9 +47,22 @@ implementation
 						NomorSim: Integer; 
 						var FEBahanMentah: Abahanmentah; 
 						NBahanM: Integer);	
+	{procedure tidur menerima masukan-masukan diatas, dan melakukan hal-hal dibawah ini:
+		1. Membuat energi chef menjadi 10
+		2. Membuat hari berganti(Hari berganti jika chef melakukan aksi yang mengurangi atau menambahkan energi, jika energi tidak berubah makan chef tidak bisa tidur)
+		3. Menghapus bahan-bahan mentah dan olahan yang sudah kadaluarsa pada inventori, dan menyebabkan berkurangnya inventori
+		4. Melakukan restock bahan mentah} 				
+	{I.S. energi awal, countm, countis,aksi diambil dari hasil penambahan atau pengurangan energi di procedure-procedure sebelumnya, countd diambil 
+	 dari FESimulasi.tHariHidup, datenow diambil dari FESimulasi.tanggal, NInvBM, NInvBO, NBahanM, NomorSim diambil dari uDef,
+	 FESimulasi menggunakan array FESimulasi, FEBahanMentah menggunakan array FEBahanMentah}
+	{F.S. energi awal akan bertambah menjadi 10, countm,countis,dan aksi akan menjadi 0, countd (untuk menghitung berapa hari yang berlangsung) akan bertambah satu,
+	 bahan mentah dan olahan yang telah kadaluarsa akan dihapus dari inventori, dan penghapusan menyebabkan kapasitas inventori berkurang.}
+
+	{KAMUS}
 	var
 		k: Integer;												{variabel k digunakan sebagai penanda elemen suatu array}
-		
+	
+	{ALGORITMA}	
 	begin
 		if (countm=0) and (countis=0) and (aksi=0) then			{kondisi saat belum melakukan aksi apapun}
 		begin 

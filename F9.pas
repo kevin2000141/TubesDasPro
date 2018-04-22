@@ -7,14 +7,22 @@ unit F9;
 interface
 
 	procedure makan(var energiawal:Longint; var countm:Integer ); 
-	
 	{procedure ini menerima input energi chef saat ini dan countm. countm merupakan counter yang menghitung berapa kali chef telah
 	 makan dalam sehari}
+	{I.S. energiawal = energi awal sebelum makan, diambil dari FESimulasi.tEnergi. Saat belum makan, countm=0}
+	{F.S. energi awal bertambah 3 jika  masih bisa makan , countm akan bertambah satu setiap kali makan}
 
 implementation
 
 	procedure makan(var energiawal:Longint; var countm:Integer );
-	
+	{procedure ini menerima input energi chef saat ini dan countm. countm merupakan counter yang menghitung berapa kali chef telah
+	 makan dalam sehari}
+	{I.S. energiawal = energi awal sebelum makan, diambil dari FESimulasi.tEnergi. Saat belum makan, countm=0}
+	{F.S. energi awal bertambah 3 jika  masih bisa makan , countm akan bertambah satu setiap kali makan}
+
+	{KAMUS}
+
+	{ALGORITMA}
 	begin
 		if (countm < 3) then					{Kondisi saat chef belum makan 3 kali}
 		begin
@@ -37,4 +45,5 @@ implementation
 			writeln('Makan tidak boleh >3 kali');
 		end;	
 	end;
+	
 end.

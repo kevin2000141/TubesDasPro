@@ -8,12 +8,19 @@ interface
 	uses uDef,F1;
 	procedure upgradeInventori(var Nmax: longint);
 	{Prosedur untuk menambah jumlah kapasitas inventori}
-	{Ketika prosedur ini dijalankan, kapasitas inventori akan bertambah 25 setiap kali
-	prosedur ini dijalankan}
-	
+	{I.S. Prosedur upgradeInventori terinisialisasi}
+	{F.S. Kapasitas inventori bertambah 25}
+
 implementation
 
 	procedure upgradeInventori(var Nmax: longint);
+	{Prosedur untuk menambah jumlah kapasitas inventori}
+	{I.S. Prosedur upgradeInventori terinisialisasi}
+	{F.S. Kapasitas inventori bertambah 25}
+
+	{KAMUS}
+
+	{ALGORITMA}
 	begin
 		Nmax := Nmax + 25;
 	end;

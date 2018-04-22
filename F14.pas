@@ -8,16 +8,23 @@ interface
 uses uDef,sysutils;
 
 procedure lihatResep(var FEResep: AResep; NResep: Integer);
+{Melihat daftar resep yang tersedia, termasuk semua daftar bahan penyusunnya}
+
 
 implementation
 
 	procedure lihatResep(var FEResep: AResep; NResep: Integer);
+	{Melihat daftar resep yang tersedia, termasuk semua daftar bahan penyusunnya}
+
+	{KAMUS}
 	var
 		N: longint;
 		i,j,k:integer;
 		tukarInt:longint;
 		urutan: string;
 		tukarString : array [1..Nmax] of string;
+	
+	{ALGORITMA}
 	begin
 		repeat 
 			write('Penampilan terurut abjad "membesar" atau "mengecil" : ');

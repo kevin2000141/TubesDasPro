@@ -8,14 +8,21 @@ interface
 	uses uDef,F1,math, sysutils;
 	procedure tambahresep (var FEResep: Aresep; var NResep: integer; FEBahanMentah: Abahanmentah; FEBahanOlahan: Abahanolahan; FEInventoriBahanMentah, FEInventoriBahanOlahan: AInventori; NBahanM, NBahanO, NInvBM, NInvBO: Integer);
 	{Prosedur untuk menambahkan resep ke dalam array resep}
-	{Prosedur akan menerima masukkan nama resep dari pengguna, lalu akan mengecek apakah nama resep yang dimasukkan sudah ada di dalam array atau belum.
-	Jika nama resep yang dimasukkan belum ada, maka akan diminta untuk memasukkan jumlah bahan yang dibutuhkan untuk membuat resep tersebut. Lalu pengguna
-	diminta untuk memasukkan harga jual dari resep tersebut. Harga jual harus 12,5% lebih tinggi dari jumlah harga bahan - bahan yang digunakan.}
+	{I.S. Prosedur menerima masukkan berupa nama resep dari pengguna}
+	{F.S. Program akan menyimpan nama resep, jumlah bahan yang digunakan untuk membuat resep tersebut, bahan - bahan yang digunakan, dan
+	 harga jual dari resep tersebut jika resep yang dimasukkan belum ada di dalam array FEResep. Jika resep sudah ada, maka akan muncul pesan kesalahan dan pengguna diminta untuk memasukkan
+	 nama resep yang lain.}
 
 implementation
 
 procedure tambahresep (var FEResep: Aresep; var NResep: integer; FEBahanMentah: Abahanmentah; FEBahanOlahan: Abahanolahan; FEInventoriBahanMentah, FEInventoriBahanOlahan: AInventori; NBahanM, NBahanO, NInvBM, NInvBO: Integer);
+{Prosedur untuk menambahkan resep ke dalam array resep}
+{I.S. Prosedur menerima masukkan berupa nama resep dari pengguna}
+{F.S. Program akan menyimpan nama resep, jumlah bahan yang digunakan untuk membuat resep tersebut, bahan - bahan yang digunakan, dan
+ harga jual dari resep tersebut jika resep yang dimasukkan belum ada di dalam array FEResep. Jika resep sudah ada, maka akan muncul pesan kesalahan dan pengguna diminta untuk memasukkan
+ nama resep yang lain.}
 
+{KAMUS}
 var
 	resepbaru : string;
 	n,i,j,k,l,m : integer;
@@ -23,7 +30,8 @@ var
 	hargaresep : Real;
 	x : string;
 	found: Boolean;
-	
+
+{ALGORITMA}	
 begin
 	write('Masukkan nama resep : ');
 	readln(resepbaru);
