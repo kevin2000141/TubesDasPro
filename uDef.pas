@@ -3,6 +3,7 @@
 // Tanggal terakhir diubah: 20/04/2018
 
 unit uDef;
+{Unit definisi untuk Program EngisKitchen}
 
 interface
 uses sysutils;
@@ -27,7 +28,7 @@ uses sysutils;
 		end;
 		inventoribahan=record
 			nama		: String;
-			tanggal		: TDateTime;
+			tanggal		: TDateTime; {Tipe data bawaan Pascal}
 			jumlah		: Longint;	
 		end;
 		resep=record
@@ -38,7 +39,7 @@ uses sysutils;
 		end;
 		simulasi=record
 			nomor 			: Longint;
-			tanggal 		: TDateTime;
+			tanggal 		: TDateTime; {Tipe data bawaan Pascal}
 			tHariHidup 		: Longint;
 			tEnergi 		: Longint;
 			maxInventori 	: Longint;
@@ -65,12 +66,11 @@ uses sysutils;
 		FESimulasi: Asimulasi; {Array dari file simulasi}
 		NBahanM, NBahanO, NInvBM, NInvBO, NResep, NSim: Integer; {Nilai efektif}
 		NomorSim: Integer; {Nomor Simulasi yang dijalankan}
-		countis, countm: Integer;
-		i, aksi:Integer;
-		teks:String;
+		countis, countm: Integer; {Menghitung istirahat dan makan}
+		i, aksi:Integer; {Variabel I dan variabel untuk menghitung aksi}}
+		teks:String; {Variabel teks}
 
 implementation
-
 
 end.
 

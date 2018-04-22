@@ -11,6 +11,7 @@ interface
 	{Prosedur akan menerima masukkan nama resep dari pengguna, lalu akan mengecek apakah nama resep yang dimasukkan sudah ada di dalam array atau belum.
 	Jika nama resep yang dimasukkan belum ada, maka akan diminta untuk memasukkan jumlah bahan yang dibutuhkan untuk membuat resep tersebut. Lalu pengguna
 	diminta untuk memasukkan harga jual dari resep tersebut. Harga jual harus 12,5% lebih tinggi dari jumlah harga bahan - bahan yang digunakan.}
+
 implementation
 
 procedure tambahresep (var FEResep: Aresep; var NResep: integer; FEBahanMentah: Abahanmentah; FEBahanOlahan: Abahanolahan; FEInventoriBahanMentah, FEInventoriBahanOlahan: AInventori; NBahanM, NBahanO, NInvBM, NInvBO: Integer);
