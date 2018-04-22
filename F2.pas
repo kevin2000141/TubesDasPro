@@ -53,17 +53,20 @@ implementation
 	begin
 	assign (a, 'BahanMentah.txt');
 	rewrite (a);
-	for j:=1 to NBahanM do
+	{Buka file 'BahanMentah.txt'}
+	for j:=1 to NBahanM do {Penulisan file per line}
 	begin
 		temp:='';
 		temp:= FEBahanMentah[j].nama + ' | ' + IntToStr(FEBahanMentah[j].harga) + ' | ' + IntToStr(FEBahanMentah[j].kadaluarsa) + ' | ' + IntToStr(FEBahanMentah[j].jumlah);
 		writeln(a, temp);
 	end;
 	close (a);
+	{Tutup file 'BahanMentah.txt'}
 
 	assign (c, 'InvBahanMentah.txt');
 	rewrite (c);
-	for j:=1 to NInvBM do
+	{Buka file 'InvBahanMentah.txt'}
+	for j:=1 to NInvBM do {Penulisan file per line}
 	begin
 		temp:='';
 		DefaultFormatSettings.ShortDateFormat := 'd/m/yyyy';
@@ -72,10 +75,12 @@ implementation
 		writeln(c, temp);
 	end;
 	close(c);
+	{Tutup file 'InvBahanMentah.txt'}
 
 	assign (d, 'InvBahanOlahan.txt');
 	rewrite (d);
-	for j:=1 to NInvBO do
+	{Buka file 'InvBahanOlahan.txt'}
+	for j:=1 to NInvBO do {Penulisan file per line}
 	begin
 		temp:='';
 		DefaultFormatSettings.ShortDateFormat := 'd/m/yyyy';
@@ -84,13 +89,15 @@ implementation
 		writeln(d, temp);
 	end;
 	close(d);
+	{Tutup file 'InvBahanOlahan.txt'}
 
 	assign (e, 'Resep.txt');
 	rewrite (e);
-	for i:=1 to NResep do
+	{Buka file 'Resep.txt'}
+	for i:=1 to NResep do {Penulisan file per line}
 	begin
 		temp:='';
-		for j:=1 to FEResep[i].n do
+		for j:=1 to FEResep[i].n do {Merancang bahan resep untuk siap ditulis}
 		begin
 			temp := (temp + ' | ' + FEResep[i].bahan[j]);
 		end;
@@ -98,6 +105,7 @@ implementation
 		writeln(e, temp1);
 	end;
 	close(e);
+	{Tutup file 'Resep.txt'}
 
 	end;
 end.
