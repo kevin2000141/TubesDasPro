@@ -9,14 +9,13 @@ uses uDef, sysutils, F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, F11, F12, F13, F14
 //uses B3_validasi;
 //uses B4_restock;
 
-
 var
-	input: AnsiString;
-	countis, countm, NomorSim : Integer;
-	l: Boolean;
+	input: AnsiString; {Variabel input pengguna}
+	countis, countm, NomorSim : Integer; 
+	l: Boolean; {Menandakan apakah file sudah diload}
 
 begin
-l:=False;
+l:=False; {Berarti file belum diload}
 writeln('Selamat datang di simulasi Engi''s Kitchen!');
 writeln('Aksi yang tersedia:');
 	writeln('1. Load');
@@ -25,7 +24,7 @@ write('> ');
 readln(input);
 while lowercase(input) <> 'exit' do
 begin
-	if lowercase(input) = 'load' then
+	if (lowercase(input) = 'load') or (lowercase(input) = 'reload') then
 	begin
 		load(l, FEBahanMentah, FEBahanOlahan, FEInventoriBahanMentah, FEInventoriBahanOlahan, FEResep, FESimulasi, NBahanM, NBahanO, NInvBM, NInvBO, NResep, NSim); 
 		writeln('Aksi yang tersedia:');
@@ -34,7 +33,8 @@ begin
 			writeln('3. LihatResep');
 			writeln('4. CariResep');
 			writeln('5. TambahResep');
-			writeln('6. Exit');
+			writeln('6. Reload');
+			writeln('7. Exit');
 		write('> ');
 		readln(input);
 	end;
@@ -44,7 +44,7 @@ begin
 		if StrToInt(input) <= NSim then
 		begin
 		NomorSim:=StrToInt(input);
-		startSimulasi(countis, countm, aksi, FESimulasi, NomorSim, FEBahanMentah, NBahanM);
+		startSimulasi(countis, countm, aksi, FESimulasi, NomorSim, FEBahanMentah, NBahanM, FEInventoriBahanMentah, FEInventoriBahanOlahan, NInvBM, NInvBO);
 		writeln('Mulai simulasi ', NomorSim);
 		writeln('Aksi yang tersedia:');
 			writeln('1. BeliBahan');
@@ -133,7 +133,8 @@ begin
 			writeln('3. LihatResep');
 			writeln('4. CariResep');
 			writeln('5. TambahResep');
-			writeln('6. Exit');
+			writeln('6. Reload');
+			writeln('7. Exit');
 		write('> ');
 		readln(input);
 		end else
@@ -145,7 +146,8 @@ begin
 				writeln('3. LihatResep');
 				writeln('4. CariResep');
 				writeln('5. TambahResep');
-				writeln('6. Exit');
+				writeln('6. Reload');
+				writeln('7. Exit');
 			write('> ');
 			readln(input);
 		end;
@@ -158,7 +160,8 @@ begin
 			writeln('3. LihatResep');
 			writeln('4. CariResep');
 			writeln('5. TambahResep');
-			writeln('6. Exit');
+			writeln('6. Reload');
+			writeln('7. Exit');
 		write('> ');
 		readln(input);
 	end else if (lowercase(input)='lihatresep') and l then 
@@ -170,7 +173,8 @@ begin
 			writeln('3. LihatResep');
 			writeln('4. CariResep');
 			writeln('5. TambahResep');
-			writeln('6. Exit');
+			writeln('6. Reload');
+			writeln('7. Exit');
 		write('> ');
 		readln(input);
 	end else if (lowercase(input)='cariresep') and l then 
@@ -182,7 +186,8 @@ begin
 			writeln('3. LihatResep');
 			writeln('4. CariResep');
 			writeln('5. TambahResep');
-			writeln('6. Exit');
+			writeln('6. Reload');
+			writeln('7. Exit');
 		write('> ');
 		readln(input);
 	end else if (lowercase(input)='tambahresep') and l then 
@@ -194,7 +199,8 @@ begin
 			writeln('3. LihatResep');
 			writeln('4. CariResep');
 			writeln('5. TambahResep');
-			writeln('6. Exit');
+			writeln('6. Reload');
+			writeln('7. Exit');
 		write('> ');
 		readln(input);
 	end;

@@ -44,7 +44,7 @@ implementation
 					i:=i+1;
 				end;
 			end;
-			if (ketemu=False) then writeln('nama tidak terdaftar');				
+			if (ketemu=False) then writeln('Nama tidak terdaftar');				
 		until (ketemu =True);
 		ketemu:=False;
 		i:=1;

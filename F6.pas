@@ -30,7 +30,7 @@ implementation
 						i:=i+1;
 					end;
 				end;
-			if (ketemu=False) then writeln('nama tidak terdaftar');				
+			if (ketemu=False) then writeln('Nama tidak terdaftar');				
 			until (ketemu =True);
 			count:=0;//untuk bahan yang mencukupi
 			for j:=1 to olah[i].n do 
@@ -84,8 +84,8 @@ implementation
 					olahb[k].jumlah:=1;
 					NInvBO:=NInvBO+1;
 				end;
-				writeln('bisa dungs');
-			end else writeln('Tidak bisa buat');
+				writeln('Berhasil dibuat');
+			end else writeln('Gagal dibuat');
 	end;
 end.
 				
