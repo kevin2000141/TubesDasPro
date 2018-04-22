@@ -15,10 +15,14 @@ implementation
 	{prosedur ini akan memvalidasi bahan mentah yang mau dibeli beserta jumlahnya,mengitung total harga,dan melakukan perubahan pada inventori maupun pada inventori bahan mentah}
 	{I.S menerima masukan berupa string dan integer yang akan di cek kevalidannya}
 	{F.S memasukan kedalam inventoridan mengubah data}
+	
+	{KAMUS}
 	var
 		namabahan:string;
 		i,j,k:longint;
 		ketemu:boolean;
+	
+	{ALGORITMA}
 	begin{satu kali prosedur satu kali beli satu unit}
 		repeat//validasi
 			i:=1;
