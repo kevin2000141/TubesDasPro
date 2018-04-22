@@ -2,14 +2,14 @@ unit F10; {Istirahat}
 
 interface
 
-	procedure istirahat(var energiawal:Integer; var countis:Integer );
+	procedure istirahat(var energiawal:Longint; var countis:Integer );
 	
 	{procedure ini menerima input energi chef saat ini dan countis. countis merupakan counter yang menghitung berapa kali chef telah
 	 makan dalam sehari}
 
 implementation
 
-	procedure istirahat(var energiawal:Integer; var countis:Integer );
+	procedure istirahat(var energiawal:Longint; var countis:Integer );
 	
 	begin
 		if (countis < 6) then					{Kondisi saat chef belum istirahat 6 kali}					

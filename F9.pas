@@ -2,14 +2,14 @@ unit F9; {Makan}
 
 interface
 
-	procedure makan(var energiawal:Integer; var countm:Integer ); 
+	procedure makan(var energiawal:Longint; var countm:Integer ); 
 	
 	{procedure ini menerima input energi chef saat ini dan countm. countm merupakan counter yang menghitung berapa kali chef telah
 	 makan dalam sehari}
 
 implementation
 
-	procedure makan(var energiawal:Integer; var countm:Integer );
+	procedure makan(var energiawal:Longint; var countm:Integer );
 	
 	begin
 		if (countm < 3) then					{Kondisi saat chef belum makan 3 kali}

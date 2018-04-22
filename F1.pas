@@ -58,7 +58,7 @@ implementation
 			end;
 		end;
 		end;
-		
+
 	procedure load( var l : Boolean;
 					var FEBahanMentah: Abahanmentah; 
 					var FEBahanOlahan: Abahanolahan;

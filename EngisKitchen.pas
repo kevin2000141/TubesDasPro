@@ -13,6 +13,10 @@ var
 
 begin
 l:=False;
+writeln('Selamat datang di Engi''s Kitchen!');
+writeln('Aksi yang tersedia:');
+writeln('1. Load');
+writeln('2. Exit');
 write('> ');
 readln(input);
 while lowercase(input) <> 'exit' do
@@ -114,6 +118,9 @@ begin
 	if not(lowercase(input) = 'load') and (not(l)) then
 	begin 
 		writeln('File harus diload terlebih dahulu.');
+		writeln('Aksi yang tersedia:');
+		writeln('1. Load');
+		writeln('2. Exit');
 		write('> ');
 		readln(input);
 	end;
