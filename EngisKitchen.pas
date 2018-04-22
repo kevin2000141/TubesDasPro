@@ -13,7 +13,7 @@ var
 
 begin
 l:=False;
-writeln('Selamat datang di Engi''s Kitchen!');
+writeln('Selamat datang di simulasi Engi''s Kitchen!');
 writeln('Aksi yang tersedia:');
 	writeln('1. Load');
 	writeln('2. Exit');
@@ -204,5 +204,6 @@ begin
 		readln(input);
 	end;
 end;
+writeln('Terima kasih telah menggunakan simulasi Engi''s Kitchen!');
 exit(FEBahanMentah, FEInventoriBahanMentah, FEInventoriBahanOlahan, FEResep, NBahanM, NInvBM, NInvBO, NResep);
 end.
