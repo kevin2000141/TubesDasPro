@@ -7,9 +7,13 @@ interface
 	uses uDef,F1,sysutils;//untuk ngambil data
 	procedure jualresep (resep:Aresep; var c:Asimulasi;var mentah,olah:Ainventori; var NInvBM, NInvBO, NomorSim,aksi: Integer);
 	{akan memvalidasi resep yang diterima,dan memroses data mengubah data simulasi dan inventori}
+	{I.S menerima masukan berupa string,yang merupakan resep yang akan dijual}
+	{F.S menambah penghasilan,membuat barang dengan mengurangi dari inventori bahannya} 
 implementation
 	procedure jualresep (resep:Aresep; var c:Asimulasi;var mentah,olah:Ainventori; var NInvBM, NInvBO, NomorSim,aksi: Integer);
 	{akan memvalidasi resep yang diterima,dan memroses data mengubah data simulasi dan inventori}
+		{I.S menerima masukan berupa string,yang merupakan resep yang akan dijual}
+	{F.S menambah penghasilan,membuat barang dengan mengurangi dari inventori bahannya} 
 	var
 		nama:string;
 		i,j,count,k:longint;

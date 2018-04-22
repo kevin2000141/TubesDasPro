@@ -7,9 +7,13 @@ interface
 	uses uDef,sysutils,F1;//untuk ngambil data
 	procedure jualolahan(olah:Abahanolahan;var olahb:Ainventori;var c : Asimulasi; var NInvBO, NBahanO, NomorSim,aksi: Integer);
 	{akan menerima masukan nama bahan yang ingin dijual,dan akan memvalidas,lalu melaukan perubahan pada inventori dan juga mengubah dat simulasi}
+	{I.S menerima sebuah string berua olahan yang akan dijual}
+	{F.S menambah penghasilan}
 implementation
 	procedure jualolahan(olah:Abahanolahan;var olahb:Ainventori;var c : Asimulasi; var NInvBO, NBahanO, NomorSim,aksi: Integer);
 	{akan menerima masukan nama bahan yang ingin dijual,dan akan memvalidas,lalu melaukan perubahan pada inventori dan juga mengubah dat simulasi}
+		{I.S menerima sebuah string berua olahan yang akan dijual}
+	{F.S menambah penghasilan}
 	var
 		nama:string;
 		ketemu,ketemu2:boolean;

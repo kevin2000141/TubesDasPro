@@ -8,9 +8,13 @@ interface
 
 	procedure beliBahan(var a,b:Ainventori{type inv dari F1};d:Abahanmentah{untuk data bahan};var c:Asimulasi{type dari soal}; var aksi, NInvBO, NInvBM, NomorSim,NBahanM: Integer);
 	{prosedur ini akan memvalidasi bahan mentah yang mau dibeli beserta jumlahnya,mengitung total harga,dan melakukan perubahan pada inventori maupun pada inventori bahan mentah}
+	{I.S menerima masukan berupa string dan integer yang akan di cek kevalidannya}
+	{F.S memasukan kedalam inventoridan mengubah data}
 implementation
 	procedure beliBahan(var a,b:Ainventori{type inv dari F1};d:Abahanmentah{untuk data bahan};var c:Asimulasi{type dari soal}; var aksi, NInvBO, NInvBM, NomorSim,NBahanM: Integer);
 	{prosedur ini akan memvalidasi bahan mentah yang mau dibeli beserta jumlahnya,mengitung total harga,dan melakukan perubahan pada inventori maupun pada inventori bahan mentah}
+	{I.S menerima masukan berupa string dan integer yang akan di cek kevalidannya}
+	{F.S memasukan kedalam inventoridan mengubah data}
 	var
 		namabahan:string;
 		i,j,k:longint;
