@@ -2,16 +2,31 @@ unit F8;
 interface
 	uses uDef,F1;//untuk ngambil data
 	procedure jualresep (resep:Aresep; var c:Asimulasi;var mentah,olah:Ainventori; var NInvBM, NInvBO, NomorSim,aksi: Integer);
-
+	{akan memvalidasi resep yang diterima,dan memroses data mengubah data simulasi dan inventori}
 implementation
 	procedure jualresep (resep:Aresep; var c:Asimulasi;var mentah,olah:Ainventori; var NInvBM, NInvBO, NomorSim,aksi: Integer);
+	{akan memvalidasi resep yang diterima,dan memroses data mengubah data simulasi dan inventori}
 	var
 		nama:string;
 		i,j,count,k:longint;
 		ketemu:boolean;
 	begin
-			write('Hidangan yang ingin dijual dari resep: ');
-			readln(nama);
+			repeat//validasi
+				i:=1;
+				write('Nama resep yang ingin dibuat: ' );
+				readln(nama);{asumsi nama bahan terdapat dalam file}
+				ketemu:=False;
+				while((ketemu = False) and (i<=NBahanO)) do
+				begin
+					if (LowerCase(nama)=LowerCase(resep[i].nama)) then
+					begin
+						ketemu:=True;
+					end else
+					begin
+						i:=i+1;
+					end;
+				end;				
+			until (ketemu =True);
 			i:=1;
 			while (resep[i].nama <> nama) do//mencari dimana bahan resepan yang ingin dibuat pada kamus
 			begin

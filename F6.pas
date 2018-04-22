@@ -1,21 +1,32 @@
 unit F6;
 interface
 	uses uDef,F1;//untuk ngambil data
-	procedure olahbahan(olah:Abahanolahan;var olahb,mentah:Ainventori;var c : Asimulasi; var NInvBO, NInvBM, NomorSim,aksi: Integer);
+	procedure olahbahan(olah:Abahanolahan;var olahb,mentah:Ainventori;var c : Asimulasi; var NInvBO, NInvBM, NomorSim,aksi,NBahanO: Integer);
+	{akan mengolah bahan yang ingin dibuat jika sudah benar}
 implementation
-	procedure olahbahan(olah:Abahanolahan;var olahb,mentah:Ainventori;var c : Asimulasi; var NInvBO, NInvBM, NomorSim,aksi: Integer);
+	procedure olahbahan(olah:Abahanolahan;var olahb,mentah:Ainventori;var c : Asimulasi; var NInvBO, NInvBM, NomorSim,aksi,NBahanO: Integer);
+	{akan mengolah bahan yang ingin dibuat jika sudah benar}
 	var
 	nama:string;
 	i,j,count,k:longint;
 	ketemu:boolean;
 	begin
-			write('Bahan yang mau dibuat : ');
-			readln(nama);
-			i:=1;
-			while (olah[i].nama <> nama) do//mencari dimana bahan olahan yang ingin dibuat pada kamus
-			begin
-					i:=i+1;
-			end;
+			repeat//validasi
+				i:=1;
+				write('Nama bahan yang ingin dibuat: ' );
+				readln(nama);{asumsi nama bahan terdapat dalam file}
+				ketemu:=False;
+				while((ketemu = False) and (i<=NBahanO)) do
+				begin
+					if (LowerCase(nama)=LowerCase(olah[i].nama)) then
+					begin
+						ketemu:=True;
+					end else
+					begin
+						i:=i+1;
+					end;
+				end;				
+			until (ketemu =True);
 			count:=0;//untuk bahan yang mencukupi
 			for j:=1 to olah[i].n do 
 			begin
