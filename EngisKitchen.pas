@@ -68,7 +68,7 @@ begin
 		begin
 				if lowercase(input) = 'belibahan' then
 				begin
-					beliBahan(FEInventoriBahanMentah, FEBahanMentah, FESimulasi, aksi, NInvBO, NInvBM, NomorSim,NBahanM);	
+					beliBahan(FEInventoriBahanMentah,FEInventoriBahanOlahan, FEBahanMentah, FESimulasi, aksi, NInvBO, NInvBM, NomorSim,NBahanM);	
 				end else if lowercase(input) = 'olahbahan' then
 				begin
 					olahbahan(FEBahanOlahan, FEInventoriBahanOlahan, FEInventoriBahanMentah, FESimulasi, NInvBO, NInvBM, NomorSim, aksi,NBahanO);

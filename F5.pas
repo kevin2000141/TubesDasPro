@@ -4,23 +4,12 @@
 
 unit F5;
 interface
-	uses uDef,F1,sysutils;//untuk ngambil data
-	function inv(c: Asimulasi; NInvBO, NInvBM, NomorSim:Integer): Boolean ; //gak perlu dipanggil
+	uses uDef,F1,sysutils,C_Maks;//untuk ngambil data
 
-	procedure beliBahan(var a:Ainventori{type inv dari F1};d:Abahanmentah{untuk data bahan};var c:Asimulasi{type dari soal}; var aksi, NInvBO, NInvBM, NomorSim,NBahanM: Integer);
+	procedure beliBahan(var a,b:Ainventori{type inv dari F1};d:Abahanmentah{untuk data bahan};var c:Asimulasi{type dari soal}; var aksi, NInvBO, NInvBM, NomorSim,NBahanM: Integer);
 	{prosedur ini akan memvalidasi bahan mentah yang mau dibeli beserta jumlahnya,mengitung total harga,dan melakukan perubahan pada inventori maupun pada inventori bahan mentah}
 implementation
-	function inv(c: Asimulasi; NInvBO, NInvBM, NomorSim:Integer):Boolean;
-	begin
-		if ((NInvBM + NInvBO)<c[NomorSim].maxInventori)then 
-		begin
-			inv := True;
-		end else
-		begin
-			inv :=False;
-		end;
-	end;
-	procedure beliBahan(var a:Ainventori{type inv dari F1};d:Abahanmentah{untuk data bahan};var c:Asimulasi{type dari soal}; var aksi, NInvBO, NInvBM, NomorSim,NBahanM: Integer);
+	procedure beliBahan(var a,b:Ainventori{type inv dari F1};d:Abahanmentah{untuk data bahan};var c:Asimulasi{type dari soal}; var aksi, NInvBO, NInvBM, NomorSim,NBahanM: Integer);
 	{prosedur ini akan memvalidasi bahan mentah yang mau dibeli beserta jumlahnya,mengitung total harga,dan melakukan perubahan pada inventori maupun pada inventori bahan mentah}
 	var
 		namabahan:string;
@@ -60,7 +49,7 @@ implementation
 		end;
 		write('Total harga : ');
 		writeln(d[i].harga*j);
-		if ((inv (c,NInvBO, NInvBM, NomorSim)=True)and (c[NomorSim].tEnergi>0) and (c[NomorSim].tUang >= (d[i].harga*j)) ) then 
+		if ((cekmaksimum (c,NInvBO, NInvBM, NomorSim,j,a,b)=True)and (c[NomorSim].tEnergi>0) and (c[NomorSim].tUang >= (d[i].harga*j))) then 
 		begin
 				
 				c[NomorSim].tEnergi:=c[NomorSim].tEnergi-1;{energibaru}

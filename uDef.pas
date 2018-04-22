@@ -67,7 +67,7 @@ uses sysutils;
 		NBahanM, NBahanO, NInvBM, NInvBO, NResep, NSim: Integer; {Nilai efektif}
 		NomorSim: Integer; {Nomor Simulasi yang dijalankan}
 		countis, countm: Integer; {Menghitung istirahat dan makan}
-		i, aksi:Integer; {Variabel I dan variabel untuk menghitung aksi}}
+		i, aksi:Integer; {Variabel I dan variabel untuk menghitung aksi}
 		teks:String; {Variabel teks}
 
 implementation
