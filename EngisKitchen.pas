@@ -1,3 +1,7 @@
+// Nama File: EngisKitchen.pas
+// Deskripsi File: Program utama simulasi Engi's Kitchen
+// Tanggal terakhir diubah: 22/04/2018
+
 Program EngisKitchen;
 
 uses uDef, sysutils, F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, F11, F12, F13, F14, F15, F16, F17;

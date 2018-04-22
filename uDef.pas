@@ -1,3 +1,7 @@
+// Nama File: uDef.pas
+// Deskripsi File: Unit definisi program
+// Tanggal terakhir diubah: 20/04/2018
+
 unit uDef;
 
 interface

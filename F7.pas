@@ -1,3 +1,7 @@
+// Nama File: F7.pas
+// Deskripsi File: Unit prosedur jual olahan untuk program utama Engi's Kitchen
+// Tanggal terakhir diubah: 22/04/2018
+
 unit F7;
 interface
 	uses uDef,sysutils,F1;//untuk ngambil data

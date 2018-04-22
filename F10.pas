@@ -1,4 +1,8 @@
-unit F10; {Istirahat}
+// Nama File: F10.pas
+// Deskripsi File: Unit prosedur istirahat untuk program utama Engi's Kitchen
+// Tanggal terakhir diubah: 22/04/2018
+
+unit F10;
 
 interface
 

@@ -1,3 +1,7 @@
+// Nama File: F4.pas
+// Deskripsi File: Unit prosedur stop simulasi untuk program utama Engi's Kitchen
+// Tanggal terakhir diubah: 22/04/2018
+
 unit F4;
 
 interface

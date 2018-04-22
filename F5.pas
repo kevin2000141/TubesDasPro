@@ -1,3 +1,7 @@
+// Nama File: F5.pas
+// Deskripsi File: Unit prosedur beli bahan untuk program utama Engi's Kitchen
+// Tanggal terakhir diubah: 22/04/2018
+
 unit F5;
 interface
 	uses uDef,F1,sysutils;//untuk ngambil data

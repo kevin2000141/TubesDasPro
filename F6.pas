@@ -1,3 +1,7 @@
+// Nama File: F6.pas
+// Deskripsi File: Unit prosedur olah bahan untuk program utama Engi's Kitchen
+// Tanggal terakhir diubah: 22/04/2018
+
 unit F6;
 interface
 	uses uDef,sysutils,F1;//untuk ngambil data

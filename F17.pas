@@ -1,3 +1,7 @@
+// Nama File: F3.pas
+// Deskripsi File: Unit prosedur upgrade inventori untuk program utama Engi's Kitchen
+// Tanggal terakhir diubah: 22/04/2018
+
 unit F17;
 
 interface

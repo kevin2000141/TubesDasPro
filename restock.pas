@@ -1,3 +1,7 @@
+// Nama File: restock.pas
+// Deskripsi File: Unit fungsi restock untuk merestock bahan
+// Tanggal terakhir diubah: 20/04/2018
+
 unit restock;
 
 interface

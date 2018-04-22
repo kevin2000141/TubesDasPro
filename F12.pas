@@ -1,3 +1,7 @@
+// Nama File: F12.pas
+// Deskripsi File: Unit prosedur lihat statistik untuk program utama Engi's Kitchen
+// Tanggal terakhir diubah: 22/04/2018
+
 unit F12;
 
 interface

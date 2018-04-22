@@ -1,3 +1,7 @@
+// Nama File: F8.pas
+// Deskripsi File: Unit prosedur jual resep untuk program utama Engi's Kitchen
+// Tanggal terakhir diubah: 22/04/2018
+
 unit F8;
 interface
 	uses uDef,F1,sysutils;//untuk ngambil data
