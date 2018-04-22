@@ -37,7 +37,9 @@ uses uDef, sysutils;
 					var NInvBO: Integer;
 					var NResep: Integer;
 					var NSim: Integer);
-
+	{Prosedur yang menyimpan data pada array-array dari file eksternal}
+	{I.S. : Semua array dan nilai efektif tidak terdefinisi}
+	{F.S. : Semua array dan nilai efektif terisi jika semua input dan file valid}
 
 implementation
 	
@@ -88,10 +90,15 @@ implementation
 					var NInvBO: Integer;
 					var NResep: Integer;
 					var NSim: Integer);
+	{Prosedur yang menyimpan data pada array-array dari file eksternal}
+	{I.S. : Semua array dan nilai efektif tidak terdefinisi}
+	{F.S. : Semua array dan nilai efektif terisi jika semua input dan file valid}
 
+	{KAMUS}
 	var
 	 	temp : AnsiString;
 	
+	{ALGORITMA}
 	begin
 	if (FileExists('BahanMentah.txt')) and (FileExists('BahanOlahan.txt')) and (FileExists('InvBahanMentah.txt')) and (FileExists('InvBahanOlahan.txt')) and (FileExists('Resep.txt')) and (FileExists('Simulasi.txt')) then
 	begin
