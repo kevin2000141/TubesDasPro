@@ -69,17 +69,30 @@ implementation
 		cek:=cekmaksimum(FESimulasi, NInvBO, NInvBM, NomorSim, 0, FEInventoriBahanMentah, FEInventoriBahanOlahan);
 		while not(cek) do {Ketika jumlah inventori melebihi maksimum inventori simulasi}
 		begin
-			if (NInvBO>=1) then {Mulai penghapusan line paling bawah inventori bahan olahan}
+			if (NInvBO>0) then {Mulai penghapusan line paling bawah inventori bahan olahan}
 			begin
 				j:=NInvBO;
-				deletearray(FEInventoriBahanOlahan,NInvBO,j);
-				cek:=cekmaksimum(FESimulasi, NInvBO, NInvBM, NomorSim, 0, FEInventoriBahanMentah, FEInventoriBahanOlahan);
+				if FEInventoriBahanOlahan[j].jumlah = 0 then
+				begin
+					deletearray(FEInventoriBahanOlahan,NInvBO,j);
+				end else
+				begin
+					FEInventoriBahanOlahan[j].jumlah := FEInventoriBahanOlahan[j].jumlah - 1;
+					cek:=cekmaksimum(FESimulasi, NInvBO, NInvBM, NomorSim, 0, FEInventoriBahanMentah, FEInventoriBahanOlahan);
+				end;
 			end else
-			if (NInvBM>=1) then {Ketika inventori bahan olahan habis, hapus inventori bahan mentah dari bawah keatas}
+			if (NInvBM>0) then {Ketika inventori bahan olahan habis, hapus inventori bahan mentah dari bawah keatas}
 			begin
 				j:=NInvBM;
-				deletearray(FEInventoriBahanMentah,NInvBM,j);
-				cek:=cekmaksimum(FESimulasi, NInvBO, NInvBM, NomorSim, 0, FEInventoriBahanMentah, FEInventoriBahanOlahan);
+				if FEInventoriBahanMentah[j].jumlah = 0 then
+				begin
+					deletearray(FEInventoriBahanMentah,NInvBM,j);
+				end else
+				begin
+					FEInventoriBahanMentah[j].jumlah := FEInventoriBahanMentah[j].jumlah - 1;
+					cek:=cekmaksimum(FESimulasi, NInvBO, NInvBM, NomorSim, 0, FEInventoriBahanMentah, FEInventoriBahanOlahan);
+				end;
+				
 			end;
 		end;
 
