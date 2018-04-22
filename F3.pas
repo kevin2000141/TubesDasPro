@@ -8,13 +8,28 @@ interface
 uses uDef, sysutils, Dateutils, restock, delete_array, C_Maks;
 
 	procedure startSimulasi(var countis, countm, aksi: Integer; FESimulasi: ASimulasi; NomorSim: Integer; var FEBahanMentah: Abahanmentah; NBahanM: Integer; var FEInventoriBahanMentah, FEInventoriBahanOlahan: AInventori; var NInvBM, NInvBO: integer);
+	{Prosedur yang menyiapkan array inventori bahan mentah, array inventori bahan olahan, dan array bahan mentah}
+	{I.S.: Nomor Simulasi yang ingin dijalankan terinisialisasi}
+	{F.S.: Semua count dan aksi direset menjadi 0.
+	       Bahan Mentah akan direstock jika simulasi dimulai pada tanggal genap.
+	       Inventori bahan dihapus jika tanggal melewati kadaluarsa/memiliki tanggal produksi lebih duluan daripada tanggal simulasi.
+	       Jika file inventori melebihi maks inventori simulasi, maka akan dikurangi dari array terbawah inventori bahan olahan keatas, dan array terbawah inventori bahan mentah keatas ketika inventori bahan olahan habis.}
 
 implementation
 
 	procedure startSimulasi(var countis, countm, aksi: Integer; FESimulasi: ASimulasi; NomorSim: Integer; var FEBahanMentah: Abahanmentah; NBahanM: Integer; var FEInventoriBahanMentah, FEInventoriBahanOlahan: AInventori; var NInvBM, NInvBO: integer);
+	{Prosedur yang menyiapkan array inventori bahan mentah, array inventori bahan olahan, dan array bahan mentah}
+	{I.S.: Nomor Simulasi yang ingin dijalankan terinisialisasi}
+	{F.S.: Semua count dan aksi direset menjadi 0.
+	       Bahan Mentah akan direstock jika simulasi dimulai pada tanggal genap.
+	       Inventori bahan dihapus jika tanggal melewati kadaluarsa/memiliki tanggal produksi lebih duluan daripada tanggal simulasi.
+	       Jika file inventori melebihi maks inventori simulasi, maka akan dikurangi dari array terbawah inventori bahan olahan keatas, dan array terbawah inventori bahan mentah keatas ketika inventori bahan olahan habis.}
+
+	{KAMUS}
 	var
 		i,j,k: Integer;
 
+	{ALGORITMA}
 	begin
 		countis:=0;
 		countm:=0;

@@ -8,15 +8,25 @@ interface
 uses uDef, sysutils;
 
 	procedure stopSimulasi(var FESimulasi: Asimulasi; NomorSim: Integer);
+	{Prosedur yang menampilkan kondisi simulasi terakhir dan memberhentikan simulasi}
+	{I.S.: FESimulasi dan NomorSim terdefinisi}
+	{F.S.: Status simulasi [NomorSim] ditampilkan pada layar}
 
 implementation
 
 	procedure stopSimulasi(var FESimulasi: Asimulasi; NomorSim: Integer);
+	{Prosedur yang menampilkan kondisi simulasi terakhir dan memberhentikan simulasi}
+	{I.S.: FESimulasi dan NomorSim terdefinisi}
+	{F.S.: Status simulasi [NomorSim] ditampilkan pada layar}
+
+	{KAMUS}
+
+	{ALGORITMA}
 	begin
 		writeln ('Nomor Simulasi: ', FESimulasi[NomorSim].nomor);
 		DefaultFormatSettings.ShortDateFormat := 'd/m/yyyy';
 		DefaultFormatSettings.DateSeparator := '/';
-		writeln ('Tanggal: ', FormatDateTime('ddddd',FESimulasi[NomorSim].tanggal));
+		writeln ('Tanggal: ', FormatDateTime('ddddd',FESimulasi[NomorSim].tanggal)); {Penampilan tanggal menggunakan format d/m/yyyy}
 		writeln ('Jumlah Hari Hidup: ', FESimulasi[NomorSim].tHariHidup);
 		writeln ('Jumlah Energi: ', FESimulasi[NomorSim].tEnergi);
 		writeln ('Kapasitas Maksimum Inventori: ', FESimulasi[NomorSim].maxInventori);
