@@ -39,7 +39,8 @@ implementation
 				begin
 					i:=i+1;
 				end;
-			end;				
+			end;
+			if (ketemu=False) then writeln('nama tidak terdaftar');				
 		until (ketemu =True);
 		ketemu:=False;
 		i:=1;
@@ -68,7 +69,7 @@ implementation
 				k:=1;
 				while((ketemu=False)and(k<= NInvBM)) do 
 				begin
-					if((namabahan = a[k].nama) and (c[NomorSim].tanggal= a[k].tanggal)) then
+					if((LowerCase(namabahan)=LowerCase(a[k].nama)) and (c[NomorSim].tanggal= a[k].tanggal)) then
 					begin
 						a[k].jumlah :=a[k].jumlah+j;
 						ketemu:=True;

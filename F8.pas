@@ -25,10 +25,11 @@ implementation
 					begin
 						i:=i+1;
 					end;
-				end;				
+				end;
+				if (ketemu=False) then writeln('nama tidak terdaftar');				
 			until (ketemu =True);
 			i:=1;
-			while (resep[i].nama <> nama) do//mencari dimana bahan resepan yang ingin dibuat pada kamus
+			while (LowerCase(resep[i].nama) <>LowerCase(nama)) do//mencari dimana bahan resepan yang ingin dibuat pada kamus
 			begin
 					i:=i+1;
 			end;

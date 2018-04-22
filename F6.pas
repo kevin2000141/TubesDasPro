@@ -25,7 +25,8 @@ implementation
 					begin
 						i:=i+1;
 					end;
-				end;				
+				end;
+			if (ketemu=False) then writeln('nama tidak terdaftar');				
 			until (ketemu =True);
 			count:=0;//untuk bahan yang mencukupi
 			for j:=1 to olah[i].n do 
@@ -65,7 +66,7 @@ implementation
 				k:=1;
 				while((ketemu=False)and(k<= NInvBO)) do 
 				begin
-					if((nama = olahb[k].nama) and (c[NomorSim].tanggal= olahb[k].tanggal)) then
+					if((LowerCase(nama) = LowerCase(olahb[k].nama)) and (c[NomorSim].tanggal= olahb[k].tanggal)) then
 					begin
 						olahb[k].jumlah :=olahb[k].jumlah+1;
 						ketemu:=True;

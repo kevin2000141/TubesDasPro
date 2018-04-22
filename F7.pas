@@ -13,7 +13,7 @@ implementation
 	begin
 		repeat//validasi
 				i:=1;
-				write('Nama bahan yang ingin dibuat: ' );
+				write('Nama bahan yang ingin dijual: ' );
 				readln(nama);
 				ketemu:=False;
 				while((ketemu = False) and (i<=NInvBO)) do
@@ -25,7 +25,8 @@ implementation
 					begin
 						i:=i+1;
 					end;
-				end;				
+				end;
+				if (ketemu=False) then writeln('nama tidak terdaftar');				
 		until (ketemu =True);
 		ketemu:=False;
 		i:=1;
@@ -40,7 +41,7 @@ implementation
 		j:=1;
 		while((ketemu2 = False) and (j<=NBahanO))do//cuman cari j
 		begin
-			if(nama = olah[j].nama) then
+			if(LowerCase(nama) = LowerCase(olah[j].nama)) then
 			begin
 				ketemu2:=True;
 			end;
