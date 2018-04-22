@@ -32,7 +32,7 @@ implementation
 						   {DaysBetween digunakan utnuk mengecek selisih hari, dan menentukan apakan bahan mentah sudah kadaluarsa atau belum.
 						    Lalu apabila di jumlah bahan mentah inventori bahan mentah sudah 0, maka akan dihapuskan elemennya dari array}
 						begin
-							deletearray(FEInventoriBahanMentah,NInvBM,j)	{mendelete array elemen ke j}
+							deletearray(FEInventoriBahanMentah,NInvBM,j);	{mendelete array elemen ke j}
 						end;
 					end;
 				end;
@@ -43,18 +43,20 @@ implementation
 					if (DaysBetween(FESimulasi[NomorSim].tanggal,FEInventoriBahanOlahan[i].tanggal)>3) or (FEInventoriBahanOlahan[i].jumlah=0) or (FESimulasi[NomorSim].tanggal < FEInventoriBahanOlahan[i].tanggal) then
 					{Mengecek apakah bahan olahan sudah kadaluarsa atau belum}
 					begin
-						deletearray(FEInventoriBahanOlahan,NInvBO,j)		{menghapus array elemen ke j}
+						deletearray(FEInventoriBahanOlahan,NInvBO,j);		{menghapus array elemen ke j}
 					end;
 			end;
 		while cekmaksimum(FESimulasi, NInvBO, NInvBM, NomorSim, 0, FEInventoriBahanMentah, FEInventoriBahanOlahan) do
 		begin
 			if (NInvBO>=1) then
 			begin
-				NInvBO:=NInvBO-1;
+				j:=NInvBO
+				deletearray(FEInventoriBahanOlahan,NInvBO,j);
 			end else
 			if (NInvBM>=1) then
 			begin
-				NInvBM:=NInvBM-1;
+				j:=NInvBM
+				deletearray(FEInventoriBahanMentah,NInvBM,j);
 			end;
 		end;
 
