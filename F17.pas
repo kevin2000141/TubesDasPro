@@ -28,6 +28,7 @@ implementation
 	{ALGORITMA}
 	begin
 		Nmax := Nmax + 25; {Kapasitas inventori bertambah 25}
+		writeln('Inventori ditambah 25 menjadi ', NMax);
 	end;
 
 end.
