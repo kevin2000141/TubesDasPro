@@ -2,4 +2,7 @@ Daging Sapi | 5000 | 10 | 25
 Kangkung | 1000 | 3 | 25
 Lada | 200 | 100 | 25
 Bawang Putih | 500 | 30 | 25
-Air | 500 | 100 | 25Es Krim | 2000 | 10 | 25Kecap | 400 | 300 | 25Beras | 500 | 100 | 25
+Air | 500 | 100 | 25
+Es Krim | 2000 | 10 | 25
+Kecap | 400 | 300 | 25
+Beras | 500 | 100 | 25

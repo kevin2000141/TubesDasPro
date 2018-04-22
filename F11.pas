@@ -5,10 +5,10 @@ interface
 	uses  sysutils,F1,delete_array,Dateutils,uDef,restock;	
 		  {delete_array adalah unit untuk menghapus elemen dari sebuah array, restock adalah unit untuk merestock barang}
 	
-	procedure tidur (	var energiawal	:Integer; 			{energiawal		: energi chef sekarang}
+	procedure tidur (	var energiawal	:Longint; 			{energiawal		: energi chef sekarang}
 						var countm		:Integer; 			{countm			: counter sudah berapa kali chef makan} 
 						var countis		:Integer; 			{countis		: counter sudah berapa kali chef istirahat} 
-						var countd		:Integer;			{countd			: menghitung jumlah hari yang berlangsung}
+						var countd		:Longint;			{countd			: menghitung jumlah hari yang berlangsung}
 						var datenow		:TDateTime;			{datenow		: tanggal hari ini (tanggal di simulasi)}
 						var NInvBM: Integer;				{NInvBM			: nilai efektif inventori bahan mentah}
 						var NInvBO: Integer;				{NInvBO			: nilai efektif inventori bahan olahan}
@@ -26,10 +26,10 @@ interface
 
 implementation
 
-	procedure tidur (	var energiawal	:Integer; 		
+	procedure tidur (	var energiawal	:Longint; 		
 						var countm		:Integer; 		
 						var countis		:Integer; 		
-						var countd		:Integer;		
+						var countd		:Longint;		
 						var datenow		:TDateTime;
 						var NInvBM: Integer;
 						var NInvBO: Integer;

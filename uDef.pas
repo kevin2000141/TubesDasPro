@@ -18,30 +18,30 @@ uses sysutils;
 		bahanolahan=record
 			nama		: String;
 			harga		: Longint;
-			n 			: Integer;
+			n 			: Longint;
 			bahan 		: array [1..bahanmax] of String;	
 		end;
 		inventoribahan=record
 			nama		: String;
 			tanggal		: TDateTime;
-			jumlah		: Integer;	
+			jumlah		: Longint;	
 		end;
 		resep=record
 			nama  		: String;
 			harga  		: Longint;
-			n 			: Integer;
+			n 			: Longint;
 			bahan 		: array [1..bahanresepmax] of String;
 		end;
 		simulasi=record
-			nomor 			: Integer;
+			nomor 			: Longint;
 			tanggal 		: TDateTime;
-			tHariHidup 		: Integer;
-			tEnergi 		: Integer;
+			tHariHidup 		: Longint;
+			tEnergi 		: Longint;
 			maxInventori 	: Longint;
-			tBMentahDibeli 	: Integer;
-			tBOlahanDibuat 	: Integer;
-			tBOlahanDijual 	: Integer;
-			tResepDijual 	: Integer;
+			tBMentahDibeli 	: Longint;
+			tBOlahanDibuat 	: Longint;
+			tBOlahanDijual 	: Longint;
+			tResepDijual 	: Longint;
 			tPemasukan 		: Longint;
 			tPengeluaran 	: Longint;
 			tUang 			: Longint;
