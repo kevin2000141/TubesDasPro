@@ -24,18 +24,18 @@ procedure tambahresep (var FEResep: Aresep; var NResep: integer; FEBahanMentah: 
 
 {KAMUS}
 var
-	resepbaru : string;
+	resepbaru : string; {Variabel nama resep baru}
 	n,i,j,k,l,m : integer;
-	sumBhn : Longint;
+	sumBhn : Longint; {Untuk menjumlah harga bahan - bahan yang digunakan}
 	hargaresep : Real;
 	x : string;
-	found: Boolean;
+	found: Boolean; {Untuk mengecek apakah nama resep baru sudah ada atau belum}
 
 {ALGORITMA}	
 begin
-	write('Masukkan nama resep : ');
+	write('Masukkan nama resep : '); {Menerima masukkan nama resep dari pengguna}
 	readln(resepbaru);
-	for m := 1 to NResep do
+	for m := 1 to NResep do {Mengecek nama resep yang ada di array FEResep}
 	begin
 		if lowercase(resepbaru) = lowercase(FEResep[m].nama) then
 		begin
@@ -43,7 +43,7 @@ begin
 		end
 		else
 		begin
-			write('Masukkan jumlah bahan : ');
+			write('Masukkan jumlah bahan : '); {Memasukkan jumlah bahan yang digunakan}
 			readln(n);
 			NResep := NResep + 1;
 			sumBhn := 0;
@@ -53,7 +53,7 @@ begin
 				found:=False;
 				while not(found) do
 				begin
-					write('Masukkan nama bahan ke-', i, ' : ');
+					write('Masukkan nama bahan ke-', i, ' : '); {Memasukkan nama bahan yang digunakan untuk membuat resep}
 					readln(x);
 				for j := 1 to NInvBM do
 				begin
@@ -76,7 +76,7 @@ begin
 					if x = FEInventoriBahanOlahan[k].nama then
 					begin
 						FEResep[NResep].bahan[i] := x;
-						FEResep[NResep].N := FEResep[NResep].N + 1;
+						FEResep[NResep].N := FEResep[NResep].N + 1; {Jumlah elemen efektif dari array FEResep bertambah 1}
 						for l:=1 to NBahanM do
 						begin
 							if x = FEBahanOlahan[l].nama then
@@ -97,7 +97,7 @@ begin
 			end;
 			write('Masukkan harga yang diinginkan : ');
 			readln(hargaresep);
-			while hargaresep < (sumBhn / 8) do
+			while hargaresep < (sumBhn / 8) do {Mengecek apakah harga resep sudah sesuai dengan spesifikasi(12,5% lebih tinggi dari total harga bahan)}
 			begin
 				writeln('Masukkan harga harus 12,5% lebih tinggi dari total harga bahan.');
 				write('Masukkan harga yang diinginkan : ');

@@ -23,7 +23,7 @@ implementation
 	{KAMUS}
 	var
 		i : integer;
-		namaresep : string;
+		namaresep : string; {variabel masukkan dari pengguna berupa nama resep}
 	
 	{ALGORITMA}
 	begin
@@ -33,17 +33,17 @@ implementation
 		begin
 			if (lowercase(FEResep[i].nama) = lowercase(namaresep)) then
 			begin
-				writeln('Nama Resep: ', FEResep[i].nama);
-				writeln('Harga Resep: ', FEResep[i].harga);
-				writeln('Jumlah Bahan: ', FEResep[i].n);
-				writeln('Bahan-bahan: ', FEResep[i].bahan[j]);
+				writeln('Nama Resep: ', FEResep[i].nama);{Menampilkan nama resep yang dicari}
+				writeln('Harga Resep: ', FEResep[i].harga);{Menampilkan harga resep}
+				writeln('Jumlah Bahan: ', FEResep[i].n);{Menampilkan jumlah bahan yang digunakan}
+				writeln('Bahan-bahan: ', FEResep[i].bahan[j]);{Menampilkan bahan - bahan yang digunakan}
 				for j := 2 to FEResep[i].n do
 				begin
 					write(', ', FEResep[i].bahan[j]);
 				end;
 			end else 
 			begin
-				writeln('Nama Resep yang dimasukkan tidak ada');
+				writeln('Nama Resep yang dimasukkan tidak ada');{Pesan kesalahan ketika nama resep yang dicari tidak ada di array}
 			end;
 		end;
 	end;

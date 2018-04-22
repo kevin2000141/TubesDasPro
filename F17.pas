@@ -22,7 +22,7 @@ implementation
 
 	{ALGORITMA}
 	begin
-		Nmax := Nmax + 25;
+		Nmax := Nmax + 25; {Kapasitas inventori bertambah 25}
 	end;
 
 end.
