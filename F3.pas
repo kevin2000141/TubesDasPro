@@ -5,7 +5,7 @@
 unit F3;
 
 interface
-uses uDef, sysutils, Dateutils, restock, delete_array;
+uses uDef, sysutils, Dateutils, restock, delete_array, C_Maks;
 
 	procedure startSimulasi(var countis, countm, aksi: Integer; FESimulasi: ASimulasi; NomorSim: Integer; var FEBahanMentah: Abahanmentah; NBahanM: Integer; var FEInventoriBahanMentah, FEInventoriBahanOlahan: AInventori; var NInvBM, NInvBO: integer);
 
@@ -46,6 +46,18 @@ implementation
 						deletearray(FEInventoriBahanOlahan,NInvBO,j)		{menghapus array elemen ke j}
 					end;
 			end;
+		while cekmaksimum(FESimulasi, NInvBO, NInvBM, NomorSim, 0, FEInventoriBahanMentah, FEInventoriBahanOlahan) do
+		begin
+			if NInvBO>=1 then
+			begin
+				NInvBO:=NInvBO-1;
+			end else
+			if NInvBM>=1 then
+			begin
+				NInvBM:=NInvBM-1;
+			end;
+		end;
+
 	end;
 
 end.
