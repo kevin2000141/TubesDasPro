@@ -9,15 +9,15 @@ uses F1, sysutils, uDef;
 
 	procedure restockbahan(FESimulasi: ASimulasi; NomorSim: Integer; var FEBahanMentah: Abahanmentah; NBahanM: Integer);
 	{Prosedur yang menambah jumlah stock bahan menjadi 25 pada file bahan mentah jika tanggal genap} 
-	{I.S. FESimulasi, NomorSim, FEBahanMentah, NBahanM terinisialiasai}
-	{F.S. Jumlah bahan di FEBahanMentah menjadi 25}
+	{I.S. : FESimulasi, NomorSim, FEBahanMentah, NBahanM terdefinisi}
+	{F.S. : Jumlah bahan di FEBahanMentah menjadi 25}
 
 implementation
 
 	procedure restockbahan(FESimulasi: ASimulasi; NomorSim: Integer; var FEBahanMentah: Abahanmentah; NBahanM: Integer);
 	{Prosedur yang menambah jumlah stock bahan menjadi 25 pada file bahan mentah jika tanggal genap}
-	{I.S. FESimulasi, NomorSim, FEBahanMentah, NBahanM terinisialiasai}
-	{F.S. Jumlah bahan di FEBahanMentah menjadi 25}
+	{I.S. : FESimulasi, NomorSim, FEBahanMentah, NBahanM terdefinisi}
+	{F.S. : Jumlah bahan di FEBahanMentah menjadi 25 jika tanggal genap}
 
 	{KAMUS}
 	var
