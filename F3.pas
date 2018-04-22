@@ -34,10 +34,10 @@ implementation
 
 	{ALGORITMA}
 	begin
-		countis:=0;
+		countis:=0; {Reset semua count}
 		countm:=0;
 		aksi:=0;
-		restockbahan(FESimulasi, NomorSim, FEBahanMentah, NBahanM);
+		restockbahan(FESimulasi, NomorSim, FEBahanMentah, NBahanM); {Restock bahan jika tanggal genap}
 		for i:=1 to NInvBM do								
 			begin
 				j:=i;
@@ -65,15 +65,15 @@ implementation
 					end;
 			end;
 		cek:=cekmaksimum(FESimulasi, NInvBO, NInvBM, NomorSim, 0, FEInventoriBahanMentah, FEInventoriBahanOlahan);
-		while not(cek) do
+		while not(cek) do {Ketika jumlah inventori melebihi maksimum inventori simulasi}
 		begin
-			if (NInvBO>=1) then
+			if (NInvBO>=1) then {Mulai penghapusan line paling bawah inventori bahan olahan}
 			begin
 				j:=NInvBO;
 				deletearray(FEInventoriBahanOlahan,NInvBO,j);
 				cek:=cekmaksimum(FESimulasi, NInvBO, NInvBM, NomorSim, 0, FEInventoriBahanMentah, FEInventoriBahanOlahan);
 			end else
-			if (NInvBM>=1) then
+			if (NInvBM>=1) then {Ketika inventori bahan olahan habis, hapus inventori bahan mentah dari bawah keatas}
 			begin
 				j:=NInvBM;
 				deletearray(FEInventoriBahanMentah,NInvBM,j);
