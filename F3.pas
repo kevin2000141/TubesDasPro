@@ -71,11 +71,13 @@ implementation
 			begin
 				j:=NInvBO;
 				deletearray(FEInventoriBahanOlahan,NInvBO,j);
+				cek:=cekmaksimum(FESimulasi, NInvBO, NInvBM, NomorSim, 0, FEInventoriBahanMentah, FEInventoriBahanOlahan);
 			end else
 			if (NInvBM>=1) then
 			begin
 				j:=NInvBM;
 				deletearray(FEInventoriBahanMentah,NInvBM,j);
+				cek:=cekmaksimum(FESimulasi, NInvBO, NInvBM, NomorSim, 0, FEInventoriBahanMentah, FEInventoriBahanOlahan);
 			end;
 		end;
 
