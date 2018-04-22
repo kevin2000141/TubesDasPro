@@ -16,7 +16,7 @@ interface
 implementation
 
 	{ Implementasi Fungsi/Prosedur }
-	
+
 	procedure jualolahan(olah:Abahanolahan;var olahb:Ainventori;var c : Asimulasi; var NInvBO, NBahanO, NomorSim,aksi: Integer);
 	{Prosedur akan menerima masukan nama bahan yang ingin dijual,dan akan memvalidas,lalu melaukan perubahan pada inventori dan juga mengubah dat simulasi}
 	{I.S menerima sebuah string berua olahan yang akan dijual}
@@ -45,7 +45,7 @@ implementation
 						i:=i+1;
 					end;
 				end;
-				if (ketemu=False) then writeln('nama tidak terdaftar');				
+				if (ketemu=False) then writeln('Nama tidak terdaftar');				
 		until (ketemu =True);
 		ketemu:=False;
 		i:=1;
@@ -74,8 +74,8 @@ implementation
 			c[NomorSim].tPemasukan:=c[NomorSim].tPemasukan+olah[j-1].harga;
 			c[NomorSim].tUang:=c[NomorSim].tUang+olah[j-1].harga;
 			aksi:=aksi+1;
-			writeln('makan nih ',nama);
-		end else writeln('Tidak bisa dibeli');
+			writeln('Dapat dijual');
+		end else writeln('Tidak bisa dijual');
 		end;
 		end.
 		

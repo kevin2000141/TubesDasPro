@@ -11,7 +11,7 @@ interface
 
 	procedure upgradeInventori(var Nmax: longint);
 	{Prosedur untuk menambah jumlah kapasitas inventori}
-	{I.S. Prosedur upgradeInventori terinisialisasi}
+	{I.S. Nmax terinisialisasi}
 	{F.S. Kapasitas inventori bertambah 25}
 
 implementation
@@ -20,7 +20,7 @@ implementation
 	
 	procedure upgradeInventori(var Nmax: longint);
 	{Prosedur untuk menambah jumlah kapasitas inventori}
-	{I.S. Prosedur upgradeInventori terinisialisasi}
+	{I.S. Nmax terinisialisasi}
 	{F.S. Kapasitas inventori bertambah 25}
 
 	{KAMUS}

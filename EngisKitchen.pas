@@ -6,9 +6,6 @@ Program EngisKitchen;
 {Program utama simulasi Engi's Kitchen}
 
 uses uDef, sysutils, F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, F11, F12, F13, F14, F15, F16, F17;
-//uses B1_cekKesalahanLoading;
-//uses B3_validasi;
-//uses B4_restock;
 
 var
 	input: AnsiString; {Variabel input pengguna}

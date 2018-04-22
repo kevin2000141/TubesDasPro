@@ -45,7 +45,7 @@ implementation
 						i:=i+1;
 					end;
 				end;
-				if (ketemu=False) then writeln('nama tidak terdaftar');				
+				if (ketemu=False) then writeln('Nama tidak terdaftar');				
 			until (ketemu =True);
 			i:=1;
 			while (LowerCase(resep[i].nama) <>LowerCase(nama)) do//mencari dimana bahan resepan yang ingin dibuat pada kamus
@@ -98,6 +98,7 @@ implementation
 					c[NomorSim].tUang:=c[NomorSim].tUang+resep[i].harga;
 					aksi:=aksi+1;
 				end;
-			end else writeln('gak bisa dibeli');
+				writeln('Dapat dibuat');
+			end else writeln('Tidak bisa dibuat');
 		end;
 end.

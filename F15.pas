@@ -9,8 +9,8 @@ interface
 
 	{ Deklarasi Fungsi/Prosedur }
 
-	procedure cariresep(FEResep: Aresep; NResep: integer);
-	{Prosedur untuk mancari resep dalam array ressep}
+	procedure cariresep(FEResep: Aresep; NResep: Integer);
+	{Prosedur untuk mancari resep dalam array resep}
 	{I.S. Prosedur menerima masukkan nama resep dari pengguna}
 	{F.S. Prosedur akan menampilkan nama resep yang dicari, harga resep, jumlah bahan yang digunakan, dan nama bahan - bahan yang digunakan.
 	Jika nama resep yang dimasukkan tidak ada, maka akan muncul pesan kesalahan.}
@@ -19,8 +19,8 @@ implementation
 
 	{ Implementasi Fungsi/Prosedur }
 	
-	procedure cariresep(FEResep: Aresep; NResep: integer);
-	{Prosedur untuk mancari resep dalam array ressep}
+	procedure cariresep(FEResep: Aresep; NResep: Integer);
+	{Prosedur untuk mancari resep dalam array resep}
 	{I.S. Prosedur menerima masukkan nama resep dari pengguna}
 	{F.S. Prosedur akan menampilkan nama resep yang dicari, harga resep, jumlah bahan yang digunakan, dan nama bahan - bahan yang digunakan.
 	 Jika nama resep yang dimasukkan tidak ada, maka akan muncul pesan kesalahan.}
